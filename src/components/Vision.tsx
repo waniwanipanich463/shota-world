@@ -31,7 +31,7 @@ export default function Vision() {
     }, []);
 
     return (
-        <section ref={containerRef} className="h-screen relative flex items-center justify-center bg-black overflow-hidden">
+        <section id="vision" ref={containerRef} className="h-screen relative flex items-center justify-center bg-black overflow-hidden">
             {/* Background Parallax */}
             <div className="absolute inset-0 opacity-40">
                 <Image

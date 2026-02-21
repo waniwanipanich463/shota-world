@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -54,10 +55,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" className="scroll-smooth">
       <body
         className={`${inter.variable} ${oswald.variable} antialiased bg-black text-white overflow-x-hidden`}
       >
+        <Header />
         {children}
       </body>
     </html>

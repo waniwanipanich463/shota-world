@@ -9,7 +9,7 @@ const projects = [
 
 export default function Works() {
     return (
-        <section className="min-h-screen py-20 px-4 bg-black">
+        <section id="works" className="min-h-screen py-20 px-4 bg-black">
             <h2 className="text-4xl md:text-8xl font-display font-bold text-center mb-20 text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-800">
                 WORKS
             </h2>
@@ -21,18 +21,18 @@ export default function Works() {
                             src={project.image}
                             alt={project.title}
                             fill
-                            className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0"
+                            className="object-cover transition-transform duration-700 md:group-hover:scale-110 opacity-80 md:opacity-60 md:group-hover:opacity-100 grayscale-0 md:grayscale md:group-hover:grayscale-0"
                         />
 
-                        <div className="absolute inset-0 bg-black/80 group-hover:bg-black/40 transition-colors duration-500 flex flex-col items-center justify-center">
-                            <h3 className="text-3xl font-display font-bold text-white tracking-widest translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-100">
+                        <div className="absolute inset-0 bg-black/60 md:bg-black/80 md:group-hover:bg-black/40 transition-colors duration-500 flex flex-col items-center justify-center">
+                            <h3 className="text-3xl font-display font-bold text-white tracking-widest translate-y-0 opacity-100 md:translate-y-4 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-300 md:delay-100">
                                 {project.title}
                             </h3>
-                            <p className="text-[var(--neon-lime)] text-sm tracking-widest mt-2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-200">
+                            <p className="text-[var(--neon-lime)] text-sm tracking-widest mt-2 translate-y-0 opacity-100 md:translate-y-4 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-300 md:delay-200">
                                 {project.category}
                             </p>
 
-                            <button className="mt-8 px-6 py-2 border border-white text-white text-sm tracking-widest hover:bg-white hover:text-black transition-colors translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 duration-300 delay-300">
+                            <button className="mt-8 px-6 py-2 border border-white text-white text-sm tracking-widest hover:bg-white hover:text-black transition-colors translate-y-0 opacity-100 md:translate-y-4 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 duration-300 md:delay-300">
                                 VIEW PROJECT
                             </button>
                         </div>

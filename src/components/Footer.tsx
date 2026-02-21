@@ -5,8 +5,6 @@ export default function Footer() {
                 <p>© 2026 SHOTA NIWANO. ALL RIGHTS RESERVED.</p>
                 <div className="flex gap-4">
                     <span className="hover:text-white cursor-pointer transition-colors">PRIVACY POLICY</span>
-                    <span>|</span>
-                    <span className="hover:text-white cursor-pointer transition-colors">CONTACT</span>
                 </div>
             </div>
         </footer>

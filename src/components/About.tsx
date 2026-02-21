@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function About() {
     return (
-        <section className="min-h-screen flex items-center justify-center py-20 px-6 relative bg-black">
+        <section id="about" className="min-h-screen flex items-center justify-center py-20 px-6 relative bg-black">
             <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 {/* Text Content */}
                 <div className="space-y-8">
