@@ -15,8 +15,6 @@ const projects = [
     { title: "WEB", category: "DEVELOPMENT", image: "/assets/hero-bg.png" }, // Placeholder
     { title: "PHOTO", category: "PHOTOGRAPHY", image: "/assets/hero-bg.png" }, // Placeholder
     { title: "MOVIE", category: "VIDEOGRAPHY", image: "/assets/hero-bg.png" }, // Placeholder
-    { title: "3D CG", category: "ANIMATION", image: "/assets/hero-bg.png" }, // Additional Placeholder
-    { title: "XR", category: "VIRTUAL PRODUCTION", image: "/assets/hero-bg.png" }, // Additional Placeholder
 ];
 
 export default function Works() {
