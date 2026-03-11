@@ -30,14 +30,14 @@ export default function Works() {
                 <div className="w-16 h-[2px] bg-sky-blue mx-auto mt-6"></div>
             </div>
 
-            <div className="w-full pb-10 overflow-hidden relative">
+            <div className="w-screen relative left-1/2 -ml-[50vw] pb-10 overflow-hidden">
                 <Swiper
                     effect={'coverflow'}
                     grabCursor={true}
                     centeredSlides={true}
                     loop={true}
                     slidesPerView={'auto'}
-                    initialSlide={2}
+                    initialSlide={projects.length}
                     coverflowEffect={{
                         rotate: 0,
                         stretch: 0,

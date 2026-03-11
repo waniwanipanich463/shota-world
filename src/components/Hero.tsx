@@ -83,41 +83,60 @@ export default function Hero() {
                 <div className="mb-12 relative w-full">
                     <svg
                         ref={svgLogoRef}
-                        viewBox="0 0 600 240"
-                        className="w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
+                        viewBox="0 0 800 320"
+                        className="w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] overflow-visible"
                     >
-                        <text
-                            x="50%"
-                            y="30%"
-                            textAnchor="middle"
-                            dominantBaseline="central"
-                            className="font-sans text-8xl md:text-9xl font-black tracking-[0.1em]"
+                        <g
+                            transform="translate(400, 80)"
+                            className="font-sans font-black tracking-[0.1em]"
                             style={{
                                 fill: "white",
                                 stroke: "white",
-                                strokeWidth: "1px",
+                                strokeWidth: "1.5px",
                                 paintOrder: "stroke fill",
                                 fillOpacity: 0
                             }}
                         >
-                            SHOTA
-                        </text>
-                        <text
-                            x="50%"
-                            y="75%"
-                            textAnchor="middle"
-                            dominantBaseline="central"
-                            className="font-sans text-8xl md:text-9xl font-black tracking-[0.1em]"
+                            {/* SHOTA - Simplified Paths to avoid internal overlaps */}
+                            <g transform="translate(-320, 0) scale(1.2)">
+                                {/* S */}
+                                <path d="M50,10 C20,10 10,25 10,40 C10,55 25,60 40,65 C55,70 65,75 65,95 C65,115 50,130 30,130 C10,130 0,115 0,100 L15,100 C15,110 20,118 30,118 C40,118 50,110 50,95 C50,80 40,75 25,70 C10,65 0,55 0,40 C0,20 15,0 45,0 C65,0 75,15 75,30 L60,30 C60,20 55,10 45,10" />
+                                {/* H */}
+                                <path d="M90,0 L110,0 L110,55 L145,55 L145,0 L165,0 L165,130 L145,130 L145,75 L110,75 L110,130 L90,130 Z" />
+                                {/* O */}
+                                <path d="M225,0 C260,0 285,30 285,65 C285,100 260,130 225,130 C190,130 165,100 165,65 C165,30 190,0 225,0 M225,15 C205,15 185,35 185,65 C185,95 205,115 225,115 C245,115 265,95 265,65 C265,35 245,15 225,15" />
+                                {/* T */}
+                                <path d="M295,0 L365,0 L365,20 L342,20 L342,130 L318,130 L318,20 L295,20 Z" />
+                                {/* A - Single Path No Overlap */}
+                                <path d="M410,0 L435,0 L470,130 L448,130 L442,105 L403,105 L397,130 L375,130 Z M422,18 L407,85 L438,85 Z" />
+                            </g>
+                        </g>
+
+                        <g
+                            transform="translate(400, 240)"
+                            className="font-sans font-black tracking-[0.1em]"
                             style={{
                                 fill: "white",
                                 stroke: "white",
-                                strokeWidth: "1px",
+                                strokeWidth: "1.5px",
                                 paintOrder: "stroke fill",
                                 fillOpacity: 0
                             }}
                         >
-                            WORLD
-                        </text>
+                            {/* WORLD */}
+                            <g transform="translate(-350, 0) scale(1.2)">
+                                {/* W */}
+                                <path d="M0,0 L25,0 L45,90 L65,0 L85,0 L105,90 L125,0 L150,0 L120,130 L95,130 L75,40 L55,130 L30,130 Z" />
+                                {/* O */}
+                                <path d="M225,0 C260,0 285,30 285,65 C285,100 260,130 225,130 C190,130 165,100 165,65 C165,30 190,0 225,0 M225,15 C205,15 185,35 185,65 C185,95 205,115 225,115 C245,115 265,95 265,65 C265,35 245,15 225,15" />
+                                {/* R */}
+                                <path d="M305,0 L355,0 C375,0 390,15 390,35 C390,55 375,65 355,65 L330,65 L330,0 Z M330,75 L355,75 L385,130 L360,130 L330,80 L330,130 L305,130 L305,0 L330,0 Z" />
+                                {/* L */}
+                                <path d="M410,0 L435,0 L435,110 L480,110 L480,130 L410,130 Z" />
+                                {/* D */}
+                                <path d="M500,0 L545,0 C585,0 605,30 605,65 C605,100 585,130 545,130 L500,130 Z M525,20 L525,110 L545,110 C570,110 580,90 580,65 C580,40 570,20 545,20 Z" />
+                            </g>
+                        </g>
                     </svg>
                 </div>
                 
