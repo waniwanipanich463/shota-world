@@ -28,16 +28,22 @@ export default function Hero() {
                 "-=1.8"
             );
 
-        const svgElements = svgLogoRef.current?.querySelectorAll("text");
-        if (svgElements && svgElements.length > 0) {
+        const outlineElements = svgLogoRef.current?.querySelectorAll(".outline-layer text");
+        const fillElements = svgLogoRef.current?.querySelectorAll(".fill-layer text");
+
+        if (outlineElements && outlineElements.length > 0 && fillElements && fillElements.length > 0) {
             tl.fromTo(
-                svgElements,
-                { strokeDasharray: 1000, strokeDashoffset: 1000, fillOpacity: 0 },
+                outlineElements,
+                { strokeDasharray: 1000, strokeDashoffset: 1000 },
                 { strokeDashoffset: 0, duration: 2, ease: "power2.inOut", stagger: 0.2 },
                 "-=1.0"
             ).to(
-                svgElements,
+                fillElements,
                 { fillOpacity: 1, duration: 1, ease: "power2.out", stagger: 0.1 },
+                "-=0.5"
+            ).to(
+                outlineElements,
+                { opacity: 0, duration: 0.5 },
                 "-=0.5"
             );
         }
@@ -86,42 +92,73 @@ export default function Hero() {
                         viewBox="0 0 600 240"
                         className="w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
                     >
-                        <text
-                            x="50%"
-                            y="30%"
-                            textAnchor="middle"
-                            dominantBaseline="central"
-                            className="font-sans text-8xl md:text-9xl font-black tracking-[0.1em]"
-                            style={{
-                                fill: "white",
-                                stroke: "white",
-                                strokeWidth: "1px",
-                                strokeLinejoin: "round",
-                                strokeLinecap: "round",
-                                paintOrder: "stroke fill",
-                                fillOpacity: 0
-                            }}
-                        >
-                            SHOTA
-                        </text>
-                        <text
-                            x="50%"
-                            y="75%"
-                            textAnchor="middle"
-                            dominantBaseline="central"
-                            className="font-sans text-8xl md:text-9xl font-black tracking-[0.1em]"
-                            style={{
-                                fill: "white",
-                                stroke: "white",
-                                strokeWidth: "1px",
-                                strokeLinejoin: "round",
-                                strokeLinecap: "round",
-                                paintOrder: "stroke fill",
-                                fillOpacity: 0
-                            }}
-                        >
-                            WORLD
-                        </text>
+                        {/* Layer 1: Animated Stroke (Outline) */}
+                        <g className="outline-layer">
+                            <text
+                                x="50%"
+                                y="30%"
+                                textAnchor="middle"
+                                dominantBaseline="central"
+                                className="font-sans text-8xl md:text-9xl font-black tracking-[0.1em]"
+                                style={{
+                                    fill: "none",
+                                    stroke: "white",
+                                    strokeWidth: "1px",
+                                    strokeLinejoin: "round",
+                                    strokeLinecap: "round",
+                                }}
+                            >
+                                SHOTA
+                            </text>
+                            <text
+                                x="50%"
+                                y="75%"
+                                textAnchor="middle"
+                                dominantBaseline="central"
+                                className="font-sans text-8xl md:text-9xl font-black tracking-[0.1em]"
+                                style={{
+                                    fill: "none",
+                                    stroke: "white",
+                                    strokeWidth: "1px",
+                                    strokeLinejoin: "round",
+                                    strokeLinecap: "round",
+                                }}
+                            >
+                                WORLD
+                            </text>
+                        </g>
+
+                        {/* Layer 2: Fade-in Fill */}
+                        <g className="fill-layer">
+                            <text
+                                x="50%"
+                                y="30%"
+                                textAnchor="middle"
+                                dominantBaseline="central"
+                                className="font-sans text-8xl md:text-9xl font-black tracking-[0.1em]"
+                                style={{
+                                    fill: "white",
+                                    fillOpacity: 0,
+                                    stroke: "none"
+                                }}
+                            >
+                                SHOTA
+                            </text>
+                            <text
+                                x="50%"
+                                y="75%"
+                                textAnchor="middle"
+                                dominantBaseline="central"
+                                className="font-sans text-8xl md:text-9xl font-black tracking-[0.1em]"
+                                style={{
+                                    fill: "white",
+                                    fillOpacity: 0,
+                                    stroke: "none"
+                                }}
+                            >
+                                WORLD
+                            </text>
+                        </g>
                     </svg>
                 </div>
                 
