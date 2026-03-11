@@ -28,16 +28,17 @@ export default function Hero() {
                 "-=1.8"
             );
 
-        const logoPaths = svgLogoRef.current?.querySelectorAll(".logo-paths path");
+        const strokeElements = svgLogoRef.current?.querySelectorAll(".logo-text-stroke");
+        const fillElements = svgLogoRef.current?.querySelectorAll(".logo-text-fill text");
 
-        if (logoPaths && logoPaths.length > 0) {
+        if (strokeElements && strokeElements.length > 0 && fillElements && fillElements.length > 0) {
             tl.fromTo(
-                logoPaths,
-                { strokeDasharray: 1000, strokeDashoffset: 1000, fillOpacity: 0 },
-                { strokeDashoffset: 0, duration: 2, ease: "power2.inOut", stagger: 0.15 },
+                strokeElements,
+                { strokeDasharray: 1200, strokeDashoffset: 1200 },
+                { strokeDashoffset: 0, duration: 2, ease: "power2.inOut", stagger: 0.2 },
                 "-=1.0"
             ).to(
-                logoPaths,
+                fillElements,
                 { fillOpacity: 1, duration: 1, ease: "power2.out", stagger: 0.1 },
                 "-=0.5"
             );
@@ -87,46 +88,97 @@ export default function Hero() {
                         viewBox="0 0 1000 400"
                         className="w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] overflow-visible"
                     >
-                        {/* Final Definitive High-Precision paths with perfect geometry and spacing */}
-                        <g
-                            className="logo-paths"
-                            style={{
-                                fill: "white",
-                                stroke: "white",
-                                strokeWidth: "1.2px",
-                                strokeLinejoin: "round",
-                                strokeLinecap: "round",
-                                paintOrder: "stroke fill",
-                                fillOpacity: 0
-                            }}
-                        >
-                            {/* SHOTA - Line 1 (Lifted higher) */}
-                            <g transform="translate(500, 75) scale(1.15)">
-                                {/* S - Shifted slightly left, refined curves */}
-                                <path d="M-260,-45 C-300,-45 -315,-25 -315,-5 C-315,15 -295,20 -280,25 C-265,30 -255,35 -255,55 C-255,75 -270,90 -295,90 C-315,90 -330,75 -330,60 L-355,60 C-355,85 -335,115 -295,115 C-255,115 -230,90 -230,55 C-230,30 -245,20 -265,15 C-285,10 -290,5 -290,-5 C-290,-15 -285,-20 -270,-20 C-255,-20 -245,-10 -245,5 L-220,5 C-220,-20 -240,-45 -260,-45 Z" transform="translate(0, -35)" />
-                                {/* H */}
-                                <path d="M-180,-45 L-155,-45 L-155,15 L-110,15 L-110,-45 L-85,-45 L-85,85 L-110,85 L-110,35 L-155,35 L-155,85 L-180,85 Z" transform="translate(0, -35)" />
-                                {/* O */}
-                                <path fillRule="evenodd" d="M0,-45 C40,-45 70,-15 70,20 C70,55 40,85 0,85 C-40,85 -70,55 -70,20 C-70,-15 -40,-45 0,-45 M0,-20 C-18,-20 -40,0 -40,20 C-40,40 -18,60 0,60 C18,60 40,40 40,20 C40,0 18,-20 0,-20 Z" transform="translate(0, -35)" />
-                                {/* T */}
-                                <path d="M95,-45 L185,-45 L185,-20 L155,-20 L155,85 L125,85 L125,-20 L95,-20 Z" transform="translate(0, -35)" />
-                                {/* A */}
-                                <path fillRule="evenodd" d="M250,-45 L280,-45 L330,85 L303,85 L292,60 L238,60 L227,85 L200,85 Z M265,-15 L245,35 L285,35 Z" transform="translate(0, -35)" />
-                            </g>
+                        <defs>
+                            {/* Mask to ensure stroke only appears on the font shape, hiding internal overlaps */}
+                            <mask id="textMask">
+                                <rect width="100%" height="100%" fill="black" />
+                                <text
+                                    x="50%"
+                                    y="30%"
+                                    textAnchor="middle"
+                                    dominantBaseline="central"
+                                    className="font-sans text-8xl md:text-9xl font-black tracking-[0.15em]"
+                                    fill="white"
+                                >
+                                    SHOTA
+                                </text>
+                                <text
+                                    x="50%"
+                                    y="75%"
+                                    textAnchor="middle"
+                                    dominantBaseline="central"
+                                    className="font-sans text-8xl md:text-9xl font-black tracking-[0.15em]"
+                                    fill="white"
+                                >
+                                    WORLD
+                                </text>
+                            </mask>
+                        </defs>
 
-                            {/* WORLD - Line 2 (Dropped lower to clear S) */}
-                            <g transform="translate(500, 265) scale(1.15)">
-                                {/* W - Cleaned and shifted to satisfy layout */}
-                                <path d="M-340,-45 L-310,-45 L-285,55 L-260,-45 L-230,-45 L-205,55 L-180,-45 L-150,-45 L-190,85 L-220,85 L-245,-10 L-270,85 L-300,85 Z" transform="translate(0, -35)" />
-                                {/* O */}
-                                <path fillRule="evenodd" d="M-55,-45 C-15,-45 15,-15 15,20 C15,55 -15,85 -55,85 C-95,85 -125,55 -125,20 C-125,-15 -95,-45 -55,-45 M-55,-20 C-73,-20 -95,0 -95,20 C-95,40 -73,60 -55,60 C-37,60 -15,40 -15,20 C-15,0 -37,-20 -55,-20 Z" transform="translate(0, -35)" />
-                                {/* R */}
-                                <path fillRule="evenodd" d="M45,-45 L110,-45 C145,-45 160,-25 160,0 C160,15 150,25 135,35 L165,85 L135,85 L108,40 L70,40 L70,85 L45,85 Z M70,-20 L70,14 L110,14 C128,14 135,7 135,0 C135,-7 128,-20 110,-20 Z" transform="translate(0, -35)" />
-                                {/* L */}
-                                <path d="M185,-45 L210,-45 L210,60 L255,60 L255,85 L185,85 Z" transform="translate(0, -35)" />
-                                {/* D - Perfectly reconstructed with smooth Bezier curves */}
-                                <path fillRule="evenodd" d="M280,-45 L345,-45 C385,-45 420,-15 420,20 C420,55 385,85 345,85 L280,85 Z M306,-21 L306,61 L345,61 C371,61 392,45 392,20 C392,-5 371,-21 345,-21 L306,-21 Z" transform="translate(0, -35)" />
-                            </g>
+                        {/* Layer 1: Animated Stroke (Clipped by Mask to hide overlaps) */}
+                        <g mask="url(#textMask)">
+                            <text
+                                x="50%"
+                                y="30%"
+                                textAnchor="middle"
+                                dominantBaseline="central"
+                                className="font-sans text-8xl md:text-9xl font-black tracking-[0.15em] logo-text-stroke"
+                                style={{
+                                    fill: "none",
+                                    stroke: "white",
+                                    strokeWidth: "4px", // Thicker stroke for mask clipping
+                                    strokeLinejoin: "round",
+                                    strokeLinecap: "round"
+                                }}
+                            >
+                                SHOTA
+                            </text>
+                            <text
+                                x="50%"
+                                y="75%"
+                                textAnchor="middle"
+                                dominantBaseline="central"
+                                className="font-sans text-8xl md:text-9xl font-black tracking-[0.15em] logo-text-stroke"
+                                style={{
+                                    fill: "none",
+                                    stroke: "white",
+                                    strokeWidth: "4px",
+                                    strokeLinejoin: "round",
+                                    strokeLinecap: "round"
+                                }}
+                            >
+                                WORLD
+                            </text>
+                        </g>
+
+                        {/* Layer 2: Fade-in Fill */}
+                        <g className="logo-text-fill">
+                            <text
+                                x="50%"
+                                y="30%"
+                                textAnchor="middle"
+                                dominantBaseline="central"
+                                className="font-sans text-8xl md:text-9xl font-black tracking-[0.15em]"
+                                style={{
+                                    fill: "white",
+                                    fillOpacity: 0
+                                }}
+                            >
+                                SHOTA
+                            </text>
+                            <text
+                                x="50%"
+                                y="75%"
+                                textAnchor="middle"
+                                dominantBaseline="central"
+                                className="font-sans text-8xl md:text-9xl font-black tracking-[0.15em]"
+                                style={{
+                                    fill: "white",
+                                    fillOpacity: 0
+                                }}
+                            >
+                                WORLD
+                            </text>
                         </g>
                     </svg>
                 </div>
