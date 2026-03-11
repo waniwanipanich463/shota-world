@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination, Navigation, Autoplay } from "swiper/modules";
+import { EffectCoverflow, Pagination, Navigation, Autoplay, Mousewheel } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
@@ -53,7 +53,11 @@ export default function Works() {
                         nextEl: '.custom-swiper-button-next',
                         prevEl: '.custom-swiper-button-prev',
                     }}
-                    modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
+                    mousewheel={{
+                        forceToAxis: true,
+                        releaseOnEdges: true,
+                    }}
+                    modules={[EffectCoverflow, Pagination, Navigation, Autoplay, Mousewheel]}
                     className="w-full py-20"
                 >
                     {projects.map((project, index) => (
