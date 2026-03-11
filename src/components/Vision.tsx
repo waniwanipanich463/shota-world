@@ -14,12 +14,13 @@ export default function Vision() {
 
         if (texts) {
             gsap.fromTo(texts,
-                { y: 100, opacity: 0 },
+                { y: 60, opacity: 0 },
                 {
                     y: 0,
                     opacity: 1,
-                    stagger: 0.2,
-                    duration: 1,
+                    stagger: 0.3,
+                    duration: 1.5,
+                    ease: "power2.out",
                     scrollTrigger: {
                         trigger: containerRef.current,
                         start: "top center",
@@ -31,27 +32,34 @@ export default function Vision() {
     }, []);
 
     return (
-        <section id="vision" ref={containerRef} className="h-screen relative flex items-center justify-center bg-black overflow-hidden">
+        <section id="vision" ref={containerRef} className="h-screen relative flex items-center justify-center bg-background overflow-hidden">
             {/* Background Parallax */}
-            <div className="absolute inset-0 opacity-40">
+            <div className="absolute inset-0 opacity-20">
                 <Image
-                    src="/assets/hero-bg.png"
+                    src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=2000"
                     alt="Vision Background"
                     fill
-                    className="object-cover blur-sm"
+                    className="object-cover"
                 />
             </div>
 
-            <div ref={textRef} className="relative z-10 flex flex-col items-center justify-center space-y-4 md:space-y-8 w-full px-2">
-                <span className="text-6xl sm:text-7xl md:text-9xl font-display font-black text-white italic tracking-tighter mix-blend-overlay">
-                    CREATE.
+            <div ref={textRef} className="relative z-10 flex flex-col items-center justify-center space-y-6 md:space-y-12 w-full px-4 text-center">
+                <span className="text-5xl sm:text-7xl md:text-9xl font-display font-medium text-foreground tracking-widest uppercase">
+                    Inspire.
                 </span>
-                <span className="text-6xl sm:text-7xl md:text-9xl font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 italic tracking-tighter">
-                    BREAK.
+                <span className="text-5xl sm:text-7xl md:text-9xl font-display italic text-turquoise tracking-widest">
+                    Relax.
                 </span>
-                <span className="text-6xl sm:text-7xl md:text-9xl font-display font-black text-[var(--neon-lime)] italic tracking-tighter drop-shadow-[0_0_20px_rgba(204,255,0,0.5)]">
-                    REBUILD.
+                <span className="text-5xl sm:text-7xl md:text-9xl font-display font-medium text-lush-green tracking-widest uppercase">
+                    Connect.
                 </span>
+            </div>
+
+            {/* Sub text */}
+            <div className="absolute bottom-20 w-full text-center">
+                <p className="text-[10px] tracking-[0.5em] text-foreground/40 uppercase">
+                    Shaping the future with calm and light.
+                </p>
             </div>
         </section>
     );

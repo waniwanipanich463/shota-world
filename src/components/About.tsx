@@ -2,44 +2,49 @@ import Image from "next/image";
 
 export default function About() {
     return (
-        <section id="about" className="min-h-screen flex items-center justify-center py-20 px-6 relative bg-black">
-            <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                {/* Text Content */}
-                <div className="space-y-8">
-                    <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-8 border-l-4 border-[var(--neon-lime)] pl-6">
-                        ABOUT
-                    </h2>
-
-                    <div className="space-y-6 text-gray-300 leading-relaxed font-sans text-lg">
-                        <p>
-                            東京都生まれ、千葉県市川市育ち。<br />
-                            営業職・介護職を経て、<br />
-                            <span className="text-white font-bold">「伝える」から「魅せる」へ。</span>
-                        </p>
-                        <p>
-                            映画、とくにMARVELの世界観に影響を受け、<br />
-                            ストリートと海の自由さをデザインに落とし込む。
-                        </p>
-                        <p>
-                            グラフィック、WEB、そしてGO PRO HERO13による映像制作。<br />
-                            表現のフィールドは、無限大。
-                        </p>
-                        <p className="text-2xl font-display font-bold text-white mt-8">
-                            ここが、SHOTA WORLD。
-                        </p>
-                    </div>
-                </div>
-
-                {/* Visual Content */}
-                <div className="relative aspect-[3/4] bg-neutral-900 rounded-sm overflow-hidden border border-neutral-800 group">
+        <section id="about" className="min-h-screen flex items-center justify-center py-20 px-6 relative bg-background">
+            <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                
+                {/* Visual Content (Left for a change in rhythm) */}
+                <div className="relative aspect-[4/5] photo-frame rotate-[-2deg] group">
                     <Image
                         src="/assets/portrait.jpg"
                         alt="SHOTA NIWANO"
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 grayscale group-hover:grayscale-0"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--neon-lime)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-coral/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
+
+                {/* Text Content */}
+                <div className="space-y-10">
+                    <div className="relative inline-block">
+                        <h2 className="text-4xl md:text-7xl font-display font-medium text-lush-green mb-2">
+                            ABOUT.
+                        </h2>
+                        <div className="w-12 h-[2px] bg-turquoise"></div>
+                    </div>
+
+                    <div className="space-y-8 text-foreground/80 leading-relaxed font-sans text-lg md:text-xl">
+                        <p>
+                            東京都生まれ、千葉県市川市育ち。<br />
+                            営業職・介護職を経て、<br />
+                            <span className="text-foreground font-semibold">「伝える」から「魅せる」へ。</span>
+                        </p>
+                        <p>
+                            光と影、そして海の自由さをデザインに落とし込み、<br />
+                            見る人の心に「余白」を届ける。
+                        </p>
+                        <p>
+                            グラフィック、WEB、そしてGO PRO HERO13による映像制作。<br />
+                            リラックスしたラグジュアリーを、ここに。
+                        </p>
+                        <p className="text-3xl font-display italic text-coral mt-10">
+                            Relaxed Luxury.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </section>
     );

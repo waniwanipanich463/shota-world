@@ -23,31 +23,41 @@ export default function Header() {
 
     return (
         <header
-            className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-black/90 backdrop-blur-md py-4 border-b border-white/10" : "bg-transparent py-6"
+            className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? "bg-white/40 backdrop-blur-lg py-4 border-b border-black/5" : "bg-transparent py-6"
                 }`}
         >
             <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-                <Link href="#" className="text-xl font-display font-bold tracking-widest text-white hover:text-[var(--neon-lime)] transition-colors">
+                <Link href="#" className="text-xl font-display font-medium tracking-[0.2em] text-foreground hover:text-turquoise transition-colors">
                     SHOTA WORLD
                 </Link>
 
-                <nav className="hidden md:flex gap-8">
+                <nav className="hidden md:flex gap-10">
                     {navItems.map((item) => (
                         <Link
                             key={item.name}
                             href={item.href}
-                            className="text-sm font-sans tracking-widest text-white hover:text-[var(--neon-lime)] transition-colors"
+                            className="text-[11px] font-sans tracking-[0.3em] text-foreground/80 hover:text-turquoise transition-colors"
                         >
                             {item.name}
                         </Link>
                     ))}
                 </nav>
 
-                {/* Mobile: Show Contact Button */}
+                {/* Desktop: Contact Link as a refined button */}
+                <div className="hidden md:block">
+                     <Link
+                        href="#contact"
+                        className="text-[10px] font-sans tracking-[0.2em] text-white bg-foreground px-6 py-2 hover:bg-turquoise transition-all"
+                    >
+                        GET IN TOUCH
+                    </Link>
+                </div>
+
+                {/* Mobile: Link */}
                 <div className="md:hidden">
                     <Link
                         href="#contact"
-                        className="text-xs font-sans tracking-widest text-black bg-[var(--neon-lime)] px-4 py-2 font-bold"
+                        className="text-[10px] font-sans tracking-[0.2em] text-foreground font-bold border-b border-foreground"
                     >
                         CONTACT
                     </Link>
