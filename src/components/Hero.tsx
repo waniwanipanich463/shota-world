@@ -84,10 +84,10 @@ export default function Hero() {
                 <div className="mb-12 relative w-full">
                     <svg
                         ref={svgLogoRef}
-                        viewBox="0 0 800 320"
+                        viewBox="0 0 900 350"
                         className="w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] overflow-visible"
                     >
-                        {/* Custom high-precision merged paths for SHOTA WORLD to ensure perfect outline drawing */}
+                        {/* Custom high-precision merged paths with adjusted kerning to prevent S/W overlap */}
                         <g
                             className="logo-paths"
                             style={{
@@ -100,32 +100,32 @@ export default function Hero() {
                                 fillOpacity: 0
                             }}
                         >
-                            {/* SHOTA - Line 1 */}
-                            <g transform="translate(400, 85) scale(1.1)">
-                                {/* S - Merged Path */}
-                                <path d="M-225,-45 C-260,-45 -275,-25 -275,-5 C-275,15 -255,20 -240,25 C-225,30 -215,35 -215,55 C-215,75 -230,90 -255,90 C-275,90 -290,75 -290,60 L-315,60 C-315,85 -295,115 -255,115 C-215,115 -190,90 -190,55 C-190,30 -205,20 -225,15 C-245,10 -250,5 -250,-5 C-250,-15 -245,-20 -230,-20 C-215,-20 -205,-10 -205,5 L-180,5 C-180,-20 -200,-45 -225,-45 Z" transform="translate(0, -35)" />
-                                {/* H - Merged Path */}
-                                <path d="M-170,-45 L-145,-45 L-145,15 L-100,15 L-100,-45 L-75,-45 L-75,85 L-100,85 L-100,35 L-145,35 L-145,85 L-170,85 Z" transform="translate(0, -35)" />
-                                {/* O - Merged Path (Inner and Outer combined with fill-rule: evenodd) */}
+                            {/* SHOTA - Line 1 (Shifted up and spread out) */}
+                            <g transform="translate(450, 80) scale(1.1)">
+                                {/* S - Shifted further left */}
+                                <path d="M-255,-45 C-290,-45 -305,-25 -305,-5 C-305,15 -285,20 -270,25 C-255,30 -245,35 -245,55 C-245,75 -260,90 -285,90 C-305,90 -320,75 -320,60 L-345,60 C-345,85 -325,115 -285,115 C-245,115 -220,90 -220,55 C-220,30 -235,20 -255,15 C-275,10 -280,5 -280,-5 C-280,-15 -275,-20 -260,-20 C-245,-20 -235,-10 -235,5 L-210,5 C-210,-20 -230,-45 -255,-45 Z" transform="translate(0, -35)" />
+                                {/* H */}
+                                <path d="M-180,-45 L-155,-45 L-155,15 L-110,15 L-110,-45 L-85,-45 L-85,85 L-110,85 L-110,35 L-155,35 L-155,85 L-180,85 Z" transform="translate(0, -35)" />
+                                {/* O */}
                                 <path fillRule="evenodd" d="M0,-45 C40,-45 70,-15 70,20 C70,55 40,85 0,85 C-40,85 -70,55 -70,20 C-70,-15 -40,-45 0,-45 M0,-20 C-18,-20 -40,0 -40,20 C-40,40 -18,60 0,60 C18,60 40,40 40,20 C40,0 18,-20 0,-20 Z" transform="translate(0, -35)" />
-                                {/* T - Merged Path */}
-                                <path d="M85,-45 L175,-45 L175,-20 L145,-20 L145,85 L115,85 L115,-20 L85,-20 Z" transform="translate(0, -35)" />
-                                {/* A - Merged Path (No internal overlaps) */}
-                                <path fillRule="evenodd" d="M230,-45 L260,-45 L310,85 L285,85 L275,60 L215,60 L205,85 L180,85 Z M245,-15 L225,35 L265,35 Z" transform="translate(0, -35)" />
+                                {/* T */}
+                                <path d="M95,-45 L185,-45 L185,-20 L155,-20 L155,85 L125,85 L125,-20 L95,-20 Z" transform="translate(0, -35)" />
+                                {/* A */}
+                                <path fillRule="evenodd" d="M250,-45 L280,-45 L330,85 L305,85 L295,60 L235,60 L225,85 L200,85 Z M265,-15 L245,35 L285,35 Z" transform="translate(0, -35)" />
                             </g>
 
-                            {/* WORLD - Line 2 */}
-                            <g transform="translate(400, 235) scale(1.1)">
-                                {/* W - Merged Path */}
-                                <path d="M-300,-45 L-270,-45 L-245,55 L-220,-45 L-190,-45 L-165,55 L-140,-45 L-110,-45 L-150,85 L-180,85 L-205,-10 L-230,85 L-260,85 Z" transform="translate(0, -35)" />
-                                {/* O - Merged Path */}
-                                <path fillRule="evenodd" d="M-40,-45 C0,-45 30,-15 30,20 C30,55 0,85 -40,85 C-80,85 -110,55 -110,20 C-110,-15 -80,-45 -40,-45 M-40,-20 C-58,-20 -80,0 -80,20 C-80,40 -58,60 -40,60 C-22,60 0,40 0,20 C0,0 -22,-20 -40,-20 Z" transform="translate(0, -35)" />
-                                {/* R - Merged Path */}
+                            {/* WORLD - Line 2 (Shifted down and adjusted spacing) */}
+                            <g transform="translate(450, 250) scale(1.1)">
+                                {/* W - Adjusted to ensure no overlap with bottom of S */}
+                                <path d="M-320,-45 L-290,-45 L-265,55 L-240,-45 L-210,-45 L-185,55 L-160,-45 L-130,-45 L-170,85 L-200,85 L-225,-10 L-250,85 L-280,85 Z" transform="translate(0, -35)" />
+                                {/* O */}
+                                <path fillRule="evenodd" d="M-50,-45 C-10,-45 20,-15 20,20 C20,55 -10,85 -50,85 C-90,85 -120,55 -120,20 C-120,-15 -90,-45 -50,-45 M-50,-20 C-68,-20 -90,0 -90,20 C-90,40 -68,60 -50,60 C-32,60 -10,40 -10,20 C-10,0 -32,-20 -50,-20 Z" transform="translate(0, -35)" />
+                                {/* R */}
                                 <path fillRule="evenodd" d="M45,-45 L105,-45 C135,-45 150,-25 150,0 C150,15 140,25 125,35 L155,85 L125,85 L100,40 L70,40 L70,85 L45,85 Z M70,-20 L70,15 L100,15 C115,15 125,10 125,0 C125,-10 115,-20 100,-20 Z" transform="translate(0, -35)" />
-                                {/* L - Merged Path */}
-                                <path d="M165,-45 L190,-45 L190,60 L235,60 L235,85 L165,85 Z" transform="translate(0, -35)" />
-                                {/* D - Merged Path */}
-                                <path fillRule="evenodd" d="M250,-45 L300,-45 C345,-45 365,-15 365,20 C365,55 345,85 300,85 L250,85 Z M275,-20 L275,60 L300,60 C325,60 340,45 340,20 C340,-5 325,-20 300,-20 Z" transform="translate(0, -35)" />
+                                {/* L */}
+                                <path d="M175,-45 L200,-45 L200,60 L245,60 L245,85 L175,85 Z" transform="translate(0, -35)" />
+                                {/* D */}
+                                <path fillRule="evenodd" d="M270,-45 L320,-45 C365,-45 385,-15 385,20 C385,55 365,85 320,85 L270,85 Z M295,-20 L295,60 L320,60 C345,60 360,45 360,20 C340,-5 325,-20 320,-20 Z" transform="translate(0, -35)" />
                             </g>
                         </g>
                     </svg>
