@@ -9,8 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
-    const logoRef = useRef<HTMLDivElement>(null);
-    const textRef = useRef<HTMLHeadingElement>(null);
     const bgRef = useRef<HTMLDivElement>(null);
     const svgLogoRef = useRef<SVGSVGElement>(null);
 
@@ -34,18 +32,11 @@ export default function Hero() {
         if (svgElements && svgElements.length > 0) {
             tl.fromTo(
                 svgElements,
-                { strokeDasharray: 500, strokeDashoffset: 500, fillOpacity: 0 },
-                { strokeDashoffset: 0, fillOpacity: 1, duration: 2.5, ease: "power2.inOut", stagger: 0.2 },
+                { strokeDasharray: 1000, strokeDashoffset: 1000, fillOpacity: 0 },
+                { strokeDashoffset: 0, fillOpacity: 1, duration: 3, ease: "power2.inOut", stagger: 0.2 },
                 "-=1.0"
             );
         }
-
-        tl.fromTo(
-            textRef.current,
-            { y: 20, opacity: 0 },
-            { y: 0, opacity: 1, duration: 1.5, ease: "power2.out" },
-            "-=0.8"
-        );
 
         // Floating Animation for Logo
         gsap.to(svgLogoRef.current, {
@@ -84,19 +75,19 @@ export default function Hero() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 flex flex-col items-center text-center px-4 w-full">
-                <div className="mb-12 relative w-full max-w-[600px]">
+            <div className="relative z-10 flex flex-col items-center text-center px-4 w-full max-w-[1200px]">
+                <div className="mb-8 relative w-full">
                     <svg
                         ref={svgLogoRef}
-                        viewBox="0 0 500 80"
-                        className="w-full h-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.1)]"
+                        viewBox="0 0 800 120"
+                        className="w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
                     >
                         <text
                             x="50%"
                             y="50%"
                             textAnchor="middle"
                             dominantBaseline="central"
-                            className="font-display text-5xl font-medium tracking-[0.2em]"
+                            className="font-display text-8xl md:text-9xl font-medium tracking-[0.25em]"
                             style={{
                                 fill: "var(--foreground)",
                                 stroke: "var(--foreground)",
@@ -108,14 +99,8 @@ export default function Hero() {
                         </text>
                     </svg>
                 </div>
-
-                <div className="overflow-hidden">
-                    <h1 ref={textRef} className="text-3xl md:text-6xl font-display font-medium tracking-wider text-foreground">
-                        TROPICAL ESCAPE.
-                    </h1>
-                </div>
                 
-                <p className="mt-4 text-sm md:text-base font-sans tracking-[0.3em] text-foreground/70 uppercase">
+                <p className="text-xs md:text-sm font-sans tracking-[0.5em] text-foreground/50 uppercase ml-[0.5em]">
                     Design & Creative Studio
                 </p>
             </div>
