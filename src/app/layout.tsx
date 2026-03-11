@@ -44,9 +44,9 @@ export const metadata: Metadata = {
     creator: "@your_id", // Placeholder as per request
   },
   icons: {
-    icon: "/assets/logo-icon.png",
-    shortcut: "/assets/logo-icon.png",
-    apple: "/assets/logo-icon.png",
+    icon: "/fabicon.png",
+    shortcut: "/fabicon.png",
+    apple: "/fabicon.png",
   },
 };
 
