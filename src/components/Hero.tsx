@@ -32,8 +32,8 @@ export default function Hero() {
         if (svgElements && svgElements.length > 0) {
             tl.fromTo(
                 svgElements,
-                { strokeDasharray: 1000, strokeDashoffset: 1000, fillOpacity: 0 },
-                { strokeDashoffset: 0, fillOpacity: 1, duration: 3, ease: "power2.inOut", stagger: 0.2 },
+                { opacity: 0, y: 20 },
+                { opacity: 1, y: 0, duration: 1.5, ease: "power3.out", stagger: 0.2 },
                 "-=1.0"
             );
         }
@@ -87,9 +87,9 @@ export default function Hero() {
                             y="35%"
                             textAnchor="middle"
                             dominantBaseline="central"
-                            className="font-display text-8xl md:text-9xl font-medium tracking-[0.25em]"
+                            className="font-sans text-8xl md:text-9xl font-black tracking-[0.1em]"
                             style={{
-                                fill: "none",
+                                fill: "white",
                                 stroke: "white",
                                 strokeWidth: "1px",
                                 paintOrder: "stroke fill"
@@ -102,9 +102,9 @@ export default function Hero() {
                             y="75%"
                             textAnchor="middle"
                             dominantBaseline="central"
-                            className="font-display text-8xl md:text-9xl font-medium tracking-[0.25em]"
+                            className="font-sans text-8xl md:text-9xl font-black tracking-[0.1em]"
                             style={{
-                                fill: "none",
+                                fill: "white",
                                 stroke: "white",
                                 strokeWidth: "1px",
                                 paintOrder: "stroke fill"
