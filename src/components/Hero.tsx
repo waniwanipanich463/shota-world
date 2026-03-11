@@ -80,15 +80,15 @@ export default function Hero() {
 
             {/* Content */}
             <div className="relative z-10 flex flex-col items-center text-center px-4 w-full max-w-[1200px]">
-                <div className="mb-8 relative w-full">
+                <div className="mb-12 relative w-full">
                     <svg
                         ref={svgLogoRef}
-                        viewBox="0 0 600 300"
+                        viewBox="0 0 600 240"
                         className="w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
                     >
                         <text
                             x="50%"
-                            y="35%"
+                            y="30%"
                             textAnchor="middle"
                             dominantBaseline="central"
                             className="font-sans text-8xl md:text-9xl font-black tracking-[0.1em]"
@@ -121,13 +121,13 @@ export default function Hero() {
                     </svg>
                 </div>
                 
-                <p className="text-xs md:text-sm font-sans tracking-[0.5em] text-foreground/50 uppercase ml-[0.5em]">
+                <p className="text-xs md:text-sm font-sans tracking-[0.5em] text-foreground/50 uppercase ml-[0.5em] mb-32">
                     Design & Creative Studio
                 </p>
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-4">
+            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-4">
                 <span className="text-[10px] tracking-[0.4em] text-foreground/40 uppercase rotate-90 origin-left translate-x-1">Scroll</span>
                 <div className="w-[1px] h-20 bg-gradient-to-b from-foreground/40 to-transparent"></div>
             </div>
