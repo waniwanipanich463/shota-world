@@ -30,26 +30,29 @@ export default function Works() {
                 <div className="w-16 h-[2px] bg-sky-blue mx-auto mt-6"></div>
             </div>
 
-            <div className="w-full max-w-[1600px] mx-auto pb-10">
+            <div className="w-full max-w-[1400px] mx-auto pb-10">
                 <Swiper
                     effect={'coverflow'}
                     grabCursor={true}
                     centeredSlides={true}
                     loop={true}
                     slidesPerView={1.2}
+                    spaceBetween={20}
                     breakpoints={{
                         640: {
                             slidesPerView: 2,
+                            spaceBetween: 30,
                         },
                         1024: {
                             slidesPerView: 3,
+                            spaceBetween: 50,
                         },
                     }}
                     coverflowEffect={{
                         rotate: 0,
                         stretch: 0,
                         depth: 100,
-                        modifier: 1.5,
+                        modifier: 1,
                         slideShadows: false,
                     }}
                     autoplay={{
@@ -66,7 +69,7 @@ export default function Works() {
                         releaseOnEdges: true,
                     }}
                     modules={[EffectCoverflow, Pagination, Navigation, Autoplay, Mousewheel]}
-                    className="w-full py-20"
+                    className="w-full py-20 !overflow-visible"
                 >
                     {projects.map((project, index) => (
                         <SwiperSlide
