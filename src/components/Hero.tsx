@@ -32,9 +32,13 @@ export default function Hero() {
         if (svgElements && svgElements.length > 0) {
             tl.fromTo(
                 svgElements,
-                { opacity: 0, y: 20 },
-                { opacity: 1, y: 0, duration: 1.5, ease: "power3.out", stagger: 0.2 },
+                { strokeDasharray: 500, strokeDashoffset: 500, fillOpacity: 0 },
+                { strokeDashoffset: 0, duration: 2, ease: "power2.inOut", stagger: 0.2 },
                 "-=1.0"
+            ).to(
+                svgElements,
+                { fillOpacity: 1, duration: 1, ease: "power2.out", stagger: 0.1 },
+                "-=0.5"
             );
         }
 
@@ -92,7 +96,8 @@ export default function Hero() {
                                 fill: "white",
                                 stroke: "white",
                                 strokeWidth: "1px",
-                                paintOrder: "stroke fill"
+                                paintOrder: "stroke fill",
+                                fillOpacity: 0
                             }}
                         >
                             SHOTA
@@ -107,7 +112,8 @@ export default function Hero() {
                                 fill: "white",
                                 stroke: "white",
                                 strokeWidth: "1px",
-                                paintOrder: "stroke fill"
+                                paintOrder: "stroke fill",
+                                fillOpacity: 0
                             }}
                         >
                             WORLD
