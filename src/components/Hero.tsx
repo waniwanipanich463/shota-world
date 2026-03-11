@@ -32,7 +32,7 @@ export default function Hero() {
         if (svgElements && svgElements.length > 0) {
             tl.fromTo(
                 svgElements,
-                { strokeDasharray: 500, strokeDashoffset: 500, fillOpacity: 0 },
+                { strokeDasharray: 1000, strokeDashoffset: 1000, fillOpacity: 0 },
                 { strokeDashoffset: 0, duration: 2, ease: "power2.inOut", stagger: 0.2 },
                 "-=1.0"
             ).to(
