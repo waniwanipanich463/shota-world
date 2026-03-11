@@ -79,23 +79,38 @@ export default function Hero() {
                 <div className="mb-8 relative w-full">
                     <svg
                         ref={svgLogoRef}
-                        viewBox="0 0 800 120"
+                        viewBox="0 0 600 300"
                         className="w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
                     >
                         <text
                             x="50%"
-                            y="50%"
+                            y="35%"
                             textAnchor="middle"
                             dominantBaseline="central"
                             className="font-display text-8xl md:text-9xl font-medium tracking-[0.25em]"
                             style={{
-                                fill: "var(--foreground)",
-                                stroke: "var(--foreground)",
-                                strokeWidth: "0.5px",
+                                fill: "none",
+                                stroke: "white",
+                                strokeWidth: "1px",
                                 paintOrder: "stroke fill"
                             }}
                         >
-                            SHOTA WORLD
+                            SHOTA
+                        </text>
+                        <text
+                            x="50%"
+                            y="75%"
+                            textAnchor="middle"
+                            dominantBaseline="central"
+                            className="font-display text-8xl md:text-9xl font-medium tracking-[0.25em]"
+                            style={{
+                                fill: "none",
+                                stroke: "white",
+                                strokeWidth: "1px",
+                                paintOrder: "stroke fill"
+                            }}
+                        >
+                            WORLD
                         </text>
                     </svg>
                 </div>
