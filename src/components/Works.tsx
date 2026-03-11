@@ -38,10 +38,10 @@ export default function Works() {
                     loop={true}
                     slidesPerView={'auto'}
                     coverflowEffect={{
-                        rotate: 5,
+                        rotate: 10,
                         stretch: 0,
-                        depth: 100,
-                        modifier: 2.5,
+                        depth: 150,
+                        modifier: 1.2,
                         slideShadows: false,
                     }}
                     autoplay={{
