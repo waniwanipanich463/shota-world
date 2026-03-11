@@ -28,14 +28,24 @@ export default function Hero() {
                 "-=1.8"
             );
 
-        const revealRects = svgLogoRef.current?.querySelectorAll(".reveal-rect");
+        const revealRectsShota = svgLogoRef.current?.querySelectorAll(".reveal-rect-shota");
+        const revealRectsWorld = svgLogoRef.current?.querySelectorAll(".reveal-rect-world");
 
-        if (revealRects && revealRects.length > 0) {
+        if (revealRectsShota && revealRectsShota.length > 0) {
             tl.fromTo(
-                revealRects,
-                { attr: { x: -1000 } },
-                { attr: { x: 0 }, duration: 1.5, ease: "power3.inOut", stagger: 0.3 },
-                "-=1.0"
+                revealRectsShota,
+                { attr: { width: 0 } },
+                { attr: { width: 200 }, duration: 0.8, ease: "power2.inOut", stagger: 0.15 },
+                "-=0.5"
+            );
+        }
+
+        if (revealRectsWorld && revealRectsWorld.length > 0) {
+            tl.fromTo(
+                revealRectsWorld,
+                { attr: { width: 0 } },
+                { attr: { width: 250 }, duration: 0.8, ease: "power2.inOut", stagger: 0.15 },
+                "-=0.5"
             );
         }
 
@@ -84,38 +94,50 @@ export default function Hero() {
                         className="w-full h-auto drop-shadow-[0_40px_80px_rgba(0,0,0,0.3)] overflow-visible"
                     >
                         <defs>
-                            {/* Brush-reveal clip paths for each line */}
-                            <clipPath id="reveal-shota">
-                                <rect className="reveal-rect" x="-500" y="0" width="1000" height="200" />
-                            </clipPath>
-                            <clipPath id="reveal-world">
-                                <rect className="reveal-rect" x="-500" y="200" width="1000" height="200" />
-                            </clipPath>
+                            {/* Individual reveal clip paths for each character */}
+                            {"SHOTA".split("").map((char, i) => (
+                                <clipPath key={`cp-shota-${i}`} id={`reveal-shota-${i}`}>
+                                    <rect className="reveal-rect-shota" x={150 + i * 140} y="0" width="0" height="200" />
+                                </clipPath>
+                            ))}
+                            {"WORLD".split("").map((char, i) => (
+                                <clipPath key={`cp-world-${i}`} id={`reveal-world-${i}`}>
+                                    <rect className="reveal-rect-world" x={80 + i * 170} y="200" width="0" height="200" />
+                                </clipPath>
+                            ))}
                         </defs>
 
                         {/* SHOTA - Line 1 */}
-                        <text
-                            x="50%"
-                            y="25%"
-                            textAnchor="middle"
-                            dominantBaseline="central"
-                            className="font-sans text-[120px] md:text-[160px] font-black tracking-widest fill-white"
-                            clipPath="url(#reveal-shota)"
-                        >
-                            SHOTA
-                        </text>
+                        <g className="font-sans text-[120px] md:text-[150px] font-black tracking-widest fill-white">
+                            {"SHOTA".split("").map((char, i) => (
+                                <text
+                                    key={`shota-${i}`}
+                                    x={150 + i * 140}
+                                    y="25%"
+                                    textAnchor="start"
+                                    dominantBaseline="central"
+                                    clipPath={`url(#reveal-shota-${i})`}
+                                >
+                                    {char}
+                                </text>
+                            ))}
+                        </g>
 
                         {/* WORLD - Line 2 */}
-                        <text
-                            x="50%"
-                            y="75%"
-                            textAnchor="middle"
-                            dominantBaseline="central"
-                            className="font-sans text-[120px] md:text-[160px] font-black tracking-widest fill-white"
-                            clipPath="url(#reveal-world)"
-                        >
-                            WORLD
-                        </text>
+                        <g className="font-sans text-[120px] md:text-[150px] font-black tracking-widest fill-white">
+                            {"WORLD".split("").map((char, i) => (
+                                <text
+                                    key={`world-${i}`}
+                                    x={80 + i * 170}
+                                    y="75%"
+                                    textAnchor="start"
+                                    dominantBaseline="central"
+                                    clipPath={`url(#reveal-world-${i})`}
+                                >
+                                    {char}
+                                </text>
+                            ))}
+                        </g>
                     </svg>
                 </div>
                 
