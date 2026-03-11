@@ -28,16 +28,16 @@ export default function Hero() {
                 "-=1.8"
             );
 
-        const svgElements = svgLogoRef.current?.querySelectorAll("text, path");
+        const svgElements = svgLogoRef.current?.querySelectorAll("text");
         if (svgElements && svgElements.length > 0) {
             tl.fromTo(
                 svgElements,
                 { strokeDasharray: 1000, strokeDashoffset: 1000, fillOpacity: 0 },
-                { strokeDashoffset: 0, duration: 2, ease: "power2.inOut", stagger: 0.1 },
+                { strokeDashoffset: 0, duration: 2, ease: "power2.inOut", stagger: 0.2 },
                 "-=1.0"
             ).to(
                 svgElements,
-                { fillOpacity: 1, duration: 1, ease: "power2.out", stagger: 0.05 },
+                { fillOpacity: 1, duration: 1, ease: "power2.out", stagger: 0.1 },
                 "-=0.5"
             );
         }
@@ -83,53 +83,45 @@ export default function Hero() {
                 <div className="mb-12 relative w-full">
                     <svg
                         ref={svgLogoRef}
-                        viewBox="0 0 800 320"
-                        className="w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] overflow-visible"
+                        viewBox="0 0 600 240"
+                        className="w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
                     >
-                        {/* SHOTA */}
-                        <g
-                            transform="translate(400, 80)"
-                            className="font-sans font-black tracking-[0.1em]"
+                        <text
+                            x="50%"
+                            y="30%"
+                            textAnchor="middle"
+                            dominantBaseline="central"
+                            className="font-sans text-8xl md:text-9xl font-black tracking-[0.1em]"
                             style={{
                                 fill: "white",
                                 stroke: "white",
-                                strokeWidth: "1.2px",
+                                strokeWidth: "1px",
                                 strokeLinejoin: "round",
                                 strokeLinecap: "round",
-                                paintOrder: "stroke fill"
+                                paintOrder: "stroke fill",
+                                fillOpacity: 0
                             }}
                         >
-                            <text x="-210" y="0" textAnchor="middle" dominantBaseline="central" className="text-8xl md:text-9xl" style={{ fillOpacity: 0 }}>S</text>
-                            <text x="-110" y="0" textAnchor="middle" dominantBaseline="central" className="text-8xl md:text-9xl" style={{ fillOpacity: 0 }}>H</text>
-                            <text x="0" y="0" textAnchor="middle" dominantBaseline="central" className="text-8xl md:text-9xl" style={{ fillOpacity: 0 }}>O</text>
-                            <text x="100" y="0" textAnchor="middle" dominantBaseline="central" className="text-8xl md:text-9xl" style={{ fillOpacity: 0 }}>T</text>
-                            {/* A - Custom path to eliminate overlap, specifically tracing the bold font shape */}
-                            <path 
-                                d="M195,-45 L225,-45 L265,45 L245,45 L238,28 L182,28 L175,45 L155,45 Z M210,-30 L188,18 L232,18 Z" 
-                                transform="translate(0, 5)"
-                                style={{ fillOpacity: 0 }}
-                            />
-                        </g>
-
-                        {/* WORLD */}
-                        <g
-                            transform="translate(400, 240)"
-                            className="font-sans font-black tracking-[0.1em]"
+                            SHOTA
+                        </text>
+                        <text
+                            x="50%"
+                            y="75%"
+                            textAnchor="middle"
+                            dominantBaseline="central"
+                            className="font-sans text-8xl md:text-9xl font-black tracking-[0.1em]"
                             style={{
                                 fill: "white",
                                 stroke: "white",
-                                strokeWidth: "1.2px",
+                                strokeWidth: "1px",
                                 strokeLinejoin: "round",
                                 strokeLinecap: "round",
-                                paintOrder: "stroke fill"
+                                paintOrder: "stroke fill",
+                                fillOpacity: 0
                             }}
                         >
-                            <text x="-220" y="0" textAnchor="middle" dominantBaseline="central" className="text-8xl md:text-9xl" style={{ fillOpacity: 0 }}>W</text>
-                            <text x="-90" y="0" textAnchor="middle" dominantBaseline="central" className="text-8xl md:text-9xl" style={{ fillOpacity: 0 }}>O</text>
-                            <text x="20" y="0" textAnchor="middle" dominantBaseline="central" className="text-8xl md:text-9xl" style={{ fillOpacity: 0 }}>R</text>
-                            <text x="120" y="0" textAnchor="middle" dominantBaseline="central" className="text-8xl md:text-9xl" style={{ fillOpacity: 0 }}>L</text>
-                            <text x="210" y="0" textAnchor="middle" dominantBaseline="central" className="text-8xl md:text-9xl" style={{ fillOpacity: 0 }}>D</text>
-                        </g>
+                            WORLD
+                        </text>
                     </svg>
                 </div>
                 
