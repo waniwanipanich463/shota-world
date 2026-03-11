@@ -97,12 +97,12 @@ export default function Contact() {
                                 rel="noopener noreferrer"
                                 className="group flex items-center gap-6"
                             >
-                                <div className="w-14 h-14 border border-foreground/10 flex items-center justify-center group-hover:border-turquoise group-hover:text-turquoise transition-all bg-white shadow-sm">
+                                <div className="w-14 h-14 border border-turquoise flex items-center justify-center text-turquoise bg-white shadow-sm">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
                                     </svg>
                                 </div>
-                                <span className="text-[11px] font-sans tracking-[0.3em] text-foreground/40 group-hover:text-foreground transition-colors uppercase">Twitter</span>
+                                <span className="text-[11px] font-sans tracking-[0.3em] text-foreground transition-colors uppercase">X(元Twitter)</span>
                             </a>
 
                             <a
@@ -111,22 +111,12 @@ export default function Contact() {
                                 rel="noopener noreferrer"
                                 className="group flex items-center gap-6"
                             >
-                                <div className="w-14 h-14 border border-foreground/10 flex items-center justify-center group-hover:border-turquoise group-hover:text-turquoise transition-all bg-white shadow-sm">
+                                <div className="w-14 h-14 border border-turquoise flex items-center justify-center text-turquoise bg-white shadow-sm">
                                     <Instagram size={18} />
                                 </div>
-                                <span className="text-[11px] font-sans tracking-[0.3em] text-foreground/40 group-hover:text-foreground transition-colors uppercase">Instagram</span>
+                                <span className="text-[11px] font-sans tracking-[0.3em] text-foreground transition-colors uppercase">Instagram</span>
                             </a>
                         </div>
-                    </div>
-
-                    <div className="pt-10">
-                         <Image
-                            src="/assets/logo-sub.png"
-                            alt="SHOTA WORLD"
-                            width={160}
-                            height={40}
-                            className="object-contain opacity-20 hover:opacity-100 transition-opacity"
-                        />
                     </div>
                 </div>
             </div>
