@@ -30,24 +30,13 @@ export default function Works() {
                 <div className="w-16 h-[2px] bg-sky-blue mx-auto mt-6"></div>
             </div>
 
-            <div className="w-full pb-10 px-4 md:px-0">
+            <div className="w-full pb-10 overflow-hidden">
                 <Swiper
                     effect={'coverflow'}
                     grabCursor={true}
                     centeredSlides={true}
                     loop={true}
-                    slidesPerView={1.2}
-                    spaceBetween={20}
-                    breakpoints={{
-                        768: {
-                            slidesPerView: 2.5,
-                            spaceBetween: 40,
-                        },
-                        1024: {
-                            slidesPerView: 3.5,
-                            spaceBetween: 60,
-                        },
-                    }}
+                    slidesPerView={'auto'}
                     coverflowEffect={{
                         rotate: 0,
                         stretch: 0,
@@ -69,12 +58,12 @@ export default function Works() {
                         releaseOnEdges: true,
                     }}
                     modules={[EffectCoverflow, Pagination, Navigation, Autoplay, Mousewheel]}
-                    className="w-full py-20 !overflow-visible"
+                    className="w-full py-20 works-swiper"
                 >
                     {projects.map((project, index) => (
                         <SwiperSlide
                             key={index}
-                            className="!h-auto"
+                            className="!w-[300px] sm:!w-[400px] md:!w-[500px] !h-auto"
                         >
                             <div className="photo-frame flex flex-col gap-4 mx-4">
                                 <div className="relative aspect-square overflow-hidden bg-neutral-100">
@@ -120,6 +109,9 @@ export default function Works() {
             </div>
 
             <style jsx global>{`
+                .works-swiper .swiper {
+                    overflow: visible !important;
+                }
                 .custom-swiper-pagination .swiper-pagination-bullet {
                     background: var(--foreground);
                     opacity: 0.1;
