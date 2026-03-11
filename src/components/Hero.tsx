@@ -12,6 +12,7 @@ export default function Hero() {
     const logoRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLHeadingElement>(null);
     const bgRef = useRef<HTMLDivElement>(null);
+    const svgLogoRef = useRef<SVGSVGElement>(null);
 
     useEffect(() => {
         const tl = gsap.timeline();
@@ -23,20 +24,31 @@ export default function Hero() {
             { scale: 1, opacity: 0.8, duration: 2.5, ease: "power2.out" }
         )
             .fromTo(
-                logoRef.current,
-                { y: 30, opacity: 0, filter: "blur(10px)" },
-                { y: 0, opacity: 1, filter: "blur(0px)", duration: 1.2, ease: "power3.out" },
+                svgLogoRef.current,
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1.2, ease: "power3.out" },
                 "-=1.8"
-            )
-            .fromTo(
-                textRef.current,
-                { y: 20, opacity: 0 },
-                { y: 0, opacity: 1, duration: 1.5, ease: "power2.out" },
-                "-=0.8"
             );
 
+        const svgElements = svgLogoRef.current?.querySelectorAll("text");
+        if (svgElements && svgElements.length > 0) {
+            tl.fromTo(
+                svgElements,
+                { strokeDasharray: 500, strokeDashoffset: 500, fillOpacity: 0 },
+                { strokeDashoffset: 0, fillOpacity: 1, duration: 2.5, ease: "power2.inOut", stagger: 0.2 },
+                "-=1.0"
+            );
+        }
+
+        tl.fromTo(
+            textRef.current,
+            { y: 20, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1.5, ease: "power2.out" },
+            "-=0.8"
+        );
+
         // Floating Animation for Logo
-        gsap.to(logoRef.current, {
+        gsap.to(svgLogoRef.current, {
             y: -15,
             duration: 3,
             repeat: -1,
@@ -53,7 +65,7 @@ export default function Hero() {
                 scrub: true,
             },
             opacity: 0,
-            y: -50,
+            y: -20,
         });
     }, []);
 
@@ -73,14 +85,28 @@ export default function Hero() {
 
             {/* Content */}
             <div className="relative z-10 flex flex-col items-center text-center px-4 w-full">
-                <div ref={logoRef} className="mb-12 relative w-[80vw] max-w-[450px] aspect-[3/2]">
-                    <Image
-                        src="/assets/logo-main.png"
-                        alt="SHOTA WORLD"
-                        fill
-                        className="object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.1)]"
-                        priority
-                    />
+                <div className="mb-12 relative w-full max-w-[600px]">
+                    <svg
+                        ref={svgLogoRef}
+                        viewBox="0 0 500 80"
+                        className="w-full h-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.1)]"
+                    >
+                        <text
+                            x="50%"
+                            y="50%"
+                            textAnchor="middle"
+                            dominantBaseline="central"
+                            className="font-display text-5xl font-medium tracking-[0.2em]"
+                            style={{
+                                fill: "var(--foreground)",
+                                stroke: "var(--foreground)",
+                                strokeWidth: "0.5px",
+                                paintOrder: "stroke fill"
+                            }}
+                        >
+                            SHOTA WORLD
+                        </text>
+                    </svg>
                 </div>
 
                 <div className="overflow-hidden">

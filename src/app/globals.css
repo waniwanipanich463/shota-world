@@ -68,12 +68,12 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #111;
+  background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: var(--lush-green);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--neon-lime);
+  background: var(--turquoise);
 }
