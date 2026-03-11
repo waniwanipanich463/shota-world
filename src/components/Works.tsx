@@ -30,7 +30,7 @@ export default function Works() {
                 <div className="w-16 h-[2px] bg-sky-blue mx-auto mt-6"></div>
             </div>
 
-            <div className="w-full max-w-[1400px] mx-auto pb-10">
+            <div className="w-full pb-10 px-4 md:px-0">
                 <Swiper
                     effect={'coverflow'}
                     grabCursor={true}
@@ -39,13 +39,13 @@ export default function Works() {
                     slidesPerView={1.2}
                     spaceBetween={20}
                     breakpoints={{
-                        640: {
-                            slidesPerView: 2,
-                            spaceBetween: 30,
+                        768: {
+                            slidesPerView: 2.5,
+                            spaceBetween: 40,
                         },
                         1024: {
-                            slidesPerView: 3,
-                            spaceBetween: 50,
+                            slidesPerView: 3.5,
+                            spaceBetween: 60,
                         },
                     }}
                     coverflowEffect={{
