@@ -84,10 +84,10 @@ export default function Hero() {
                 <div className="mb-12 relative w-full">
                     <svg
                         ref={svgLogoRef}
-                        viewBox="0 0 900 350"
+                        viewBox="0 0 1000 400"
                         className="w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] overflow-visible"
                     >
-                        {/* Custom high-precision merged paths with adjusted kerning to prevent S/W overlap */}
+                        {/* Final Definitive High-Precision paths with perfect geometry and spacing */}
                         <g
                             className="logo-paths"
                             style={{
@@ -100,10 +100,10 @@ export default function Hero() {
                                 fillOpacity: 0
                             }}
                         >
-                            {/* SHOTA - Line 1 (Shifted up and spread out) */}
-                            <g transform="translate(450, 80) scale(1.1)">
-                                {/* S - Shifted further left */}
-                                <path d="M-255,-45 C-290,-45 -305,-25 -305,-5 C-305,15 -285,20 -270,25 C-255,30 -245,35 -245,55 C-245,75 -260,90 -285,90 C-305,90 -320,75 -320,60 L-345,60 C-345,85 -325,115 -285,115 C-245,115 -220,90 -220,55 C-220,30 -235,20 -255,15 C-275,10 -280,5 -280,-5 C-280,-15 -275,-20 -260,-20 C-245,-20 -235,-10 -235,5 L-210,5 C-210,-20 -230,-45 -255,-45 Z" transform="translate(0, -35)" />
+                            {/* SHOTA - Line 1 (Lifted higher) */}
+                            <g transform="translate(500, 75) scale(1.15)">
+                                {/* S - Shifted slightly left, refined curves */}
+                                <path d="M-260,-45 C-300,-45 -315,-25 -315,-5 C-315,15 -295,20 -280,25 C-265,30 -255,35 -255,55 C-255,75 -270,90 -295,90 C-315,90 -330,75 -330,60 L-355,60 C-355,85 -335,115 -295,115 C-255,115 -230,90 -230,55 C-230,30 -245,20 -265,15 C-285,10 -290,5 -290,-5 C-290,-15 -285,-20 -270,-20 C-255,-20 -245,-10 -245,5 L-220,5 C-220,-20 -240,-45 -260,-45 Z" transform="translate(0, -35)" />
                                 {/* H */}
                                 <path d="M-180,-45 L-155,-45 L-155,15 L-110,15 L-110,-45 L-85,-45 L-85,85 L-110,85 L-110,35 L-155,35 L-155,85 L-180,85 Z" transform="translate(0, -35)" />
                                 {/* O */}
@@ -111,21 +111,21 @@ export default function Hero() {
                                 {/* T */}
                                 <path d="M95,-45 L185,-45 L185,-20 L155,-20 L155,85 L125,85 L125,-20 L95,-20 Z" transform="translate(0, -35)" />
                                 {/* A */}
-                                <path fillRule="evenodd" d="M250,-45 L280,-45 L330,85 L305,85 L295,60 L235,60 L225,85 L200,85 Z M265,-15 L245,35 L285,35 Z" transform="translate(0, -35)" />
+                                <path fillRule="evenodd" d="M250,-45 L280,-45 L330,85 L303,85 L292,60 L238,60 L227,85 L200,85 Z M265,-15 L245,35 L285,35 Z" transform="translate(0, -35)" />
                             </g>
 
-                            {/* WORLD - Line 2 (Shifted down and adjusted spacing) */}
-                            <g transform="translate(450, 250) scale(1.1)">
-                                {/* W - Adjusted to ensure no overlap with bottom of S */}
-                                <path d="M-320,-45 L-290,-45 L-265,55 L-240,-45 L-210,-45 L-185,55 L-160,-45 L-130,-45 L-170,85 L-200,85 L-225,-10 L-250,85 L-280,85 Z" transform="translate(0, -35)" />
+                            {/* WORLD - Line 2 (Dropped lower to clear S) */}
+                            <g transform="translate(500, 265) scale(1.15)">
+                                {/* W - Cleaned and shifted to satisfy layout */}
+                                <path d="M-340,-45 L-310,-45 L-285,55 L-260,-45 L-230,-45 L-205,55 L-180,-45 L-150,-45 L-190,85 L-220,85 L-245,-10 L-270,85 L-300,85 Z" transform="translate(0, -35)" />
                                 {/* O */}
-                                <path fillRule="evenodd" d="M-50,-45 C-10,-45 20,-15 20,20 C20,55 -10,85 -50,85 C-90,85 -120,55 -120,20 C-120,-15 -90,-45 -50,-45 M-50,-20 C-68,-20 -90,0 -90,20 C-90,40 -68,60 -50,60 C-32,60 -10,40 -10,20 C-10,0 -32,-20 -50,-20 Z" transform="translate(0, -35)" />
+                                <path fillRule="evenodd" d="M-55,-45 C-15,-45 15,-15 15,20 C15,55 -15,85 -55,85 C-95,85 -125,55 -125,20 C-125,-15 -95,-45 -55,-45 M-55,-20 C-73,-20 -95,0 -95,20 C-95,40 -73,60 -55,60 C-37,60 -15,40 -15,20 C-15,0 -37,-20 -55,-20 Z" transform="translate(0, -35)" />
                                 {/* R */}
-                                <path fillRule="evenodd" d="M45,-45 L105,-45 C135,-45 150,-25 150,0 C150,15 140,25 125,35 L155,85 L125,85 L100,40 L70,40 L70,85 L45,85 Z M70,-20 L70,15 L100,15 C115,15 125,10 125,0 C125,-10 115,-20 100,-20 Z" transform="translate(0, -35)" />
+                                <path fillRule="evenodd" d="M45,-45 L110,-45 C145,-45 160,-25 160,0 C160,15 150,25 135,35 L165,85 L135,85 L108,40 L70,40 L70,85 L45,85 Z M70,-20 L70,14 L110,14 C128,14 135,7 135,0 C135,-7 128,-20 110,-20 Z" transform="translate(0, -35)" />
                                 {/* L */}
-                                <path d="M175,-45 L200,-45 L200,60 L245,60 L245,85 L175,85 Z" transform="translate(0, -35)" />
-                                {/* D */}
-                                <path fillRule="evenodd" d="M270,-45 L320,-45 C365,-45 385,-15 385,20 C385,55 365,85 320,85 L270,85 Z M295,-20 L295,60 L320,60 C345,60 360,45 360,20 C340,-5 325,-20 320,-20 Z" transform="translate(0, -35)" />
+                                <path d="M185,-45 L210,-45 L210,60 L255,60 L255,85 L185,85 Z" transform="translate(0, -35)" />
+                                {/* D - Perfectly reconstructed with smooth Bezier curves */}
+                                <path fillRule="evenodd" d="M280,-45 L345,-45 C385,-45 420,-15 420,20 C420,55 385,85 345,85 L280,85 Z M306,-21 L306,61 L345,61 C371,61 392,45 392,20 C392,-5 371,-21 345,-21 L306,-21 Z" transform="translate(0, -35)" />
                             </g>
                         </g>
                     </svg>
