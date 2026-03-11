@@ -142,7 +142,7 @@ export default function PrivacyPolicy() {
 
                     <div className="pt-32 border-t border-foreground/5 text-center">
                         <p className="text-[10px] tracking-[0.5em] text-foreground/20 uppercase">
-                            © 2026 SHOTA WORLD | TROPICAL ESCAPE
+                            © 2026 SHOTA WORLD
                         </p>
                     </div>
                 </div>
