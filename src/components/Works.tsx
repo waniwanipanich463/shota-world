@@ -30,13 +30,14 @@ export default function Works() {
                 <div className="w-16 h-[2px] bg-sky-blue mx-auto mt-6"></div>
             </div>
 
-            <div className="w-full pb-10 overflow-hidden">
+            <div className="w-full pb-10 overflow-hidden relative">
                 <Swiper
                     effect={'coverflow'}
                     grabCursor={true}
                     centeredSlides={true}
                     loop={true}
                     slidesPerView={'auto'}
+                    initialSlide={2}
                     coverflowEffect={{
                         rotate: 0,
                         stretch: 0,
@@ -58,12 +59,12 @@ export default function Works() {
                         releaseOnEdges: true,
                     }}
                     modules={[EffectCoverflow, Pagination, Navigation, Autoplay, Mousewheel]}
-                    className="w-full py-20 works-swiper"
+                    className="w-full py-20 !overflow-visible"
                 >
                     {projects.map((project, index) => (
                         <SwiperSlide
                             key={index}
-                            className="!w-[300px] sm:!w-[400px] md:!w-[500px] !h-auto"
+                            className="!w-[280px] sm:!w-[380px] md:!w-[480px] !h-auto"
                         >
                             <div className="photo-frame flex flex-col gap-4 mx-4">
                                 <div className="relative aspect-square overflow-hidden bg-neutral-100">
