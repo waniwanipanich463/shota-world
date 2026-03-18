@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
     const bgRef = useRef<HTMLDivElement>(null);
-    const svgLogoRef = useRef<SVGSVGElement>(null);
+    const typoRef = useRef<HTMLImageElement>(null);
 
     useEffect(() => {
         const tl = gsap.timeline();
@@ -21,42 +21,49 @@ export default function Hero() {
             { scale: 1.1, opacity: 0 },
             { scale: 1, opacity: 0.8, duration: 2.5, ease: "power2.out" }
         )
-            .fromTo(
-                svgLogoRef.current,
-                { y: 30, opacity: 0 },
-                { y: 0, opacity: 1, duration: 1.2, ease: "power3.out" },
+
+        if (typoRef.current) {
+            // Setup initial state for typing/burst effect
+            gsap.set(typoRef.current, {
+                clipPath: "inset(0% 100% 0% 0%)", // Clipped from right
+                scale: 1.1,
+                filter: "blur(20px)",
+                opacity: 0,
+                y: 30
+            });
+
+            // "Trace/Wipe" effect from left to right
+            tl.to(
+                typoRef.current,
+                {
+                    opacity: 1,
+                    y: 0,
+                    clipPath: "inset(0% 0% 0% 0%)",
+                    duration: 1.8,
+                    ease: "power3.inOut"
+                },
                 "-=1.8"
+            ).to(
+                typoRef.current,
+                {
+                    scale: 1,
+                    filter: "blur(0px)",
+                    duration: 1.2,
+                    ease: "back.out(1.5)"
+                },
+                "-=0.6" // Burst effect starts slightly before the wipe finishes
             );
 
-        const revealRectsShota = svgLogoRef.current?.querySelectorAll(".reveal-rect-shota");
-        const revealRectsWorld = svgLogoRef.current?.querySelectorAll(".reveal-rect-world");
-
-        if (revealRectsShota && revealRectsShota.length > 0) {
-            tl.fromTo(
-                revealRectsShota,
-                { attr: { width: 0 } },
-                { attr: { width: 200 }, duration: 0.8, ease: "power2.inOut", stagger: 0.15 },
-                "-=0.5"
-            );
+            // Floating Animation for Logo
+            gsap.to(typoRef.current, {
+                y: -15,
+                duration: 3,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                delay: 1.5 // Start after appearing
+            });
         }
-
-        if (revealRectsWorld && revealRectsWorld.length > 0) {
-            tl.fromTo(
-                revealRectsWorld,
-                { attr: { width: 0 } },
-                { attr: { width: 250 }, duration: 0.8, ease: "power2.inOut", stagger: 0.15 },
-                "-=0.5"
-            );
-        }
-
-        // Floating Animation for Logo
-        gsap.to(svgLogoRef.current, {
-            y: -15,
-            duration: 3,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut"
-        });
 
         // Scroll Animation
         gsap.to(containerRef.current, {
@@ -87,58 +94,16 @@ export default function Hero() {
 
             {/* Content */}
             <div className="relative z-10 flex flex-col items-center text-center px-4 w-full max-w-[1200px]">
-                <div className="mb-12 relative w-full">
-                    <svg
-                        ref={svgLogoRef}
-                        viewBox="0 0 1000 400"
-                        className="w-full h-auto drop-shadow-[0_40px_80px_rgba(0,0,0,0.3)] overflow-visible"
-                    >
-                        <defs>
-                            {/* Individual reveal clip paths for each character */}
-                            {"SHOTA".split("").map((char, i) => (
-                                <clipPath key={`cp-shota-${i}`} id={`reveal-shota-${i}`}>
-                                    <rect className="reveal-rect-shota" x={150 + i * 140} y="0" width="0" height="200" />
-                                </clipPath>
-                            ))}
-                            {"WORLD".split("").map((char, i) => (
-                                <clipPath key={`cp-world-${i}`} id={`reveal-world-${i}`}>
-                                    <rect className="reveal-rect-world" x={80 + i * 170} y="200" width="0" height="200" />
-                                </clipPath>
-                            ))}
-                        </defs>
-
-                        {/* SHOTA - Line 1 */}
-                        <g className="font-sans text-[120px] md:text-[150px] font-black tracking-widest fill-white">
-                            {"SHOTA".split("").map((char, i) => (
-                                <text
-                                    key={`shota-${i}`}
-                                    x={150 + i * 140}
-                                    y="25%"
-                                    textAnchor="start"
-                                    dominantBaseline="central"
-                                    clipPath={`url(#reveal-shota-${i})`}
-                                >
-                                    {char}
-                                </text>
-                            ))}
-                        </g>
-
-                        {/* WORLD - Line 2 */}
-                        <g className="font-sans text-[120px] md:text-[150px] font-black tracking-widest fill-white">
-                            {"WORLD".split("").map((char, i) => (
-                                <text
-                                    key={`world-${i}`}
-                                    x={80 + i * 170}
-                                    y="75%"
-                                    textAnchor="start"
-                                    dominantBaseline="central"
-                                    clipPath={`url(#reveal-world-${i})`}
-                                >
-                                    {char}
-                                </text>
-                            ))}
-                        </g>
-                    </svg>
+                <div className="mb-12 relative w-full flex justify-center">
+                    <Image
+                        ref={typoRef}
+                        src="/typo.png"
+                        alt="SHOTA WORLD TITLE"
+                        width={1000}
+                        height={400}
+                        className="w-full h-auto max-w-[800px]"
+                        priority
+                    />
                 </div>
                 
                 <p className="text-xs md:text-sm font-sans tracking-[0.5em] text-foreground/50 uppercase ml-[0.5em] mb-32">
