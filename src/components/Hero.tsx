@@ -92,7 +92,7 @@ export default function Hero() {
                         svgEl.classList.add('custom-svg-strokes');
                         svgEl.setAttribute('width', '100%');
                         svgEl.setAttribute('height', '100%');
-                        svgEl.style.dropShadow = "0 40px 80px rgba(0,0,0,0.3)";
+                        svgEl.style.filter = "drop-shadow(0 40px 80px rgba(0,0,0,0.3))";
                     }
                 })
                 .catch(err => console.error("Failed to load typo.svg:", err));
