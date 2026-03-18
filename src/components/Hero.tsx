@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
     const bgRef = useRef<HTMLDivElement>(null);
-    const svgContainerRef = useRef<HTMLDivElement>(null);
+    const typoRef = useRef<HTMLImageElement>(null);
 
     useEffect(() => {
         const tl = gsap.timeline();
@@ -22,89 +22,33 @@ export default function Hero() {
             { scale: 1, opacity: 0.8, duration: 2.5, ease: "power2.out" }
         );
 
-        if (svgContainerRef.current) {
-            // GSAP settings for the overarching "burst" & "wipe" wrapper
-            gsap.set(svgContainerRef.current, {
-                clipPath: "inset(0% 100% 0% 0%)",
-                scale: 1.1,
-                filter: "blur(20px)",
-                opacity: 0,
-                y: 30
-            });
-
-            // "Wipe & Burst" of the container itself
-            tl.to(
-                svgContainerRef.current,
-                {
-                    opacity: 1,
-                    y: 0,
-                    clipPath: "inset(0% 0% 0% 0%)",
-                    duration: 1.8,
-                    ease: "power3.inOut"
+        // Slow fade-in for typo.png
+        if (typoRef.current) {
+            tl.fromTo(
+                typoRef.current,
+                { 
+                    opacity: 0, 
+                    y: 30,
+                    filter: "blur(10px)" // Slight blur at start for smoother fade feeling
                 },
-                "-=1.8"
-            ).to(
-                svgContainerRef.current,
-                {
-                    scale: 1,
+                { 
+                    opacity: 1, 
+                    y: 0, 
                     filter: "blur(0px)",
-                    duration: 1.2,
-                    ease: "back.out(1.5)"
+                    duration: 2.5, 
+                    ease: "power2.out" 
                 },
-                "-=0.6"
+                "-=1.5" // Start during the background fade
             );
 
-            // Fetch and inject the SVG for the "stroke to fill" inner animation
-            // Using CSS animations for the paths to avoid GSAP overloading the browser with thousands of nodes
-            fetch('/typo.svg')
-                .then(res => res.text())
-                .then(svgText => {
-                    if (!svgContainerRef.current) return;
-                    
-                    // Inject styles and SVG
-                    svgContainerRef.current.innerHTML = `
-                        <style>
-                            .custom-svg-strokes path, .custom-svg-strokes polygon, .custom-svg-strokes rect {
-                                stroke: rgba(255,255,255,0.7) !important;
-                                stroke-width: 2px !important;
-                                fill-opacity: 0;
-                                stroke-dasharray: 1000;
-                                stroke-dashoffset: 1000;
-                                animation: 
-                                    drawTrace 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards,
-                                    burstFill 1.5s cubic-bezier(0.1, 0.9, 0.2, 1) 1.5s forwards;
-                            }
-                            @keyframes drawTrace {
-                                0% { stroke-dashoffset: 1000; opacity: 0; }
-                                10% { opacity: 1; }
-                                100% { stroke-dashoffset: 0; opacity: 1; }
-                            }
-                            @keyframes burstFill {
-                                0% { fill-opacity: 0; stroke-opacity: 1; }
-                                100% { fill-opacity: 1; stroke-opacity: 0; }
-                            }
-                        </style>
-                        ${svgText}
-                    `;
-                    
-                    const svgEl = svgContainerRef.current.querySelector('svg');
-                    if (svgEl) {
-                        svgEl.classList.add('custom-svg-strokes');
-                        svgEl.setAttribute('width', '100%');
-                        svgEl.setAttribute('height', '100%');
-                        svgEl.style.filter = "drop-shadow(0 40px 80px rgba(0,0,0,0.3))";
-                    }
-                })
-                .catch(err => console.error("Failed to load typo.svg:", err));
-
             // Floating Animation for Logo
-            gsap.to(svgContainerRef.current, {
+            gsap.to(typoRef.current, {
                 y: -15,
                 duration: 3,
                 repeat: -1,
                 yoyo: true,
                 ease: "sine.inOut",
-                delay: 2.5
+                delay: 1.0 // Start floating after fade-in
             });
         }
 
@@ -138,12 +82,15 @@ export default function Hero() {
             {/* Content */}
             <div className="relative z-10 flex flex-col items-center text-center px-4 w-full max-w-[1200px]">
                 <div className="mb-12 relative w-full flex justify-center">
-                    <div 
-                        ref={svgContainerRef} 
-                        className="w-full h-auto max-w-[800px] flex items-center justify-center"
-                    >
-                        {/* SVG will be injected here via Fetch */}
-                    </div>
+                    <Image
+                        ref={typoRef}
+                        src="/typo.png"
+                        alt="SHOTA WORLD TITLE"
+                        width={1000}
+                        height={400}
+                        className="w-full h-auto max-w-[800px] drop-shadow-[0_40px_80px_rgba(0,0,0,0.3)]"
+                        priority
+                    />
                 </div>
                 
                 <p className="text-xs md:text-sm font-sans tracking-[0.5em] text-foreground/50 uppercase ml-[0.5em] mb-32">
