@@ -2,142 +2,165 @@
 
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination, Navigation, Autoplay, Mousewheel } from "swiper/modules";
+import { Pagination, Navigation, Autoplay, FreeMode, Mousewheel } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/free-mode";
 
 const projects = [
-    { title: "GRAPHIC", category: "ARTWORK", image: "https://images.unsplash.com/photo-1579546678181-7f9630324701?auto=format&fit=crop&q=80&w=800" }, 
-    { title: "WEB", category: "DEVELOPMENT", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800" },
-    { title: "PHOTO", category: "PHOTOGRAPHY", image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=800" },
-    { title: "MOVIE", category: "VIDEOGRAPHY", image: "https://images.unsplash.com/photo-1492691523567-6170c2298b4e?auto=format&fit=crop&q=80&w=800" },
+    { 
+        title: "GRAPHIC DESIGN", 
+        category: "Visual Arts", 
+        image: "https://images.unsplash.com/photo-1579546678181-7f9630324701?auto=format&fit=crop&q=80&w=1200",
+        description: "Branding and visual identity systems."
+    }, 
+    { 
+        title: "WEB DEVELOPMENT", 
+        category: "Product", 
+        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200",
+        description: "Modern, high-performance web applications."
+    },
+    { 
+        title: "PHOTOGRAPHY", 
+        category: "Lifestyle", 
+        image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=1200",
+        description: "Capturing moments that tell a story."
+    },
+    { 
+        title: "VIDEOGRAPHY", 
+        category: "Production", 
+        image: "https://images.unsplash.com/photo-1492691523567-6170c2298b4e?auto=format&fit=crop&q=80&w=1200",
+        description: "Cinematic experiences and visual storytelling."
+    },
+    { 
+        title: "UI/UX DESIGN", 
+        category: "Interface", 
+        image: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=1200",
+        description: "Designing intuitive and engaging digital products."
+    },
 ];
 
 export default function Works() {
     return (
-        <section id="works" className="min-h-screen py-32 px-4 bg-background overflow-hidden relative">
-            <div className="text-center mb-20">
-                <h2 className="text-5xl md:text-8xl font-display font-medium text-foreground/10 absolute top-20 left-1/2 -translate-x-1/2 select-none tracking-[0.2em]">
-                    PORTFOLIO
-                </h2>
-                <h3 className="text-4xl md:text-6xl font-display font-medium text-foreground relative z-10">
-                    SELECTED WORKS.
-                </h3>
-                <div className="w-16 h-[2px] bg-sky-blue mx-auto mt-6"></div>
+        <section id="works" className="py-24 md:py-32 bg-background overflow-hidden">
+            <div className="container mx-auto px-6 mb-16">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <div>
+                        <h2 className="text-sm font-bold tracking-[0.2em] text-sky-blue uppercase mb-4">
+                            Portfolio
+                        </h2>
+                        <h3 className="text-4xl md:text-6xl font-display font-semibold text-foreground leading-tight">
+                            Selected Works.
+                        </h3>
+                    </div>
+                    <div className="flex items-center gap-4">
+                        <button className="custom-swiper-button-prev w-12 h-12 rounded-full border border-foreground/10 flex items-center justify-center text-foreground/40 hover:bg-foreground/5 hover:text-foreground transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                            </svg>
+                        </button>
+                        <button className="custom-swiper-button-next w-12 h-12 rounded-full border border-foreground/10 flex items-center justify-center text-foreground/40 hover:bg-foreground/5 hover:text-foreground transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
 
-            <div className="w-screen relative left-1/2 -ml-[50vw] pb-10 overflow-hidden">
+            <div className="w-full">
                 <Swiper
-                    effect={'coverflow'}
+                    modules={[Pagination, Navigation, Autoplay, FreeMode, Mousewheel]}
+                    spaceBetween={24}
+                    slidesPerView={"auto"}
+                    centeredSlides={false}
                     grabCursor={true}
-                    centeredSlides={true}
-                    loop={true}
-                    slidesPerView={'auto'}
-                    initialSlide={projects.length}
-                    coverflowEffect={{
-                        rotate: 0,
-                        stretch: 0,
-                        depth: 100,
-                        modifier: 1,
-                        slideShadows: false,
+                    freeMode={{
+                        enabled: true,
+                        momentumRatio: 0.5,
+                        momentumVelocityRatio: 0.5,
                     }}
-                    autoplay={{
-                        delay: 4000,
-                        disableOnInteraction: false,
+                    mousewheel={{
+                        forceToAxis: true,
                     }}
-                    pagination={{ el: '.custom-swiper-pagination', clickable: true }}
                     navigation={{
                         nextEl: '.custom-swiper-button-next',
                         prevEl: '.custom-swiper-button-prev',
                     }}
-                    mousewheel={{
-                        forceToAxis: true,
-                        releaseOnEdges: true,
+                    pagination={{
+                        el: '.custom-swiper-pagination',
+                        clickable: true,
                     }}
-                    modules={[EffectCoverflow, Pagination, Navigation, Autoplay, Mousewheel]}
-                    className="w-full py-20 !overflow-visible"
+                    breakpoints={{
+                        640: {
+                            spaceBetween: 32,
+                        },
+                        1024: {
+                            spaceBetween: 40,
+                        }
+                    }}
+                    className="!px-6 md:!px-[10vw] !pb-20 !overflow-visible"
                 >
                     {projects.map((project, index) => (
                         <SwiperSlide
                             key={index}
-                            className="!w-[280px] sm:!w-[380px] md:!w-[480px] !h-auto"
+                            className="!w-[300px] sm:!w-[400px] md:!w-[500px] group"
                         >
-                            <div className="photo-frame flex flex-col gap-4 mx-4">
-                                <div className="relative aspect-square overflow-hidden bg-neutral-100">
-                                    <Image
-                                        src={project.image}
-                                        alt={project.title}
-                                        fill
-                                        className="object-cover transition-transform duration-700 md:group-hover:scale-110 pointer-events-none"
-                                    />
-                                </div>
+                            <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-neutral-100 transition-transform duration-500 hover:scale-[1.02] shadow-sm">
+                                <Image
+                                    src={project.image}
+                                    alt={project.title}
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                 
-                                <div className="pt-2">
-                                    <h4 className="text-2xl font-display font-medium text-foreground tracking-widest">
+                                <div className="absolute top-8 left-8 right-8 z-10">
+                                    <p className="text-[10px] font-bold tracking-[0.2em] text-white/70 uppercase mb-2">
+                                        {project.category}
+                                    </p>
+                                    <h4 className="text-2xl md:text-3xl font-display font-medium text-white tracking-tight leading-tight">
                                         {project.title}
                                     </h4>
-                                    <div className="flex justify-between items-center mt-2">
-                                        <p className="text-turquoise text-[10px] tracking-[0.2em] font-sans uppercase">
-                                            {project.category}
-                                        </p>
-                                        <LinkBtn />
-                                    </div>
+                                </div>
+
+                                <div className="absolute bottom-8 left-8 right-8 z-10 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                    <p className="text-white/80 text-sm mb-6 line-clamp-2">
+                                        {project.description}
+                                    </p>
+                                    <button className="px-6 py-2 rounded-full bg-white text-black text-xs font-bold tracking-widest hover:bg-sky-blue hover:text-white transition-colors">
+                                        VIEW DETAILS
+                                    </button>
                                 </div>
                             </div>
                         </SwiperSlide>
                     ))}
-
-                    <div className="flex justify-center items-center gap-10 mt-20 z-10 relative">
-                        <button className="custom-swiper-button-prev p-2 text-foreground/40 hover:text-turquoise transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-8 h-8">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
-                            </svg>
-                        </button>
-
-                        <div className="custom-swiper-pagination flex items-center justify-center gap-4"></div>
-
-                        <button className="custom-swiper-button-next p-2 text-foreground/40 hover:text-turquoise transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-8 h-8">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                            </svg>
-                        </button>
-                    </div>
                 </Swiper>
+                
+                <div className="custom-swiper-pagination flex items-center justify-center gap-3 mt-4"></div>
             </div>
 
             <style jsx global>{`
-                .works-swiper .swiper {
-                    overflow: visible !important;
-                }
                 .custom-swiper-pagination .swiper-pagination-bullet {
                     background: var(--foreground);
                     opacity: 0.1;
-                    width: 6px;
-                    height: 6px;
-                    transition: all 0.4s ease;
-                    display: inline-block;
-                    border-radius: 50%;
+                    width: 8px;
+                    height: 8px;
+                    margin: 0 !important;
+                    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
                     cursor: pointer;
                 }
                 .custom-swiper-pagination .swiper-pagination-bullet-active {
                     opacity: 1;
-                    background: var(--turquoise);
-                    transform: scale(1.5);
+                    background: var(--sky-blue);
+                    width: 24px;
+                    border-radius: 4px;
                 }
             `}</style>
         </section>
     );
 }
 
-function LinkBtn() {
-    return (
-        <button className="text-[10px] font-sans tracking-[0.1em] text-foreground/40 hover:text-turquoise transition-colors flex items-center gap-2 group">
-            LEARN MORE
-            <span className="w-4 h-[1px] bg-foreground/20 group-hover:bg-turquoise transition-colors"></span>
-        </button>
-    );
-}
