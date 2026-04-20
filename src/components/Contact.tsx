@@ -20,14 +20,21 @@ export default function Contact() {
 
     return (
         <section id="contact" className="py-40 px-6 bg-background flex flex-col items-center justify-center relative overflow-hidden">
-            <div className="max-w-xl w-full text-center mb-24">
-                <h2 className="text-4xl md:text-7xl font-display font-medium text-foreground tracking-tight mb-4">
+            <div className="max-w-3xl w-full text-center mb-24">
+                <h2 className="text-4xl md:text-7xl font-display font-medium text-foreground tracking-tight mb-8">
                     TALK TO ME.
                 </h2>
-                <p className="text-xs uppercase tracking-[0.4em] text-foreground/40">
-                    Let's create something beautiful together.
+                <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-10">
+                    チラシやSNS広告、リール動画など、「どう見せれば伝わるか」で悩んでいる方へ。<br />
+                    目的や課題に合わせて、最適なビジュアル表現をご提案します。<br />
+                    まずはお気軽にご相談ください。
                 </p>
-                <div className="w-12 h-[1px] bg-turquoise mx-auto mt-10"></div>
+                
+                <div className="inline-block px-6 py-3 border border-turquoise/30 bg-turquoise/5 rounded-full">
+                    <p className="text-[10px] md:text-xs tracking-[0.1em] text-turquoise font-medium">
+                        対応内容：チラシ / リール広告 / SNS広告 / バナー / キービジュアル / 販促クリエイティブ
+                    </p>
+                </div>
             </div>
 
             <div className="w-full max-w-6xl z-10 flex flex-col lg:flex-row gap-20 items-start">

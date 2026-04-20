@@ -12,34 +12,28 @@ import "swiper/css/free-mode";
 
 const projects = [
     { 
-        title: "GRAPHIC DESIGN", 
-        category: "Visual Arts", 
+        title: "Flyer Design / Promotional Design", 
+        category: "Flyer Design", 
         image: "https://images.unsplash.com/photo-1579546678181-7f9630324701?auto=format&fit=crop&q=80&w=1200",
-        description: "Branding and visual identity systems."
+        description: "集客とブランド認知を最大化するチラシ・販促物のデザイン。"
     }, 
     { 
-        title: "WEB DEVELOPMENT", 
-        category: "Product", 
+        title: "SNS Ads / Web Visuals", 
+        category: "SNS Ads", 
         image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200",
-        description: "Modern, high-performance web applications."
+        description: "クリック率とエンゲージメントを高めるSNS・ウェブ広告の制作。"
     },
     { 
-        title: "PHOTOGRAPHY", 
-        category: "Lifestyle", 
-        image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=1200",
-        description: "Capturing moments that tell a story."
-    },
-    { 
-        title: "VIDEOGRAPHY", 
-        category: "Production", 
+        title: "Reel Ads / Short Video Creative", 
+        category: "Reel Ads", 
         image: "https://images.unsplash.com/photo-1492691523567-6170c2298b4e?auto=format&fit=crop&q=80&w=1200",
-        description: "Cinematic experiences and visual storytelling."
+        description: "リール広告やショート動画による、心に届くストーリーテリング。"
     },
     { 
-        title: "UI/UX DESIGN", 
-        category: "Interface", 
+        title: "Campaign Visual Planning", 
+        category: "Creative", 
         image: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=1200",
-        description: "Designing intuitive and engaging digital products."
+        description: "キャンペーンを成功に導くための包括的なビジュアル設計。"
     },
 ];
 
@@ -52,9 +46,13 @@ export default function Works() {
                         <h2 className="text-sm font-bold tracking-[0.2em] text-sky-blue uppercase mb-4">
                             Portfolio
                         </h2>
-                        <h3 className="text-4xl md:text-6xl font-display font-semibold text-foreground leading-tight">
+                        <h3 className="text-4xl md:text-6xl font-display font-semibold text-foreground leading-tight mb-6">
                             Selected Works.
                         </h3>
+                        <p className="text-foreground/60 leading-relaxed font-sans max-w-xl">
+                            チラシ、広告クリエイティブ、SNS用ビジュアルなど、課題や目的に合わせて制作した事例です。<br className="hidden md:block" />
+                            伝わりやすさ、印象の強さ、行動につながる表現を大切にしています。
+                        </p>
                     </div>
                     <div className="flex items-center gap-4">
                         <button className="custom-swiper-button-prev w-12 h-12 rounded-full border border-foreground/10 flex items-center justify-center text-foreground/40 hover:bg-foreground/5 hover:text-foreground transition-all">

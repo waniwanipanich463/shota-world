@@ -92,10 +92,16 @@ export default function Hero() {
                         priority
                     />
                 </div>
-                
-                <p className="text-xs md:text-sm font-sans tracking-[0.5em] text-foreground/50 uppercase ml-[0.5em] mb-32">
-                    Design & Creative Studio
-                </p>
+                <div className="max-w-[700px] space-y-6">
+                    <h1 className="text-xl md:text-2xl font-medium tracking-widest leading-relaxed text-foreground/80">
+                        SHOTA WORLD<br />
+                        ビジュアルデザインで、<br className="md:hidden" />伝わらない悩みを解決する。
+                    </h1>
+                    <p className="text-sm md:text-base font-sans tracking-[0.2em] text-foreground/60 leading-loose">
+                        チラシ・リール広告・SNS広告など、<br />
+                        目を引き、伝わり、行動につながる表現を形にします。
+                    </p>
+                </div>
             </div>
 
             {/* Scroll Indicator */}

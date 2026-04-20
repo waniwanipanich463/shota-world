@@ -43,22 +43,18 @@ export default function Vision() {
                 />
             </div>
 
-            <div ref={textRef} className="relative z-10 flex flex-col items-center justify-center space-y-6 md:space-y-12 w-full px-4 text-center">
-                <span className="text-5xl sm:text-7xl md:text-9xl font-display font-medium text-foreground tracking-widest uppercase">
-                    Inspire.
-                </span>
-                <span className="text-5xl sm:text-7xl md:text-9xl font-display italic text-turquoise tracking-widest">
-                    Relax.
-                </span>
-                <span className="text-5xl sm:text-7xl md:text-9xl font-display font-medium text-lush-green tracking-widest uppercase">
-                    Connect.
-                </span>
-            </div>
-
-            {/* Sub text */}
-            <div className="absolute bottom-20 w-full text-center">
-                <p className="text-[10px] tracking-[0.5em] text-foreground/40 uppercase">
-                    Shaping the future with calm and light.
+            <div ref={textRef} className="relative z-10 flex flex-col items-center justify-center space-y-4 md:space-y-8 w-full px-4 text-center">
+                <div className="flex flex-col md:flex-row items-center gap-4 md:gap-12">
+                    <span className="text-4xl sm:text-6xl md:text-8xl font-display font-medium text-foreground tracking-tight uppercase">
+                        Visualize<br className="md:hidden" /> the Value.
+                    </span>
+                    <span className="text-4xl sm:text-6xl md:text-8xl font-display italic text-turquoise tracking-tight">
+                        Solve with<br className="md:hidden" /> Design.
+                    </span>
+                </div>
+                
+                <p className="text-lg md:text-2xl font-sans text-foreground/80 tracking-[0.2em] mt-12 bg-background/50 backdrop-blur-sm px-6 py-2">
+                    価値を見える形にし、デザインで課題を解決する。
                 </p>
             </div>
         </section>

@@ -27,17 +27,22 @@ export default function About() {
 
                     <div className="space-y-8 text-foreground/80 leading-relaxed font-sans text-lg md:text-xl">
                         <p>
-                            東京都生まれ、千葉県市川市育ち。<br />
-                            営業職・介護職を経て、<br />
-                            <span className="text-foreground font-semibold">「伝える」から「魅せる」へ。</span>
+                            私は、ビジュアルをデザインして表現することで、<br />
+                            <span className="text-foreground font-semibold">お客様の悩みを解決したい</span>と考えています。
                         </p>
                         <p>
-                            光と影、そして海の自由さをデザインに落とし込み、<br />
-                            見る人の心に「余白」を届ける。
+                            ただ見た目を整えるだけではなく、<br />
+                            「伝わらない」「目に留まらない」「反応につながらない」といった課題を、<br />
+                            ビジュアルの力で改善していくことを大切にしています。
                         </p>
                         <p>
-                            グラフィック、WEB、そしてGO PRO HERO13による映像制作。<br />
-                            リラックスしたラグジュアリーを、ここに。
+                            チラシ、リール広告、SNS広告など、<br />
+                            目的に合わせた表現設計を通して、<br />
+                            商品の魅力やサービスの価値が届くクリエイティブを制作しています。
+                        </p>
+                        <p>
+                            見た瞬間の印象と、その先の行動。<br />
+                            その両方を意識したデザインが、<span className="text-lush-green font-semibold">SHOTA WORLDの軸</span>です。
                         </p>
                         <p className="text-3xl font-display italic text-coral mt-10">
                             Relaxed Luxury.
