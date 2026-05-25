@@ -1,36 +1,27 @@
-import type { Metadata } from "next";
-import { Montserrat, Cormorant_Garamond } from "next/font/google";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-});
-
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
 export const metadata: Metadata = {
-  title: "SHOTA WORLD | TROPICAL ESCAPE",
-  description: "Official portfolio of Shota Niwano. Tropical luxury and relaxed design. 海と光の美しさをデザインに落とし込む。",
-  keywords: ["SHOTA WORLD", "Shota Niwano", "Portfolio", "Graphic Design", "Tropical", "Luxury", "Relaxed Design"],
+  metadataBase: new URL("https://www.shota-world.jp"),
+  title: "SHOTA WORLD｜AI ART × VISUAL DESIGN",
+  description: "AIアートとビジュアルデザインを組み合わせ、広告・ポスター・SNSクリエイティブに使える印象的な世界観を制作するポートフォリオサイトです。",
+  keywords: ["SHOTA WORLD", "Shota Niwano", "AI Art", "Visual Design", "Portfolio", "Graphic Design", "AI Creator"],
   authors: [{ name: "Shota Niwano" }],
-  viewport: "width=device-width, initial-scale=1",
+  alternates: {
+    canonical: "https://www.shota-world.jp",
+  },
   openGraph: {
-    title: "SHOTA WORLD | TROPICAL ESCAPE",
-    description: "Official portfolio of Shota Niwano. Graphic, Web, Photo, Movie.",
-    url: "https://shota-world.com", // Placeholder
+    title: "SHOTA WORLD｜AIで描く。デザインで伝える。",
+    description: "AIアート、ポスター、SNS広告、キービジュアルなど、世界観のあるビジュアル制作を行うSHOTA WORLDのポートフォリオサイト。",
+    url: "https://www.shota-world.jp",
     siteName: "SHOTA WORLD",
     images: [
       {
-        url: "/assets/logo-main.png",
+        url: "/images/ogp/shota-world-ogp.jpg",
         width: 1200,
         height: 630,
-        alt: "SHOTA WORLD Logo",
+        alt: "SHOTA WORLD misty synthwave city",
       },
     ],
     locale: "ja_JP",
@@ -38,16 +29,22 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SHOTA WORLD | TROPICAL ESCAPE",
-    description: "Official portfolio of Shota Niwano. Graphic, Web, Photo, Movie.",
-    images: ["/assets/logo-main.png"],
-    creator: "@your_id", // Placeholder as per request
+    title: "SHOTA WORLD｜AIで描く。デザインで伝える。",
+    description: "AIアート、ポスター、SNS広告、キービジュアルなど、世界観のあるビジュアル制作を行うSHOTA WORLDのポートフォリオサイト。",
+    images: ["/images/ogp/shota-world-ogp.jpg"],
+    creator: "@Niwano_creator",
   },
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
+    icon: "/fabicon.png",
+    shortcut: "/fabicon.png",
+    apple: "/fabicon.png",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#050715",
 };
 
 export default function RootLayout({
@@ -58,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className="scroll-smooth">
       <body
-        className={`${montserrat.variable} ${cormorant.variable} antialiased bg-background text-foreground overflow-x-hidden`}
+        className="bg-background text-foreground antialiased overflow-x-hidden"
       >
         <Header />
         {children}

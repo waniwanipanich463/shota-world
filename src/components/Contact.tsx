@@ -1,132 +1,84 @@
-"use client";
+import { Instagram, Mail } from "lucide-react";
+import Link from "next/link";
 
-import { Instagram } from "lucide-react";
-import Image from "next/image";
-import { useState } from "react";
+const offers = [
+  "AIアート制作",
+  "ポスター",
+  "SNS広告",
+  "バナー",
+  "キービジュアル",
+  "LP用ビジュアル",
+  "コンセプトアート",
+];
 
 export default function Contact() {
-    const [isSubmitting, setIsSubmitting] = useState(false);
+  return (
+    <section id="contact" className="relative overflow-hidden py-20 md:py-32">
+      <div className="mist-band top-[-8%]" />
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-        // 仮の送信処理
-        setTimeout(() => {
-            alert("お問い合わせを受け付けました。");
-            setIsSubmitting(false);
-            (e.target as HTMLFormElement).reset();
-        }, 1500);
-    };
+      <div className="section-shell relative z-10">
+        <div className="glass-panel mx-auto max-w-5xl rounded-lg p-6 text-center md:p-12">
+          <p className="section-kicker mb-5">CONTACT</p>
+          <h2 className="mb-8 font-display text-5xl font-bold leading-none text-white md:text-7xl">
+            TALK TO ME.
+          </h2>
 
-    return (
-        <section id="contact" className="py-40 px-6 bg-background flex flex-col items-center justify-center relative overflow-hidden">
-            <div className="max-w-3xl w-full text-center mb-24">
-                <h2 className="text-4xl md:text-7xl font-display font-medium text-foreground tracking-tight mb-8">
-                    TALK TO ME.
-                </h2>
-                <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-10">
-                    チラシやSNS広告、リール動画など、「どう見せれば伝わるか」で悩んでいる方へ。<br />
-                    目的や課題に合わせて、最適なビジュアル表現をご提案します。<br />
-                    まずはお気軽にご相談ください。
-                </p>
-                
-                <div className="inline-block px-6 py-3 border border-turquoise/30 bg-turquoise/5 rounded-full">
-                    <p className="text-[10px] md:text-xs tracking-[0.1em] text-turquoise font-medium">
-                        対応内容：チラシ / リール広告 / SNS広告 / バナー / キービジュアル / 販促クリエイティブ
-                    </p>
-                </div>
-            </div>
+          <div className="mx-auto max-w-3xl space-y-5 text-base leading-8 text-mist-gray md:text-lg">
+            <p>
+              AIアートを活用したビジュアル制作、広告・ポスター・SNSクリエイティブ・キービジュアル制作のご相談を受け付けています。
+            </p>
+            <p className="text-white">
+              「頭の中にあるイメージを形にしたい」<br />
+              「サービスやブランドの世界観をビジュアル化したい」<br />
+              「SNSで目を引く画像を作りたい」
+            </p>
+            <p>そんなときは、お気軽にご相談ください。</p>
+          </div>
 
-            <div className="w-full max-w-6xl z-10 flex flex-col lg:flex-row gap-20 items-start">
-                {/* フォーム部分 */}
-                <form onSubmit={handleSubmit} className="flex-1 flex flex-col gap-12 w-full">
-                    {/* お名前（必須） */}
-                    <div className="flex flex-col gap-3">
-                        <label className="text-foreground font-sans text-[10px] tracking-[0.2em] uppercase flex items-center justify-between">
-                            YOUR NAME
-                            <span className="text-coral font-bold">*</span>
-                        </label>
-                        <input
-                            type="text"
-                            required
-                            className="bg-transparent border-b border-foreground/10 px-0 py-4 text-foreground focus:outline-none focus:border-turquoise transition-colors placeholder:text-foreground/20 text-lg"
-                            placeholder="Shota Niwano"
-                        />
-                    </div>
+          <div className="my-10 flex flex-wrap justify-center gap-2">
+            {offers.map((offer) => (
+              <span
+                key={offer}
+                className="rounded-full border border-synth-pink/25 bg-synth-pink/[0.06] px-4 py-2 text-xs font-bold text-white/[0.82]"
+              >
+                {offer}
+              </span>
+            ))}
+          </div>
 
-                    {/* メールアドレス（必須） */}
-                    <div className="flex flex-col gap-3">
-                        <label className="text-foreground font-sans text-[10px] tracking-[0.2em] uppercase flex items-center justify-between">
-                            E-MAIL ADDRESS
-                            <span className="text-coral font-bold">*</span>
-                        </label>
-                        <input
-                            type="email"
-                            required
-                            className="bg-transparent border-b border-foreground/10 px-0 py-4 text-foreground focus:outline-none focus:border-turquoise transition-colors placeholder:text-foreground/20 text-lg"
-                            placeholder="hello@example.com"
-                        />
-                    </div>
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link
+              href="mailto:contact@shota-world.jp"
+              className="cta-link focus-ring w-full border border-white/[0.35] bg-white text-background shadow-[0_0_32px_rgba(155,231,245,0.2)] hover:border-synth-cyan hover:bg-synth-cyan sm:w-auto"
+            >
+              <Mail size={18} aria-hidden="true" />
+              <span className="ml-2">メールで相談する</span>
+            </Link>
 
-                    {/* ご相談内容（必須） */}
-                    <div className="flex flex-col gap-3">
-                        <label className="text-foreground font-sans text-[10px] tracking-[0.2em] uppercase flex items-center justify-between">
-                            YOUR MESSAGE
-                            <span className="text-coral font-bold">*</span>
-                        </label>
-                        <textarea
-                            required
-                            rows={4}
-                            className="bg-transparent border-b border-foreground/10 px-0 py-4 text-foreground focus:outline-none focus:border-turquoise transition-colors placeholder:text-foreground/20 text-lg resize-none"
-                            placeholder="Tell me about your project..."
-                        ></textarea>
-                    </div>
+            <Link
+              href="https://www.instagram.com/niwano_creator/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-link focus-ring w-full border border-white/20 bg-white/[0.06] text-white hover:border-synth-pink/60 hover:bg-synth-pink/[0.1] sm:w-auto"
+            >
+              <Instagram size={18} aria-hidden="true" />
+              <span className="ml-2">Instagramを見る</span>
+            </Link>
 
-                    <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="mt-4 px-10 py-5 bg-foreground text-background font-sans text-[11px] tracking-[0.4em] hover:bg-turquoise transition-colors duration-500 w-full md:w-fit disabled:opacity-50 uppercase"
-                    >
-                        {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
-                    </button>
-                </form>
-
-                {/* SNSリンク部分 */}
-                <div className="w-full lg:w-1/3 flex flex-col gap-16 lg:pl-20 mt-20 lg:mt-0">
-                    <div>
-                        <h3 className="text-xl font-display font-medium text-foreground tracking-widest mb-8 uppercase">
-                            Connect.
-                        </h3>
-                        <div className="space-y-10">
-                            <a
-                                href="https://x.com/Niwano_creator"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group flex items-center gap-6"
-                            >
-                                <div className="w-14 h-14 border border-turquoise flex items-center justify-center text-turquoise bg-white shadow-sm">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
-                                    </svg>
-                                </div>
-                                <span className="text-[11px] font-sans tracking-[0.3em] text-foreground transition-colors uppercase">X(元Twitter)</span>
-                            </a>
-
-                            <a
-                                href="https://www.instagram.com/niwano_creator/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group flex items-center gap-6"
-                            >
-                                <div className="w-14 h-14 border border-turquoise flex items-center justify-center text-turquoise bg-white shadow-sm">
-                                    <Instagram size={18} />
-                                </div>
-                                <span className="text-[11px] font-sans tracking-[0.3em] text-foreground transition-colors uppercase">Instagram</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+            <Link
+              href="https://x.com/Niwano_creator"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-link focus-ring w-full border border-white/20 bg-white/[0.06] text-white hover:border-synth-cyan/60 hover:bg-synth-cyan/[0.1] sm:w-auto"
+            >
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+              </svg>
+              <span className="ml-2">Xを見る</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

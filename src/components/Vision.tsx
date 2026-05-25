@@ -1,62 +1,36 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Vision() {
-    const containerRef = useRef(null);
-    const textRef = useRef<HTMLDivElement>(null);
+  return (
+    <section id="vision" className="relative overflow-hidden py-24 md:py-36">
+      <Image
+        src="/images/works/misty-resort-canal.jpg"
+        alt="淡い霧と水面反射のある未来都市"
+        fill
+        sizes="100vw"
+        className="object-cover opacity-[0.32]"
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,21,0.92)_0%,rgba(5,7,21,0.56)_46%,rgba(5,7,21,0.94)_100%)]" />
+      <div className="mist-band bottom-0" />
 
-    useEffect(() => {
-        const texts = textRef.current?.querySelectorAll("span");
+      <div className="section-shell relative z-10">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="section-kicker mb-5">VISION</p>
+          <h2 className="mb-10 font-display text-4xl font-bold leading-tight text-white md:text-6xl">
+            まだ見たことのない世界観を、<span className="text-gradient">伝わるデザイン</span>へ。
+          </h2>
 
-        if (texts) {
-            gsap.fromTo(texts,
-                { y: 60, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    stagger: 0.3,
-                    duration: 1.5,
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: containerRef.current,
-                        start: "top center",
-                        toggleActions: "play none none reverse"
-                    }
-                }
-            );
-        }
-    }, []);
-
-    return (
-        <section id="vision" ref={containerRef} className="h-screen relative flex items-center justify-center bg-background overflow-hidden">
-            {/* Background Parallax */}
-            <div className="absolute inset-0 opacity-20">
-                <Image
-                    src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=2000"
-                    alt="Vision Background"
-                    fill
-                    className="object-cover"
-                />
-            </div>
-
-            <div ref={textRef} className="relative z-10 flex flex-col items-center justify-center space-y-4 md:space-y-8 w-full px-4 text-center">
-                <div className="flex flex-col md:flex-row items-center gap-4 md:gap-12">
-                    <span className="text-4xl sm:text-6xl md:text-8xl font-display font-medium text-foreground tracking-tight uppercase">
-                        Visualize<br className="md:hidden" /> the Value.
-                    </span>
-                    <span className="text-4xl sm:text-6xl md:text-8xl font-display italic text-turquoise tracking-tight">
-                        Solve with<br className="md:hidden" /> Design.
-                    </span>
-                </div>
-                
-                <p className="text-lg md:text-2xl font-sans text-foreground/80 tracking-[0.2em] mt-12 bg-background/50 backdrop-blur-sm px-6 py-2">
-                    価値を見える形にし、デザインで課題を解決する。
-                </p>
-            </div>
-        </section>
-    );
+          <div className="mx-auto max-w-3xl space-y-6 text-base leading-8 text-mist-gray md:text-lg md:leading-9">
+            <p>AIによって、誰もがビジュアルを作れる時代になりました。</p>
+            <p>
+              だからこそ大切なのは、何を作るか、なぜその表現にするのか、どう届けるかだと考えています。
+            </p>
+            <p>
+              SHOTA WORLDでは、AIの力を使いながら、人の想像力や感情に残るビジュアル表現を追求していきます。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

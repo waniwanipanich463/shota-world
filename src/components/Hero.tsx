@@ -1,114 +1,60 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import Link from "next/link";
 
 export default function Hero() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const bgRef = useRef<HTMLDivElement>(null);
-    const typoRef = useRef<HTMLImageElement>(null);
+  return (
+    <section className="relative flex min-h-[88svh] items-center overflow-hidden pt-24 text-white md:min-h-[90vh]">
+      <Image
+        src="/images/hero/synthwave-oasis-hero.jpg"
+        alt="霧に包まれた高層都市とパームツリー、水面反射のあるSHOTA WORLDの背景"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,21,0.18)_0%,rgba(5,7,21,0.42)_52%,rgba(5,7,21,0.9)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,21,0.58)_0%,rgba(5,7,21,0.12)_50%,rgba(5,7,21,0.5)_100%)]" />
+      <div className="mist-band bottom-[-18%]" />
 
-    useEffect(() => {
-        const tl = gsap.timeline();
+      <div className="section-shell relative z-10 grid gap-8 pb-8 md:pb-10">
+        <div className="max-w-5xl animate-fade-up">
+          <p className="section-kicker mb-4 text-white/[0.82]">AI ART × VISUAL DESIGN</p>
 
-        // Initial Background Animation
-        tl.fromTo(
-            bgRef.current,
-            { scale: 1.1, opacity: 0 },
-            { scale: 1, opacity: 0.8, duration: 2.5, ease: "power2.out" }
-        );
+          <div className="mb-5 w-[min(90vw,760px)]">
+            <Image
+              src="/images/logo/shota-world-logo.png"
+              alt="SHOTA WORLD"
+              width={2172}
+              height={724}
+              priority
+              className="h-auto w-full drop-shadow-[0_18px_46px_rgba(0,229,255,0.24)]"
+            />
+          </div>
 
-        // Slow fade-in for typo.png
-        if (typoRef.current) {
-            tl.fromTo(
-                typoRef.current,
-                { 
-                    opacity: 0, 
-                    y: 30,
-                    filter: "blur(10px)" // Slight blur at start for smoother fade feeling
-                },
-                { 
-                    opacity: 1, 
-                    y: 0, 
-                    filter: "blur(0px)",
-                    duration: 2.5, 
-                    ease: "power2.out" 
-                },
-                "-=1.5" // Start during the background fade
-            );
+          <h1 className="mb-4 text-3xl font-bold leading-tight text-white drop-shadow-[0_8px_28px_rgba(5,7,21,0.76)] sm:text-4xl md:text-5xl">
+            AIで描く。デザインで伝える。
+          </h1>
 
-            // Floating Animation for Logo
-            gsap.to(typoRef.current, {
-                y: -15,
-                duration: 3,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-                delay: 1.0 // Start floating after fade-in
-            });
-        }
+          <p className="max-w-2xl text-base leading-8 text-white/[0.84] drop-shadow-[0_8px_24px_rgba(5,7,21,0.72)] md:text-lg">
+            AIアートとビジュアルデザインを組み合わせ、広告・ポスター・SNSクリエイティブに使える印象的な世界観を制作します。
+          </p>
 
-        // Scroll Animation
-        gsap.to(containerRef.current, {
-            scrollTrigger: {
-                trigger: containerRef.current,
-                start: "top top",
-                end: "bottom top",
-                scrub: true,
-            },
-            opacity: 0,
-            y: -20,
-        });
-    }, []);
-
-    return (
-        <section ref={containerRef} className="relative h-[110vh] w-full overflow-hidden flex flex-col items-center justify-center bg-background">
-            {/* Background */}
-            <div ref={bgRef} className="absolute inset-0 z-0">
-                <Image
-                    src="/hero.png"
-                    alt="Hero Background"
-                    fill
-                    className="object-cover"
-                    priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background" />
-            </div>
-
-            {/* Content */}
-            <div className="relative z-10 flex flex-col items-center text-center px-4 w-full max-w-[1200px]">
-                <div className="mb-12 relative w-full flex justify-center">
-                    <Image
-                        ref={typoRef}
-                        src="/typo.png"
-                        alt="SHOTA WORLD TITLE"
-                        width={1000}
-                        height={400}
-                        className="w-full h-auto max-w-[800px] drop-shadow-[0_40px_80px_rgba(0,0,0,0.3)]"
-                        priority
-                    />
-                </div>
-                <div className="max-w-[700px] space-y-6">
-                    <h1 className="text-xl md:text-2xl font-medium tracking-widest leading-relaxed text-foreground/80">
-                        SHOTA WORLD<br />
-                        ビジュアルデザインで、<br className="md:hidden" />伝わらない悩みを解決する。
-                    </h1>
-                    <p className="text-sm md:text-base font-sans tracking-[0.2em] text-foreground/60 leading-loose">
-                        チラシ・リール広告・SNS広告など、<br />
-                        目を引き、伝わり、行動につながる表現を形にします。
-                    </p>
-                </div>
-            </div>
-
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-4">
-                <span className="text-[10px] tracking-[0.4em] text-foreground/40 uppercase rotate-90 origin-left translate-x-1">Scroll</span>
-                <div className="w-[1px] h-20 bg-gradient-to-b from-foreground/40 to-transparent"></div>
-            </div>
-        </section>
-    );
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="#works"
+              className="cta-link focus-ring border border-white/[0.35] bg-white/[0.13] text-white shadow-[0_0_32px_rgba(155,231,245,0.2)] backdrop-blur-xl hover:border-synth-cyan/70 hover:bg-synth-cyan/[0.14] hover:shadow-[0_0_34px_rgba(0,229,255,0.32)]"
+            >
+              Worksを見る
+            </Link>
+            <Link
+              href="#contact"
+              className="cta-link focus-ring border border-synth-purple/60 bg-transparent text-[#f4d8ff] backdrop-blur-xl hover:border-synth-pink/80 hover:bg-synth-pink/[0.1] hover:shadow-[0_0_34px_rgba(255,102,217,0.24)]"
+            >
+              相談する
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

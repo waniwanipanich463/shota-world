@@ -1,68 +1,92 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+
+const navItems = [
+  { name: "Works", href: "#works" },
+  { name: "About", href: "#about" },
+  { name: "Service", href: "#service" },
+  { name: "Process", href: "#process" },
+  { name: "Contact", href: "#contact" },
+];
 
 export default function Header() {
-    const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 28);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    const navItems = [
-        { name: "ABOUT", href: "#about" },
-        { name: "WORKS", href: "#works" },
-        { name: "VISION", href: "#vision" },
-        { name: "CONTACT", href: "#contact" },
-    ];
-
-    return (
-        <header
-            className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? "bg-white/40 backdrop-blur-lg py-4 border-b border-black/5" : "bg-transparent py-6"
-                }`}
+  return (
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled || menuOpen
+          ? "border-b border-white/10 bg-[#080b16]/70 py-3 shadow-[0_18px_70px_rgba(5,7,21,0.3)] backdrop-blur-xl"
+          : "border-b border-white/0 bg-transparent py-5"
+      }`}
+    >
+      <div className="section-shell flex items-center justify-between gap-4">
+        <Link
+          href="#"
+          aria-label="SHOTA WORLD home"
+          className="focus-ring font-display text-base font-bold text-white transition-colors hover:text-synth-cyan sm:text-lg"
+          onClick={() => setMenuOpen(false)}
         >
-            <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-                <Link href="#" className="text-xl font-display font-medium tracking-[0.2em] text-foreground hover:text-turquoise transition-colors">
-                    SHOTA WORLD
-                </Link>
+          SHOTA WORLD
+        </Link>
 
-                <nav className="hidden md:flex gap-10">
-                    {navItems.map((item) => (
-                        <Link
-                            key={item.name}
-                            href={item.href}
-                            className="text-[11px] font-sans tracking-[0.3em] text-foreground/80 hover:text-turquoise transition-colors"
-                        >
-                            {item.name}
-                        </Link>
-                    ))}
-                </nav>
+        <nav className="hidden items-center gap-7 md:flex">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="focus-ring text-sm font-medium text-white/[0.78] transition-colors hover:text-synth-cyan"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
 
-                {/* Desktop: Contact Link as a refined button */}
-                <div className="hidden md:block">
-                     <Link
-                        href="#contact"
-                        className="text-[10px] font-sans tracking-[0.2em] text-white bg-foreground px-6 py-2 hover:bg-turquoise transition-all"
-                    >
-                        GET IN TOUCH
-                    </Link>
-                </div>
+        <Link
+          href="#contact"
+          className="focus-ring hidden rounded-full border border-white/20 bg-white/[0.08] px-5 py-2 text-sm font-bold text-white transition-all hover:border-synth-cyan/60 hover:bg-synth-cyan/[0.12] hover:text-synth-cyan hover:shadow-[0_0_24px_rgba(155,231,245,0.24)] md:inline-flex"
+        >
+          Talk to me
+        </Link>
 
-                {/* Mobile: Link */}
-                <div className="md:hidden">
-                    <Link
-                        href="#contact"
-                        className="text-[10px] font-sans tracking-[0.2em] text-foreground font-bold border-b border-foreground"
-                    >
-                        CONTACT
-                    </Link>
-                </div>
-            </div>
-        </header>
-    );
+        <button
+          type="button"
+          aria-label={menuOpen ? "メニューを閉じる" : "メニューを開く"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((current) => !current)}
+          className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/[0.08] text-white backdrop-blur-xl transition-colors hover:border-synth-cyan/[0.55] hover:text-synth-cyan md:hidden"
+        >
+          {menuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
+        </button>
+      </div>
+
+      {menuOpen && (
+        <div className="section-shell mt-4 md:hidden">
+          <nav className="glass-panel grid overflow-hidden rounded-lg">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+                className="focus-ring border-b border-white/10 px-5 py-4 text-base font-semibold text-white/[0.86] transition-colors last:border-b-0 hover:bg-white/[0.08] hover:text-synth-cyan"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
+    </header>
+  );
 }
