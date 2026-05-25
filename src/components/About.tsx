@@ -9,46 +9,81 @@ const tags = [
   "CONCEPT VISUAL",
 ];
 
+const profilePoints = [
+  {
+    label: "STYLE",
+    value: "Misty neon / cinematic city / quiet future",
+  },
+  {
+    label: "ROLE",
+    value: "AI Art Direction / Visual Design / Retouch",
+  },
+  {
+    label: "FOR",
+    value: "Advertising / Poster / SNS / LP Visual",
+  },
+];
+
 export default function About() {
   return (
     <section id="about" className="relative overflow-hidden py-20 md:py-32">
-      <div className="section-shell relative z-10 grid items-center gap-10 lg:grid-cols-[0.96fr_1.04fr]">
-        <div className="relative min-h-[420px] overflow-hidden rounded-lg border border-white/[0.12] bg-mist-navy shadow-[0_30px_90px_rgba(5,7,21,0.38)]">
-          <Image
-            src="/images/profile/shota-portrait.png"
-            alt="SHOTA WORLD creator portrait"
-            fill
-            sizes="(max-width: 1024px) 100vw, 48vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,21,0.05)_0%,rgba(5,7,21,0.6)_100%)]" />
-          <div className="absolute bottom-5 left-5 right-5">
-            <p className="section-kicker mb-2">Visual World Designer</p>
-            <p className="text-sm leading-6 text-white/[0.78]">
-              AIとデザインで、頭の中にある世界観を「使えるビジュアル」へ。
+      <div className="mist-band top-[10%]" />
+      <div className="section-shell relative z-10 grid items-start gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-10">
+        <div className="relative overflow-hidden rounded-lg border border-white/[0.12] bg-mist-navy shadow-[0_30px_90px_rgba(5,7,21,0.38)]">
+          <div className="relative min-h-[560px] md:min-h-[640px] lg:min-h-[700px]">
+            <Image
+              src="/images/profile/shota-artist-profile.jpg"
+              alt="SHOTA WORLD artist Shota Niwano portrait"
+              fill
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="object-cover object-[center_18%]"
+            />
+          </div>
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,21,0.02)_0%,rgba(5,7,21,0.18)_48%,rgba(5,7,21,0.78)_100%)]" />
+          <div className="absolute inset-x-0 bottom-0 p-5 md:p-7">
+            <div className="mb-4 h-px bg-gradient-to-r from-synth-cyan/70 via-synth-pink/45 to-transparent" />
+            <p className="section-kicker mb-2">ARTIST PROFILE</p>
+            <h3 className="font-display text-3xl font-bold text-white md:text-5xl">
+              SHOTA NIWANO
+            </h3>
+            <p className="mt-3 max-w-md text-sm leading-6 text-white/[0.78]">
+              都市の光、霧、余白を手がかりに、AIアートを広告やSNSで使えるビジュアルへ設計します。
             </p>
           </div>
         </div>
 
-        <div className="glass-panel rounded-lg p-6 md:p-9">
-          <p className="section-kicker mb-4">ABOUT</p>
+        <div className="glass-panel rounded-lg p-6 md:p-9 lg:p-10">
+          <p className="section-kicker mb-4">ABOUT THE ARTIST</p>
           <h2 className="mb-7 font-display text-4xl font-bold leading-tight text-white md:text-6xl">
-            AIで世界観を作り、<span className="text-gradient">伝わる形</span>へ整える。
+            世界観を描き、<span className="text-gradient">印象に残る形</span>へ仕上げる。
           </h2>
+
+          <div className="mb-8 border-l-2 border-synth-cyan/55 pl-5 text-lg font-semibold leading-8 text-white md:text-xl">
+            AIで画像を作るだけではなく、誰に何を届けるためのビジュアルなのかまで考えて設計します。
+          </div>
 
           <div className="space-y-5 text-base leading-8 text-mist-gray">
             <p>
-              私は、AIを使って「頭の中にある世界観」をビジュアルとして形にするクリエイターです。
+              SHOTA WORLDは、AIアートとビジュアルデザインを組み合わせ、ブランドやサービスの「頭の中にあるイメージ」を、広告・ポスター・SNSで使える表現へ変換する場所です。
             </p>
             <p>
-              ただ綺麗な画像を作るだけではなく、見る人の印象に残ること、伝えたい価値が届くこと、広告やポスター、SNS上で“目を止めてもらうこと”を大切にしています。
-            </p>
-            <p>
-              AIアート、画像生成、ビジュアルデザインを組み合わせ、ブランドやサービスの魅力を、記憶に残る表現へ変換します。
+              大切にしているのは、ただ綺麗な画像を作ることではなく、見る人の記憶に残ること、伝えたい価値が届くこと、スクロールの中で“目を止めてもらうこと”です。
             </p>
             <p className="font-semibold text-white">
-              SHOTA WORLDは、想像とデザインをつなぐビジュアル表現の場所です。
+              AIのスピードと、人の感情に届くデザインの視点。その両方を使って、まだ見たことのない世界観を、仕事に使えるビジュアルへ整えます。
             </p>
+          </div>
+
+          <div className="mt-9 grid gap-3">
+            {profilePoints.map((point) => (
+              <div
+                key={point.label}
+                className="grid gap-2 border-t border-white/10 pt-4 sm:grid-cols-[96px_1fr] sm:items-baseline"
+              >
+                <p className="font-display text-xs font-bold text-synth-cyan">{point.label}</p>
+                <p className="text-sm leading-6 text-white/[0.82]">{point.value}</p>
+              </div>
+            ))}
           </div>
 
           <div className="mt-8 flex flex-wrap gap-2">
