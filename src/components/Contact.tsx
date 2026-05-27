@@ -49,7 +49,7 @@ export default function Contact() {
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="mailto:contact@shota-world.jp"
-              className="cta-link focus-ring w-full border border-white/[0.35] bg-white text-background shadow-[0_0_32px_rgba(155,231,245,0.2)] hover:border-synth-cyan hover:bg-synth-cyan sm:w-auto"
+              className="cta-link cta-link-primary focus-ring w-full border border-white/[0.35] bg-white shadow-[0_0_32px_rgba(155,231,245,0.2)] hover:border-synth-cyan hover:bg-synth-cyan sm:w-auto"
             >
               <Mail size={18} aria-hidden="true" />
               <span className="ml-2">メールで相談する</span>

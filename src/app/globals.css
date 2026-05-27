@@ -189,6 +189,14 @@ img {
   transform: translateY(-2px);
 }
 
+.cta-link-primary {
+  color: #050715;
+}
+
+.cta-link-primary:hover {
+  color: #050715;
+}
+
 .focus-ring:focus-visible {
   outline: 2px solid #9be7f5;
   outline-offset: 4px;
