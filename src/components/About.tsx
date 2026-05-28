@@ -26,10 +26,10 @@ const profilePoints = [
 
 export default function About() {
   return (
-    <section id="about" className="relative overflow-hidden py-20 md:py-32">
+    <section id="about" className="retro-section relative overflow-hidden py-20 md:py-32">
       <div className="mist-band top-[10%]" />
       <div className="section-shell relative z-10 grid items-start gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-10">
-        <div className="relative overflow-hidden rounded-lg border border-white/[0.12] bg-mist-navy shadow-[0_30px_90px_rgba(5,7,21,0.38)]">
+        <div className="chrome-card reveal-on-scroll relative overflow-hidden shadow-[0_30px_90px_rgba(5,7,21,0.38)]">
           <div className="relative min-h-[560px] md:min-h-[640px] lg:min-h-[700px]">
             <Image
               src="/images/profile/shota-artist-profile.jpg"
@@ -52,49 +52,51 @@ export default function About() {
           </div>
         </div>
 
-        <div className="glass-panel rounded-lg p-6 md:p-9 lg:p-10">
-          <p className="section-kicker mb-4">ABOUT THE ARTIST</p>
-          <h2 className="mb-7 font-display text-4xl font-bold leading-tight text-white md:text-6xl">
-            世界観を描き、<span className="text-gradient">印象に残る形</span>へ仕上げる。
+        <div className="retro-panel reveal-on-scroll p-6 md:p-9 lg:p-10">
+          <div className="relative z-10">
+            <p className="section-kicker mb-4">ABOUT THE ARTIST</p>
+            <h2 className="mb-7 font-display text-4xl font-bold leading-tight text-white md:text-6xl">
+              世界観を描き、<span className="text-gradient">印象に残る形</span>へ仕上げる。
           </h2>
 
-          <div className="mb-8 border-l-2 border-synth-cyan/55 pl-5 text-lg font-semibold leading-8 text-white md:text-xl">
-            AIで画像を作るだけではなく、誰に何を届けるためのビジュアルなのかまで考えて設計します。
-          </div>
+            <div className="mb-8 border-l-2 border-retro-amber/70 pl-5 text-lg font-semibold leading-8 text-white md:text-xl">
+              AIで画像を作るだけではなく、誰に何を届けるためのビジュアルなのかまで考えて設計します。
+            </div>
 
-          <div className="space-y-5 text-base leading-8 text-mist-gray">
-            <p>
-              SHOTA WORLDは、AIアートとビジュアルデザインを組み合わせ、ブランドやサービスの「頭の中にあるイメージ」を、広告・ポスター・SNSで使える表現へ変換する場所です。
-            </p>
-            <p>
-              大切にしているのは、ただ綺麗な画像を作ることではなく、見る人の記憶に残ること、伝えたい価値が届くこと、スクロールの中で“目を止めてもらうこと”です。
-            </p>
-            <p className="font-semibold text-white">
-              AIのスピードと、人の感情に届くデザインの視点。その両方を使って、まだ見たことのない世界観を、仕事に使えるビジュアルへ整えます。
-            </p>
-          </div>
+            <div className="space-y-5 text-base leading-8 text-mist-gray">
+              <p>
+                SHOTA WORLDは、AIアートとビジュアルデザインを組み合わせ、ブランドやサービスの「頭の中にあるイメージ」を、広告・ポスター・SNSで使える表現へ変換する場所です。
+              </p>
+              <p>
+                大切にしているのは、ただ綺麗な画像を作ることではなく、見る人の記憶に残ること、伝えたい価値が届くこと、スクロールの中で“目を止めてもらうこと”です。
+              </p>
+              <p className="font-semibold text-white">
+                AIのスピードと、人の感情に届くデザインの視点。その両方を使って、まだ見たことのない世界観を、仕事に使えるビジュアルへ整えます。
+              </p>
+            </div>
 
-          <div className="mt-9 grid gap-3">
-            {profilePoints.map((point) => (
-              <div
-                key={point.label}
-                className="grid gap-2 border-t border-white/10 pt-4 sm:grid-cols-[96px_1fr] sm:items-baseline"
-              >
-                <p className="font-display text-xs font-bold text-synth-cyan">{point.label}</p>
-                <p className="text-sm leading-6 text-white/[0.82]">{point.value}</p>
-              </div>
-            ))}
-          </div>
+            <div className="mt-9 grid gap-3">
+              {profilePoints.map((point) => (
+                <div
+                  key={point.label}
+                  className="grid gap-2 border-t border-white/10 pt-4 sm:grid-cols-[96px_1fr] sm:items-baseline"
+                >
+                  <p className="font-display text-xs font-bold text-synth-cyan">{point.label}</p>
+                  <p className="text-sm leading-6 text-white/[0.82]">{point.value}</p>
+                </div>
+              ))}
+            </div>
 
-          <div className="mt-8 flex flex-wrap gap-2">
-            {tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-synth-cyan/25 bg-white/[0.06] px-4 py-2 text-xs font-bold text-white/[0.82]"
-              >
-                {tag}
-              </span>
-            ))}
+            <div className="mt-8 flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="neon-chip"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -28,26 +28,26 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="relative overflow-hidden py-20 md:py-28">
+    <section id="process" className="retro-section relative overflow-hidden py-20 md:py-28">
       <div className="section-shell">
         <div className="mb-14 max-w-3xl">
           <p className="section-kicker mb-4">PROCESS</p>
           <h2 className="section-title mb-6">
-            From image idea to <span className="text-gradient">finished design.</span>
+            From rough signal to <span className="text-gradient">finished scene.</span>
           </h2>
           <p className="text-base leading-8 text-mist-gray md:text-lg">
-            AI制作でも、目的・媒体・印象設計から仕上げまでプロセスを踏んで制作します。
+            生成、選定、レタッチ、レイアウトを一続きの演出として扱い、使えるビジュアルへ仕上げます。
           </p>
         </div>
 
         <div className="relative grid grid-cols-1 gap-4 lg:grid-cols-5">
-          <div className="pointer-events-none absolute left-0 right-0 top-10 hidden h-px bg-gradient-to-r from-transparent via-synth-cyan/[0.28] to-transparent lg:block" />
+          <div className="pointer-events-none absolute left-0 right-0 top-10 hidden h-px bg-gradient-to-r from-transparent via-synth-cyan/[0.42] via-retro-amber/[0.38] to-transparent lg:block" />
           {steps.map((step) => (
             <article
               key={step.num}
-              className="glass-panel relative rounded-lg p-6 transition-all duration-300 hover:-translate-y-1 hover:border-synth-cyan/40"
+              className="chrome-card reveal-on-scroll relative p-6 transition-all duration-300 hover:-translate-y-1 hover:border-synth-cyan/40"
             >
-              <p className="mb-6 font-display text-5xl font-bold leading-none text-transparent [background:linear-gradient(135deg,#9be7f5,#c875ea,#eba4de)] [-webkit-background-clip:text] [background-clip:text]">
+              <p className="timeline-number mb-6 text-5xl font-bold leading-none">
                 {step.num}
               </p>
               <h3 className="mb-3 font-display text-xl font-bold text-white">{step.title}</h3>

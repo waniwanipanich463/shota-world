@@ -25,7 +25,7 @@ export default function WorkCategories() {
         <div className="mb-10 max-w-3xl">
           <p className="section-kicker mb-4">WORKS CATEGORY</p>
           <h2 className="font-display text-3xl font-bold leading-tight text-white md:text-5xl">
-            依頼イメージに合わせて、使い道まで設計します。
+            依頼イメージを、ひとつの映像世界として組み立てます。
           </h2>
         </div>
 
@@ -33,9 +33,9 @@ export default function WorkCategories() {
           {categories.map((category, index) => (
             <article
               key={category.title}
-              className="rounded-lg border border-white/[0.12] bg-white/[0.045] p-6 backdrop-blur-xl transition-colors hover:border-synth-cyan/40"
+              className="chrome-card reveal-on-scroll p-6 transition-colors hover:border-synth-cyan/40"
             >
-              <p className="mb-4 font-display text-sm font-bold text-synth-pink">
+              <p className="retro-index mb-4 text-sm font-bold">
                 0{index + 1}
               </p>
               <h3 className="mb-3 font-display text-2xl font-bold text-white">

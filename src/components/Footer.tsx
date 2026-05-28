@@ -3,16 +3,19 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#050715]/90 py-10 text-white/[0.62]">
+    <footer className="border-t border-synth-cyan/20 bg-[#050715]/92 py-10 text-white/[0.62]">
       <div className="section-shell flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div>
           <Link
             href="#"
-            className="focus-ring font-display text-xl font-bold text-white transition-colors hover:text-synth-cyan"
+            className="focus-ring inline-flex items-center gap-3 font-display text-xl font-bold text-white transition-colors hover:text-synth-cyan"
           >
-            SHOTA WORLD
+            <span className="grid h-9 w-9 place-items-center rounded-md border border-synth-cyan/30 bg-synth-cyan/[0.08] text-sm text-synth-cyan">
+              SW
+            </span>
+            <span>SHOTA WORLD</span>
           </Link>
-          <p className="mt-2 text-sm text-mist-gray">AI ART × VISUAL DESIGN</p>
+          <p className="mt-2 text-sm text-mist-gray">AI ART × VISUAL DESIGN / RETRO FUTURE SIGNAL</p>
         </div>
 
         <div className="flex items-center gap-4">

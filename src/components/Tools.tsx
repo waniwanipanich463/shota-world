@@ -15,24 +15,24 @@ export default function Tools() {
   return (
     <section className="relative overflow-hidden py-16 md:py-24">
       <div className="section-shell">
-        <div className="glass-panel rounded-lg p-6 md:p-9">
-          <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <div className="retro-panel reveal-on-scroll p-6 md:p-9">
+          <div className="relative z-10 mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="section-kicker mb-3">TOOLS / SKILLS</p>
               <h2 className="font-display text-3xl font-bold text-white md:text-5xl">
-                制作環境とスキル
+                CREATIVE CONSOLE
               </h2>
             </div>
             <p className="max-w-xl text-sm leading-7 text-mist-gray">
-              AIを使っていることを隠さず、目的に合わせてプロンプト・色・構図・仕上げを設計します。
+              プロンプト、色、構図、仕上げをひとつの操作卓として扱い、世界観の出力精度を高めます。
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-2.5">
+          <div className="relative z-10 flex flex-wrap gap-2.5">
             {skills.map((skill) => (
               <span
                 key={skill}
-                className="rounded-full border border-synth-cyan/25 bg-white/[0.06] px-4 py-2 text-sm font-semibold text-white/[0.82]"
+                className="neon-chip text-sm"
               >
                 {skill}
               </span>

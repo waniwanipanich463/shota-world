@@ -25,15 +25,15 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="service" className="relative overflow-hidden py-20 md:py-28">
+    <section id="service" className="retro-section relative overflow-hidden py-20 md:py-28">
       <div className="section-shell">
         <div className="mb-12 max-w-3xl">
           <p className="section-kicker mb-4">SERVICE</p>
           <h2 className="section-title mb-6">
-            AI art made for <span className="text-gradient">real media.</span>
+            Design for <span className="text-gradient">neon memory.</span>
           </h2>
           <p className="text-base leading-8 text-mist-gray md:text-lg">
-            AIアートとデザインを活用し、広告・SNS・ポスター・LPなどに使えるビジュアル制作を行います。
+            ただ画像を作るのではなく、媒体の中で光る見え方、余白、タイトルの置き方まで含めて設計します。
           </p>
         </div>
 
@@ -44,9 +44,9 @@ export default function Services() {
             return (
               <article
                 key={service.title}
-                className="glass-panel rounded-lg p-6 transition-all duration-300 hover:-translate-y-1 hover:border-synth-pink/[0.45] hover:shadow-[0_26px_80px_rgba(235,164,222,0.12)]"
+                className="chrome-card reveal-on-scroll p-6 transition-all duration-300 hover:-translate-y-1 hover:border-synth-pink/[0.45] hover:shadow-[0_26px_80px_rgba(235,164,222,0.14)]"
               >
-                <div className="mb-7 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-synth-cyan/25 bg-synth-cyan/[0.08] text-synth-cyan">
+                <div className="service-icon mb-7">
                   <Icon size={23} aria-hidden="true" />
                 </div>
                 <h3 className="mb-4 font-display text-xl font-bold leading-tight text-white">

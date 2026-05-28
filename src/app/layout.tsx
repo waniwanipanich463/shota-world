@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
+import SiteIntro from "@/components/SiteIntro";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.shota-world.jp"),
@@ -57,6 +58,7 @@ export default function RootLayout({
       <body
         className="bg-background text-foreground antialiased overflow-x-hidden"
       >
+        <SiteIntro />
         <Header />
         {children}
       </body>
