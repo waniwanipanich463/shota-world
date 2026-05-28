@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import { works, type Work } from "@/data/works";
 
@@ -31,21 +32,30 @@ export default function Works() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-2 md:justify-end">
-            {filters.map((filter) => (
-              <button
-                key={filter}
-                type="button"
-                onClick={() => setActiveFilter(filter)}
-                className={`filter-button focus-ring border ${
-                  activeFilter === filter
-                    ? "filter-button-active"
-                    : "filter-button-idle"
-                }`}
-              >
-                {filter}
-              </button>
-            ))}
+          <div className="grid gap-3 md:justify-items-end">
+            <Link
+              href="/works"
+              className="cta-link focus-ring border border-synth-cyan/45 bg-white/[0.055] text-white hover:border-retro-amber hover:bg-synth-cyan/[0.12]"
+            >
+              Works Collection
+            </Link>
+
+            <div className="flex flex-wrap gap-2 md:justify-end">
+              {filters.map((filter) => (
+                <button
+                  key={filter}
+                  type="button"
+                  onClick={() => setActiveFilter(filter)}
+                  className={`filter-button focus-ring border ${
+                    activeFilter === filter
+                      ? "filter-button-active"
+                      : "filter-button-idle"
+                  }`}
+                >
+                  {filter}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 

@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="section-shell flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div>
           <Link
-            href="#"
+            href="/"
             className="focus-ring inline-flex items-center gap-3 font-display text-xl font-bold text-white transition-colors hover:text-synth-cyan"
           >
             <span className="grid h-9 w-9 place-items-center rounded-md border border-synth-cyan/30 bg-synth-cyan/[0.08] text-sm text-synth-cyan">

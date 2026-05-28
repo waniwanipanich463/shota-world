@@ -5,11 +5,12 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const navItems = [
-  { name: "Works", href: "#works" },
-  { name: "About", href: "#about" },
-  { name: "Service", href: "#service" },
-  { name: "Process", href: "#process" },
-  { name: "Contact", href: "#contact" },
+  { name: "Works", href: "/#works" },
+  { name: "Gallery", href: "/works" },
+  { name: "About", href: "/#about" },
+  { name: "Service", href: "/#service" },
+  { name: "Process", href: "/#process" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Header() {
@@ -33,7 +34,7 @@ export default function Header() {
     >
       <div className="section-shell flex items-center justify-between gap-4">
         <Link
-          href="#"
+          href="/"
           aria-label="SHOTA WORLD home"
           className="focus-ring group inline-flex items-center gap-3 font-display text-base font-bold text-white transition-colors hover:text-synth-cyan sm:text-lg"
           onClick={() => setMenuOpen(false)}
@@ -57,7 +58,7 @@ export default function Header() {
         </nav>
 
         <Link
-          href="#contact"
+          href="/#contact"
           className="focus-ring hidden rounded-md border border-synth-pink/35 bg-synth-pink/[0.08] px-5 py-2 text-sm font-bold text-white transition-all hover:border-retro-amber hover:bg-synth-pink/[0.14] hover:text-retro-amber hover:shadow-[0_0_24px_rgba(255,102,217,0.24)] md:inline-flex"
         >
           Talk to me
