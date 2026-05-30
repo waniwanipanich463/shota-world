@@ -46,10 +46,10 @@ export default function Hero() {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="#works"
+              href="/works"
               className="cta-link focus-ring border border-synth-cyan/60 bg-synth-cyan/[0.14] text-white shadow-[0_0_32px_rgba(155,231,245,0.22)] backdrop-blur-xl hover:border-retro-amber hover:bg-synth-cyan/[0.2] hover:shadow-[0_0_34px_rgba(0,229,255,0.34)]"
             >
-              Worksを見る
+              作品集を見る
             </Link>
             <Link
               href="#contact"

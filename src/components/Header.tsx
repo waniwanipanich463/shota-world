@@ -5,12 +5,11 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const navItems = [
-  { name: "Works", href: "/#works" },
-  { name: "Gallery", href: "/works" },
-  { name: "About", href: "/#about" },
-  { name: "Service", href: "/#service" },
-  { name: "Process", href: "/#process" },
-  { name: "Contact", href: "/#contact" },
+  { name: "作品集", href: "/works" },
+  { name: "プロフィール", href: "/#about" },
+  { name: "サービス", href: "/#service" },
+  { name: "制作の流れ", href: "/#process" },
+  { name: "相談", href: "/#contact" },
 ];
 
 export default function Header() {
@@ -61,7 +60,7 @@ export default function Header() {
           href="/#contact"
           className="focus-ring hidden rounded-md border border-synth-pink/35 bg-synth-pink/[0.08] px-5 py-2 text-sm font-bold text-white transition-all hover:border-retro-amber hover:bg-synth-pink/[0.14] hover:text-retro-amber hover:shadow-[0_0_24px_rgba(255,102,217,0.24)] md:inline-flex"
         >
-          Talk to me
+          相談する
         </Link>
 
         <button

@@ -17,7 +17,7 @@ export default function Vision() {
       <div className="section-shell relative z-10">
         <div className="retro-panel reveal-on-scroll mx-auto max-w-4xl p-6 text-center md:p-12">
           <div className="relative z-10">
-            <p className="section-kicker mb-5">VISION</p>
+            <p className="section-kicker mb-5">目指していること</p>
             <h2 className="mb-10 font-display text-4xl font-bold leading-tight text-white md:text-6xl">
               まだ見たことのない世界観を、<span className="text-gradient">伝わるデザイン</span>へ。
             </h2>

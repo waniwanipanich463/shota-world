@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const scenes = [
@@ -20,11 +18,6 @@ const scenes = [
     title: "丸い表示体が、世界を切り取る。",
     body: "均一なカード感を抑え、未来のディスプレイのような丸いフレームでビジュアルを浮かび上がらせます。",
     image: "/images/gallery/room-night.png",
-  },
-  {
-    title: "作品は、専用アーカイブへ。",
-    body: "ホームでは世界観の流れを優先し、作品は別ページでゆっくり見られる構成に整理します。",
-    image: "/images/gallery/open-sea.png",
   },
 ];
 
@@ -111,12 +104,6 @@ export default function ScrollStory() {
             <p className="scroll-story-count">{String(activeIndex + 1).padStart(2, "0")}</p>
             <h2>{activeScene.title}</h2>
             <p>{activeScene.body}</p>
-            {activeIndex === scenes.length - 1 ? (
-              <Link href="/works" className="scroll-story-link focus-ring">
-                作品集を見る
-                <ArrowRight size={18} aria-hidden="true" />
-              </Link>
-            ) : null}
           </div>
 
           <div className="scroll-story-display" aria-hidden="true">

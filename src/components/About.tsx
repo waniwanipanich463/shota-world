@@ -21,7 +21,7 @@ export default function About() {
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,21,0.02)_0%,rgba(5,7,21,0.18)_48%,rgba(5,7,21,0.78)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 p-5 md:p-7">
             <div className="mb-4 h-px bg-gradient-to-r from-synth-cyan/70 via-synth-pink/45 to-transparent" />
-            <p className="section-kicker mb-2">ARTIST PROFILE</p>
+            <p className="section-kicker mb-2">プロフィール</p>
             <h3 className="font-display text-3xl font-bold text-white md:text-5xl">
               SHOTA NIWANO
             </h3>

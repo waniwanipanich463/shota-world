@@ -797,7 +797,7 @@ img {
   --story-float-x: 0px;
   --story-float-y: 0px;
   position: relative;
-  height: 430svh;
+  height: 330svh;
   isolation: isolate;
   background:
     linear-gradient(180deg, rgba(5, 7, 21, 0.96), rgba(9, 5, 27, 0.94) 48%, rgba(5, 7, 21, 0.98)),
@@ -943,28 +943,6 @@ img {
   color: rgba(255, 255, 255, 0.78);
   font-size: clamp(0.98rem, 1.4vw, 1.08rem);
   line-height: 2;
-}
-
-.scroll-story-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  min-height: 3rem;
-  margin-top: 1.5rem;
-  border: 1px solid rgba(255, 211, 122, 0.6);
-  border-radius: 999px;
-  background: rgba(255, 211, 122, 0.12);
-  padding-inline: 1rem;
-  color: #ffffff;
-  font-weight: 700;
-  box-shadow: 0 0 24px rgba(255, 102, 217, 0.18);
-  transition: transform 0.24s ease, background 0.24s ease, border-color 0.24s ease;
-}
-
-.scroll-story-link:hover {
-  transform: translateY(-2px);
-  border-color: rgba(155, 231, 245, 0.72);
-  background: rgba(0, 229, 255, 0.14);
 }
 
 .scroll-story-display {
@@ -1823,7 +1801,7 @@ img {
 
 @media (max-width: 900px) {
   .scroll-story {
-    height: 390svh;
+    height: 315svh;
   }
 
   .scroll-story-sticky {

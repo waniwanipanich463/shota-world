@@ -19,9 +19,8 @@ export default function Contact() {
       <div className="section-shell relative z-10">
         <div className="contact-console reveal-on-scroll mx-auto max-w-5xl p-6 text-center md:p-12">
           <div className="relative z-10">
-            <p className="section-kicker mb-5">CONTACT</p>
             <h2 className="mb-8 font-display text-5xl font-bold leading-none text-white md:text-7xl">
-              OPEN THE CHANNEL.
+              世界観の相談をする。
             </h2>
 
             <div className="mx-auto max-w-3xl space-y-5 text-base leading-8 text-mist-gray md:text-lg">
