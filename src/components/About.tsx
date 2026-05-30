@@ -33,8 +33,10 @@ export default function About() {
 
         <div className="retro-panel reveal-on-scroll p-6 md:p-9 lg:p-10">
           <div className="relative z-10">
-            <h2 className="mb-7 font-display text-4xl font-bold leading-tight text-white md:text-6xl">
-              世界観を描き、<span className="text-gradient">印象に残る形</span>へ仕上げる。
+            <h2 className="natural-title mb-7 font-display text-4xl font-bold leading-tight text-white md:text-6xl">
+              <span className="title-line">世界観を描き、</span>
+              <span className="title-line text-gradient">印象に残る形へ</span>
+              <span className="title-line">仕上げる。</span>
             </h2>
 
             <div className="mb-8 border-l-2 border-retro-amber/70 pl-5 text-lg font-semibold leading-8 text-white md:text-xl">

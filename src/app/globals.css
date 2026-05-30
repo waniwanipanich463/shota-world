@@ -439,6 +439,17 @@ img {
   text-shadow: 0 14px 36px rgba(5, 7, 21, 0.72);
 }
 
+.natural-title {
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+.title-line {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .text-gradient {
   background: linear-gradient(90deg, #9be7f5, #ffd37a 36%, #ff66d9 68%, #c875ea);
   -webkit-background-clip: text;
@@ -753,6 +764,8 @@ img {
 .retro-title {
   font-family: var(--font-display);
   text-transform: uppercase;
+  text-wrap: balance;
+  word-break: keep-all;
   text-shadow:
     0 0 18px rgba(255, 102, 217, 0.26),
     0 8px 28px rgba(5, 7, 21, 0.72);
@@ -933,6 +946,8 @@ img {
   font-size: clamp(2rem, 5vw, 4.9rem);
   font-weight: 700;
   line-height: 1.02;
+  text-wrap: balance;
+  word-break: keep-all;
   text-shadow:
     0 0 22px rgba(0, 229, 255, 0.24),
     0 16px 42px rgba(5, 7, 21, 0.82);

@@ -28,8 +28,9 @@ export default function Services() {
     <section id="service" className="retro-section relative overflow-hidden py-20 md:py-28">
       <div className="section-shell">
         <div className="mb-12 max-w-3xl">
-          <h2 className="section-title mb-6">
-            光を、<span className="text-gradient">記憶に残る形</span>へ。
+          <h2 className="section-title natural-title mb-6">
+            <span className="title-line">光を、</span>
+            <span className="title-line text-gradient">記憶に残る形へ。</span>
           </h2>
           <p className="text-base leading-8 text-mist-gray md:text-lg">
             ただ画像を作るのではなく、媒体の中で光る見え方、余白、タイトルの置き方まで含めて設計します。

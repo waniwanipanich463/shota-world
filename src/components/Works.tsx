@@ -9,8 +9,9 @@ export default function Works() {
 
       <div className="section-shell relative z-10 grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
         <div className="reveal-on-scroll max-w-3xl">
-          <h2 className="section-title mb-6">
-            作品集は、<span className="text-gradient">別ページでゆっくり。</span>
+          <h2 className="section-title natural-title mb-6">
+            <span className="title-line">作品集は、</span>
+            <span className="title-line text-gradient">別ページでゆっくり。</span>
           </h2>
           <p className="text-base leading-8 text-mist-gray md:text-lg">
             ホームでは世界観の流れを優先し、作品は専用アーカイブにまとめています。大きなビューアで、作品とタイトルだけをすっきり辿れます。

@@ -36,8 +36,9 @@ export default function Hero() {
             />
           </div>
 
-          <h1 className="retro-title mb-4 max-w-4xl text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
-            AIで描く。デザインで伝える。
+          <h1 className="retro-title natural-title mb-4 max-w-4xl text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
+            <span className="title-line">AIで描く。</span>
+            <span className="title-line">デザインで伝える。</span>
           </h1>
 
           <p className="max-w-2xl text-base leading-8 text-white/[0.86] drop-shadow-[0_8px_24px_rgba(5,7,21,0.72)] md:text-lg">

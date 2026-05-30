@@ -5,17 +5,17 @@ import { useEffect, useRef, useState } from "react";
 
 const scenes = [
   {
-    title: "都市の光が、画面を起こす。",
+    titleLines: ["都市の光が、", "画面を起こす。"],
     body: "映像の奥からネオンが立ち上がり、スクロールに合わせてSHOTA WORLDの空気がゆっくり開いていきます。",
     image: "/images/gallery/highrise-01.png",
   },
   {
-    title: "色が重なり、視線が止まる。",
+    titleLines: ["色が重なり、", "視線が止まる。"],
     body: "ただ派手に動かすのではなく、霧、反射、余白のリズムで、見る人の目を次の場面へ誘導します。",
     image: "/images/gallery/tokyo-tower.png",
   },
   {
-    title: "丸い表示体が、世界を切り取る。",
+    titleLines: ["丸い表示体が、", "世界を切り取る。"],
     body: "均一なカード感を抑え、未来のディスプレイのような丸いフレームでビジュアルを浮かび上がらせます。",
     image: "/images/gallery/room-night.png",
   },
@@ -80,6 +80,7 @@ export default function ScrollStory() {
   };
 
   const activeScene = scenes[activeIndex];
+  const activeTitle = activeScene.titleLines.join("");
 
   return (
     <section ref={sectionRef} className="scroll-story" aria-label="スクロールで変化するSHOTA WORLDの世界観">
@@ -100,9 +101,15 @@ export default function ScrollStory() {
         <div className="scroll-story-grid" aria-hidden="true" />
 
         <div className="section-shell scroll-story-layout">
-          <div className="scroll-story-copy" key={activeScene.title}>
+          <div className="scroll-story-copy" key={activeTitle}>
             <p className="scroll-story-count">{String(activeIndex + 1).padStart(2, "0")}</p>
-            <h2>{activeScene.title}</h2>
+            <h2 className="natural-title">
+              {activeScene.titleLines.map((line) => (
+                <span key={line} className="title-line">
+                  {line}
+                </span>
+              ))}
+            </h2>
             <p>{activeScene.body}</p>
           </div>
 
@@ -111,7 +118,7 @@ export default function ScrollStory() {
             <div className="scroll-story-main-screen">
               {scenes.map((scene, index) => (
                 <Image
-                  key={scene.title}
+                  key={scene.titleLines.join("")}
                   src={scene.image}
                   alt=""
                   fill
@@ -133,7 +140,7 @@ export default function ScrollStory() {
           <div className="scroll-story-rail" aria-label="場面を移動">
             {scenes.map((scene, index) => (
               <button
-                key={scene.title}
+                key={scene.titleLines.join("")}
                 type="button"
                 className={`scroll-story-dot focus-ring ${index === activeIndex ? "scroll-story-dot-active" : ""}`}
                 aria-label={`${index + 1}つ目の場面へ`}
