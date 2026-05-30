@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function WorksPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-background text-white selection:bg-synth-cyan selection:text-background">
+    <main className="relative min-h-screen bg-background text-white selection:bg-synth-cyan selection:text-background">
       <WorksCollection />
       <Footer />
     </main>

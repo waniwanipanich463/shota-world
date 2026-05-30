@@ -1,69 +1,55 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { works, type Work } from "@/data/works";
+import { ArrowRight, Images } from "lucide-react";
 
 export default function Works() {
   return (
-    <section id="works" className="retro-section relative overflow-hidden pb-20 pt-0 md:pb-28 md:pt-0">
+    <section id="works" className="works-gateway relative overflow-hidden py-20 md:py-28">
       <div className="mist-band top-0" />
 
-      <div className="section-shell relative z-10">
-        <div className="mb-10 grid gap-7 md:mb-14 md:grid-cols-[1fr_auto] md:items-end">
-          <div className="max-w-3xl">
-            <h2 className="section-title mb-6">
-              Signals from <span className="text-gradient">another city.</span>
-            </h2>
-            <p className="text-base leading-8 text-mist-gray md:text-lg">
-              AIで生成した一枚をそのまま並べるのではなく、色・構図・用途まで編集したビジュアルログとして見せています。
-            </p>
-          </div>
+      <div className="section-shell relative z-10 grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+        <div className="reveal-on-scroll max-w-3xl">
+          <h2 className="section-title mb-6">
+            作品は、ひとつの<span className="text-gradient">アーカイブへ。</span>
+          </h2>
+          <p className="text-base leading-8 text-mist-gray md:text-lg">
+            ホームでは世界観の流れを切らず、作品は専用ページで大きく見られるように整理しました。気になるビジュアルだけを、余白のあるビューアでたどれます。
+          </p>
 
-          <div className="grid gap-3 md:justify-items-end">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/works"
-              className="cta-link focus-ring border border-synth-cyan/45 bg-white/[0.055] text-white hover:border-retro-amber hover:bg-synth-cyan/[0.12]"
+              className="cta-link focus-ring border border-synth-cyan/60 bg-synth-cyan/[0.14] text-white shadow-[0_0_32px_rgba(155,231,245,0.18)] hover:border-retro-amber hover:bg-synth-cyan/[0.2]"
             >
-              Works Collection
+              作品集を見る
+              <ArrowRight className="ml-2" size={18} aria-hidden="true" />
             </Link>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {works.map((work, index) => (
-            <WorkCard key={work.id} work={work} index={index + 1} />
-          ))}
-        </div>
+        <Link href="/works" className="works-gateway-display reveal-on-scroll focus-ring" aria-label="作品集ページへ移動">
+          <div className="works-gateway-ring" aria-hidden="true" />
+          <div className="works-gateway-screen">
+            <Image
+              src="/images/gallery/tokyo-tower.png"
+              alt=""
+              fill
+              sizes="(max-width: 1024px) 92vw, 48vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="works-gateway-card works-gateway-card-a" aria-hidden="true">
+            <Image src="/images/gallery/highrise-02.png" alt="" fill sizes="180px" className="object-cover" />
+          </div>
+          <div className="works-gateway-card works-gateway-card-b" aria-hidden="true">
+            <Image src="/images/gallery/room-evening.png" alt="" fill sizes="180px" className="object-cover" />
+          </div>
+          <div className="works-gateway-badge" aria-hidden="true">
+            <Images size={18} />
+            <span>作品集</span>
+          </div>
+        </Link>
       </div>
     </section>
-  );
-}
-
-function WorkCard({ work, index }: { work: Work; index: number }) {
-  return (
-    <article className="work-card reveal-on-scroll group transition-all duration-300 hover:-translate-y-1 hover:border-synth-cyan/[0.45] hover:shadow-[0_30px_95px_rgba(0,229,255,0.16)]">
-      <div className="work-card-media">
-        <Image
-          src={work.image}
-          alt={`${work.title} visual`}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover saturate-[1.08] transition-transform duration-700 group-hover:scale-[1.055]"
-        />
-        <div className="absolute left-4 top-4 z-10 retro-index text-sm font-bold">
-          {String(index).padStart(2, "0")}
-        </div>
-        <div className="absolute bottom-4 left-4 right-4 z-10">
-          <h3 className="font-display text-2xl font-bold leading-tight text-white">{work.title}</h3>
-        </div>
-      </div>
-
-      <div className="space-y-4 p-5">
-        <p className="text-sm leading-7 text-white/[0.82]">{work.useCase}</p>
-        <p className="text-sm leading-7 text-white/[0.82]">{work.theme}</p>
-        <p className="text-sm leading-7 text-mist-gray">{work.description}</p>
-      </div>
-    </article>
   );
 }

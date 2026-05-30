@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import ScrollStory from "@/components/ScrollStory";
 import Works from "@/components/Works";
 import About from "@/components/About";
 import Services from "@/components/Services";
@@ -9,8 +10,9 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-background text-white selection:bg-synth-cyan selection:text-background">
+    <main className="relative min-h-screen bg-background text-white selection:bg-synth-cyan selection:text-background">
       <Hero />
+      <ScrollStory />
       <Works />
       <About />
       <Services />
