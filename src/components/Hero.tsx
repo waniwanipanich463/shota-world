@@ -4,14 +4,18 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="hero-stage relative flex min-h-[84svh] items-center overflow-hidden pt-16 text-white md:min-h-[88vh] md:pt-20">
-      <Image
-        src="/images/hero/synthwave-oasis-hero.jpg"
-        alt="霧に包まれた高層都市とパームツリー、水面反射のあるSHOTA WORLDの背景"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover saturate-[1.18] contrast-[1.08]"
-      />
+      <video
+        className="hero-video"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/images/hero/synthwave-oasis-hero.jpg"
+        aria-label="SHOTA WORLDの未来都市背景映像"
+      >
+        <source src="/videos/tokai-city.mp4" type="video/mp4" />
+      </video>
       <div className="hero-scan" />
       <div className="hero-grid-floor" />
       <div className="mist-band bottom-[-18%] z-[3]" />
