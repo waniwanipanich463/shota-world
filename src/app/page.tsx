@@ -2,9 +2,7 @@ import Hero from "@/components/Hero";
 import Works from "@/components/Works";
 import About from "@/components/About";
 import Services from "@/components/Services";
-import WorkCategories from "@/components/WorkCategories";
 import Process from "@/components/Process";
-import Tools from "@/components/Tools";
 import Vision from "@/components/Vision";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -16,9 +14,7 @@ export default function Home() {
       <Works />
       <About />
       <Services />
-      <WorkCategories />
       <Process />
-      <Tools />
       <Vision />
       <Contact />
       <Footer />

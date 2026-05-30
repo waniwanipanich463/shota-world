@@ -14,7 +14,7 @@ export default function Hero() {
         poster="/images/hero/synthwave-oasis-hero.jpg"
         aria-label="SHOTA WORLDの未来都市背景映像"
       >
-        <source src="/videos/tokai-city.mp4" type="video/mp4" />
+        <source src="/videos/cyber-city.mp4" type="video/mp4" />
       </video>
       <div className="hero-scan" />
       <div className="hero-grid-floor" />
@@ -22,13 +22,7 @@ export default function Hero() {
 
       <div className="section-shell relative z-10 grid gap-8 pb-2 md:pb-4">
         <div className="reveal-on-scroll max-w-5xl animate-fade-up">
-          <div className="signal-row mb-4">
-            <span className="signal-chip">VISUAL TRANSMISSION</span>
-            <span className="signal-chip">TOKYO / RETRO FUTURE</span>
-            <span className="signal-chip">SIGNAL 88.7</span>
-          </div>
-
-          <div className="hero-logo-wrap mb-5">
+          <div className="hero-logo-wrap mb-7">
             <span className="logo-spark logo-spark-a" aria-hidden="true" />
             <span className="logo-spark logo-spark-b" aria-hidden="true" />
             <span className="logo-spark logo-spark-c" aria-hidden="true" />
@@ -42,8 +36,6 @@ export default function Hero() {
             />
           </div>
 
-          <p className="section-kicker mb-4 text-white/[0.86]">AI ART × VISUAL DESIGN</p>
-
           <h1 className="retro-title mb-4 max-w-4xl text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
             AIで描く。デザインで伝える。
           </h1>
@@ -52,13 +44,7 @@ export default function Hero() {
             霧、ネオン、都市の余白。AIで生まれたイメージを、広告・ポスター・SNSで使える“記憶に残るビジュアル信号”へ編集します。
           </p>
 
-          <div className="mt-5 grid max-w-2xl grid-cols-1 gap-2 sm:grid-cols-3">
-            <div className="neon-chip">POSTER / KEY VISUAL</div>
-            <div className="neon-chip">SNS CREATIVE</div>
-            <div className="neon-chip">WORLD DESIGN</div>
-          </div>
-
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="#works"
               className="cta-link focus-ring border border-synth-cyan/60 bg-synth-cyan/[0.14] text-white shadow-[0_0_32px_rgba(155,231,245,0.22)] backdrop-blur-xl hover:border-retro-amber hover:bg-synth-cyan/[0.2] hover:shadow-[0_0_34px_rgba(0,229,255,0.34)]"

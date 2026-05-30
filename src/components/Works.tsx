@@ -2,20 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
 import { works, type Work } from "@/data/works";
 
-const filters = ["ALL", "AI ART", "POSTER", "SNS", "CONCEPT"] as const;
-type Filter = (typeof filters)[number];
-
 export default function Works() {
-  const [activeFilter, setActiveFilter] = useState<Filter>("ALL");
-
-  const filteredWorks = useMemo(() => {
-    if (activeFilter === "ALL") return works;
-    return works.filter((work) => work.filter === activeFilter);
-  }, [activeFilter]);
-
   return (
     <section id="works" className="retro-section relative overflow-hidden pb-20 pt-0 md:pb-28 md:pt-0">
       <div className="mist-band top-0" />
@@ -23,7 +12,6 @@ export default function Works() {
       <div className="section-shell relative z-10">
         <div className="mb-10 grid gap-7 md:mb-14 md:grid-cols-[1fr_auto] md:items-end">
           <div className="max-w-3xl">
-            <p className="section-kicker mb-4">SELECTED AI WORKS</p>
             <h2 className="section-title mb-6">
               Signals from <span className="text-gradient">another city.</span>
             </h2>
@@ -39,28 +27,11 @@ export default function Works() {
             >
               Works Collection
             </Link>
-
-            <div className="flex flex-wrap gap-2 md:justify-end">
-              {filters.map((filter) => (
-                <button
-                  key={filter}
-                  type="button"
-                  onClick={() => setActiveFilter(filter)}
-                  className={`filter-button focus-ring border ${
-                    activeFilter === filter
-                      ? "filter-button-active"
-                      : "filter-button-idle"
-                  }`}
-                >
-                  {filter}
-                </button>
-              ))}
-            </div>
           </div>
         </div>
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredWorks.map((work, index) => (
+          {works.map((work, index) => (
             <WorkCard key={work.id} work={work} index={index + 1} />
           ))}
         </div>
@@ -84,32 +55,14 @@ function WorkCard({ work, index }: { work: Work; index: number }) {
           {String(index).padStart(2, "0")}
         </div>
         <div className="absolute bottom-4 left-4 right-4 z-10">
-          <p className="mb-2 text-xs font-bold text-synth-cyan">{work.category}</p>
           <h3 className="font-display text-2xl font-bold leading-tight text-white">{work.title}</h3>
         </div>
       </div>
 
       <div className="space-y-4 p-5">
-        <div>
-          <p className="mb-1 text-xs font-bold text-synth-pink">SIGNAL USE</p>
-          <p className="text-sm leading-6 text-white/[0.82]">{work.useCase}</p>
-        </div>
-        <div>
-          <p className="mb-1 text-xs font-bold text-retro-amber">MOOD NOTE</p>
-          <p className="text-sm leading-6 text-white/[0.82]">{work.theme}</p>
-        </div>
+        <p className="text-sm leading-7 text-white/[0.82]">{work.useCase}</p>
+        <p className="text-sm leading-7 text-white/[0.82]">{work.theme}</p>
         <p className="text-sm leading-7 text-mist-gray">{work.description}</p>
-        <div className="soft-divider" />
-        <div className="flex flex-wrap gap-2">
-          {work.tools.map((tool) => (
-            <span
-              key={tool}
-              className="neon-chip"
-            >
-              {tool}
-            </span>
-          ))}
-        </div>
       </div>
     </article>
   );

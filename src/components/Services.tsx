@@ -2,22 +2,22 @@ import { Image as ImageIcon, LayoutTemplate, MonitorSmartphone, Sparkles } from 
 
 const services = [
   {
-    title: "AI ART / Concept Visual",
+    title: "世界観の設計",
     description: "世界観やイメージをもとに、印象的なAIアートを制作します。抽象的なアイデアや頭の中のイメージを、視覚的なコンセプトに変換します。",
     icon: Sparkles,
   },
   {
-    title: "Poster / Key Visual",
+    title: "メインビジュアル制作",
     description: "広告、イベント、作品告知、サービス紹介などに使えるポスターやキービジュアルを制作します。",
     icon: ImageIcon,
   },
   {
-    title: "SNS / Ad Creative",
+    title: "SNS・広告ビジュアル",
     description: "Instagram、X、広告バナー、LP、サムネイルなどに使えるビジュアルを制作します。目を引き、伝わりやすい表現を意識します。",
     icon: MonitorSmartphone,
   },
   {
-    title: "Visual Direction",
+    title: "見せ方の整理",
     description: "「どんな見せ方がいいかわからない」という段階から、世界観・構図・色味・見せ方を整理し、ビジュアルの方向性を提案します。",
     icon: LayoutTemplate,
   },
@@ -28,9 +28,8 @@ export default function Services() {
     <section id="service" className="retro-section relative overflow-hidden py-20 md:py-28">
       <div className="section-shell">
         <div className="mb-12 max-w-3xl">
-          <p className="section-kicker mb-4">SERVICE</p>
           <h2 className="section-title mb-6">
-            Design for <span className="text-gradient">neon memory.</span>
+            光を、<span className="text-gradient">記憶に残る形</span>へ。
           </h2>
           <p className="text-base leading-8 text-mist-gray md:text-lg">
             ただ画像を作るのではなく、媒体の中で光る見え方、余白、タイトルの置き方まで含めて設計します。

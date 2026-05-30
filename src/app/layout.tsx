@@ -6,7 +6,7 @@ import CursorParticles from "@/components/CursorParticles";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.shota-world.jp"),
-  title: "SHOTA WORLD｜AI ART × VISUAL DESIGN",
+  title: "SHOTA WORLD｜RETRO FUTURE VISUAL STUDIO",
   description: "AIアートとビジュアルデザインを組み合わせ、広告・ポスター・SNSクリエイティブに使える印象的な世界観を制作するポートフォリオサイトです。",
   keywords: ["SHOTA WORLD", "Shota Niwano", "AI Art", "Visual Design", "Portfolio", "Graphic Design", "AI Creator"],
   authors: [{ name: "Shota Niwano" }],

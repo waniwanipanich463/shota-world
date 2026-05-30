@@ -1,27 +1,3 @@
-const tags = [
-  "AI ART",
-  "VISUAL DESIGN",
-  "POSTER",
-  "SNS CREATIVE",
-  "KEY VISUAL",
-  "CONCEPT VISUAL",
-];
-
-const profilePoints = [
-  {
-    label: "STYLE",
-    value: "Misty neon / cinematic city / quiet future",
-  },
-  {
-    label: "ROLE",
-    value: "AI Art Direction / Visual Design / Retouch",
-  },
-  {
-    label: "FOR",
-    value: "Advertising / Poster / SNS / LP Visual",
-  },
-];
-
 export default function About() {
   return (
     <section id="about" className="retro-section relative overflow-hidden py-20 md:py-32">
@@ -57,10 +33,9 @@ export default function About() {
 
         <div className="retro-panel reveal-on-scroll p-6 md:p-9 lg:p-10">
           <div className="relative z-10">
-            <p className="section-kicker mb-4">ABOUT THE ARTIST</p>
             <h2 className="mb-7 font-display text-4xl font-bold leading-tight text-white md:text-6xl">
               世界観を描き、<span className="text-gradient">印象に残る形</span>へ仕上げる。
-          </h2>
+            </h2>
 
             <div className="mb-8 border-l-2 border-retro-amber/70 pl-5 text-lg font-semibold leading-8 text-white md:text-xl">
               AIで画像を作るだけではなく、誰に何を届けるためのビジュアルなのかまで考えて設計します。
@@ -76,29 +51,6 @@ export default function About() {
               <p className="font-semibold text-white">
                 AIのスピードと、人の感情に届くデザインの視点。その両方を使って、まだ見たことのない世界観を、仕事に使えるビジュアルへ整えます。
               </p>
-            </div>
-
-            <div className="mt-9 grid gap-3">
-              {profilePoints.map((point) => (
-                <div
-                  key={point.label}
-                  className="grid gap-2 border-t border-white/10 pt-4 sm:grid-cols-[96px_1fr] sm:items-baseline"
-                >
-                  <p className="font-display text-xs font-bold text-synth-cyan">{point.label}</p>
-                  <p className="text-sm leading-6 text-white/[0.82]">{point.value}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-2">
-              {tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="neon-chip"
-                >
-                  {tag}
-                </span>
-              ))}
             </div>
           </div>
         </div>

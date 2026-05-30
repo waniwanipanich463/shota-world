@@ -15,7 +15,7 @@ export default function Footer() {
             </span>
             <span>SHOTA WORLD</span>
           </Link>
-          <p className="mt-2 text-sm text-mist-gray">AI ART × VISUAL DESIGN / RETRO FUTURE SIGNAL</p>
+          <p className="mt-2 text-sm text-mist-gray">RETRO FUTURE VISUAL STUDIO</p>
         </div>
 
         <div className="flex items-center gap-4">
