@@ -47,7 +47,6 @@ export default function SiteIntro() {
     <div className={`site-intro ${phase === "exit" ? "site-intro-exit" : ""}`} role="status" aria-live="polite">
       <div className="site-intro-grid" aria-hidden="true" />
       <div className="site-intro-panel">
-        <p className="site-intro-label">BOOTING VISUAL SIGNAL</p>
         <Image
           src="/images/logo/shota-world-logo.png"
           alt="SHOTA WORLD"

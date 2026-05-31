@@ -1,22 +1,19 @@
+import Image from "next/image";
+
 export default function About() {
   return (
     <section id="about" className="retro-section relative overflow-hidden py-20 md:py-32">
       <div className="mist-band top-[10%]" />
       <div className="section-shell relative z-10 grid items-start gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-10">
         <div className="profile-display chrome-card reveal-on-scroll relative overflow-hidden shadow-[0_30px_90px_rgba(5,7,21,0.38)]">
-          <div className="profile-video-wrap relative min-h-[520px] md:min-h-[620px] lg:min-h-[680px]">
-            <video
-              className="profile-video"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              poster="/images/profile/shota-artist-profile.jpg"
-              aria-label="SHOTA WORLDの世界観を表す都市映像"
-            >
-              <source src="/videos/tokai-city.mp4" type="video/mp4" />
-            </video>
+          <div className="profile-image-wrap relative min-h-[520px] md:min-h-[620px] lg:min-h-[680px]">
+            <Image
+              src="/images/profile/shota-artist-profile.jpg"
+              alt="SHOTA WORLDの世界観を表すプロフィールビジュアル"
+              fill
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="profile-image"
+            />
           </div>
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,21,0.02)_0%,rgba(5,7,21,0.18)_48%,rgba(5,7,21,0.78)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 p-5 md:p-7">

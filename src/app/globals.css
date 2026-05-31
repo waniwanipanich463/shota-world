@@ -851,7 +851,7 @@ img {
   mix-blend-mode: screen;
 }
 
-.scroll-story-video {
+.scroll-story-backdrop {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -1393,21 +1393,21 @@ img {
   padding: 0.72rem;
 }
 
-.profile-video-wrap {
+.profile-image-wrap {
   overflow: hidden;
   border: 1px solid rgba(155, 231, 245, 0.28);
   border-radius: 2rem;
   background: #090b22;
 }
 
-.profile-video-wrap::before,
-.profile-video-wrap::after {
+.profile-image-wrap::before,
+.profile-image-wrap::after {
   content: "";
   position: absolute;
   pointer-events: none;
 }
 
-.profile-video-wrap::before {
+.profile-image-wrap::before {
   inset: 1rem;
   z-index: 2;
   border: 1px solid rgba(255, 211, 122, 0.34);
@@ -1417,7 +1417,7 @@ img {
     inset 0 0 38px rgba(0, 229, 255, 0.08);
 }
 
-.profile-video-wrap::after {
+.profile-image-wrap::after {
   inset: -36%;
   z-index: 1;
   border-radius: 999px;
@@ -1427,7 +1427,7 @@ img {
   animation: display-ring-turn 16s linear infinite;
 }
 
-.profile-video {
+.profile-image {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -1555,6 +1555,8 @@ img {
 
 .collection-feature {
   position: relative;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
   min-height: clamp(22rem, 56vw, 45rem);
   overflow: hidden;
   border-radius: 1.18rem;
@@ -1580,9 +1582,21 @@ img {
   animation: console-scan 1.5s ease;
 }
 
+.collection-feature-media {
+  position: relative;
+  min-height: clamp(20rem, 48vw, 38rem);
+  overflow: hidden;
+  border-radius: 0.95rem;
+  margin: 0.75rem;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(0, 229, 255, 0.12), transparent 36%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+    #090b22;
+}
+
 .collection-feature img {
   filter: saturate(1.07) contrast(1.04);
-  transform: scale(1.01);
+  padding: 0.35rem;
 }
 
 .collection-feature-shade {
@@ -1591,25 +1605,22 @@ img {
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(5, 7, 21, 0.08) 0%, rgba(5, 7, 21, 0.2) 48%, rgba(5, 7, 21, 0.9) 100%),
-    linear-gradient(90deg, rgba(5, 7, 21, 0.72) 0%, transparent 46%, rgba(5, 7, 21, 0.52) 100%),
     repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.055) 0 1px, transparent 1px 7px);
+  opacity: 0.2;
 }
 
 .collection-feature-title {
-  position: absolute;
-  left: clamp(1rem, 3vw, 2rem);
-  right: 6.5rem;
-  bottom: clamp(1rem, 3vw, 2rem);
+  position: relative;
   z-index: 2;
+  padding: 0.35rem clamp(1rem, 3vw, 2rem) clamp(1rem, 2.4vw, 1.6rem);
 }
 
 .collection-feature-title p {
   color: #ffffff;
   font-family: var(--font-display);
-  font-size: clamp(2.1rem, 6vw, 5.7rem);
+  font-size: clamp(1.45rem, 4.2vw, 3.4rem);
   font-weight: 700;
-  line-height: 0.96;
+  line-height: 1.04;
   text-transform: uppercase;
   text-shadow:
     0 0 28px rgba(0, 229, 255, 0.32),
@@ -1619,7 +1630,7 @@ img {
 .collection-controls {
   position: absolute;
   right: clamp(1rem, 3vw, 2rem);
-  bottom: clamp(1rem, 3vw, 2rem);
+  top: clamp(1rem, 3vw, 2rem);
   z-index: 4;
   display: flex;
   gap: 0.55rem;
@@ -1763,7 +1774,7 @@ img {
 }
 
 .collection-card:hover img {
-  transform: scale(1.045);
+  transform: scale(1);
 }
 
 .collection-card-media {
@@ -1771,7 +1782,9 @@ img {
   aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 1.1rem;
-  background: #111633;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(0, 229, 255, 0.1), transparent 34%),
+    #111633;
   margin: 0.55rem;
 }
 
@@ -1789,17 +1802,14 @@ img {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(5, 7, 21, 0) 42%, rgba(5, 7, 21, 0.86) 100%),
     repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 8px);
+  opacity: 0.2;
 }
 
 .collection-card-title {
-  position: absolute;
-  inset-inline: 0;
-  bottom: 0;
+  position: relative;
   z-index: 2;
-  padding: 4.8rem 1rem 1rem;
-  pointer-events: none;
+  padding: 0.2rem 1rem 1.1rem;
 }
 
 .collection-card-title h2 {
@@ -1928,15 +1938,19 @@ img {
     min-height: 26rem;
   }
 
+  .collection-feature-media {
+    min-height: 22rem;
+    margin: 0.55rem;
+  }
+
   .collection-feature-title {
-    right: 1rem;
-    bottom: 4.8rem;
+    padding: 0.35rem 1rem 1rem;
   }
 
   .collection-controls {
-    right: auto;
-    left: 1rem;
-    bottom: 1rem;
+    left: auto;
+    right: 1rem;
+    top: 1rem;
   }
 
   .collection-thumb {

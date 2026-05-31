@@ -49,15 +49,17 @@ export default function WorksCollection() {
 
         <div className="collection-stage reveal-on-scroll mb-14">
           <div className="collection-feature">
-            <Image
-              src={activeWork.image}
-              alt={`${activeWork.title} visual`}
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 72vw"
-              className="object-cover"
-            />
-            <div className="collection-feature-shade" />
+            <div className="collection-feature-media">
+              <Image
+                src={activeWork.image}
+                alt={`${activeWork.title} visual`}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 72vw"
+                className="object-contain"
+              />
+              <div className="collection-feature-shade" />
+            </div>
             <div className="collection-feature-title">
               <p>{activeWork.title}</p>
             </div>
@@ -98,7 +100,7 @@ export default function WorksCollection() {
                     alt=""
                     fill
                     sizes="96px"
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </span>
                 <span className="collection-thumb-title">{work.title}</span>
@@ -119,7 +121,7 @@ export default function WorksCollection() {
                   alt={`${work.title} visual`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700"
+                  className="object-contain transition-transform duration-700"
                 />
               </div>
               <div className="collection-card-title">

@@ -85,17 +85,15 @@ export default function ScrollStory() {
   return (
     <section ref={sectionRef} className="scroll-story" aria-label="SHOTA WORLDのビジュアル制作コンセプト">
       <div className="scroll-story-sticky">
-        <video
-          className="scroll-story-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
+        <Image
+          src="/images/gallery/highrise-03.png"
+          alt=""
+          fill
+          sizes="100vw"
+          priority={false}
+          className="scroll-story-backdrop"
           aria-hidden="true"
-        >
-          <source src="/videos/cyber-city.mp4" type="video/mp4" />
-        </video>
+        />
 
         <div className="scroll-story-scan" aria-hidden="true" />
         <div className="scroll-story-grid" aria-hidden="true" />
