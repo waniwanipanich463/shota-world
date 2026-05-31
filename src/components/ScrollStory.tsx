@@ -5,18 +5,18 @@ import { useEffect, useRef, useState } from "react";
 
 const scenes = [
   {
-    titleLines: ["都市の光が、", "画面を起こす。"],
-    body: "映像の奥からネオンが立ち上がり、スクロールに合わせてSHOTA WORLDの空気がゆっくり開いていきます。",
+    titleLines: ["霧の都市を、", "記憶に残す。"],
+    body: "淡いネオン、水面の反射、静かな余白を重ね、広告やポスターの第一印象に残るビジュアルを設計します。",
     image: "/images/gallery/highrise-01.png",
   },
   {
-    titleLines: ["色が重なり、", "視線が止まる。"],
-    body: "ただ派手に動かすのではなく、霧、反射、余白のリズムで、見る人の目を次の場面へ誘導します。",
+    titleLines: ["AIの偶然を、", "デザインで整える。"],
+    body: "生成されたイメージを選び、構図、色、質感を調整し、目的に合うビジュアルへ仕上げます。",
     image: "/images/gallery/tokyo-tower.png",
   },
   {
-    titleLines: ["丸い表示体が、", "世界を切り取る。"],
-    body: "均一なカード感を抑え、未来のディスプレイのような丸いフレームでビジュアルを浮かび上がらせます。",
+    titleLines: ["一枚の絵に、", "物語を宿す。"],
+    body: "ブランドやサービスの背景にある感情を読み取り、SNS、LP、キービジュアルで使える世界観へまとめます。",
     image: "/images/gallery/room-night.png",
   },
 ];
@@ -83,7 +83,7 @@ export default function ScrollStory() {
   const activeTitle = activeScene.titleLines.join("");
 
   return (
-    <section ref={sectionRef} className="scroll-story" aria-label="スクロールで変化するSHOTA WORLDの世界観">
+    <section ref={sectionRef} className="scroll-story" aria-label="SHOTA WORLDのビジュアル制作コンセプト">
       <div className="scroll-story-sticky">
         <video
           className="scroll-story-video"
@@ -137,13 +137,13 @@ export default function ScrollStory() {
             <div className="scroll-story-pulse" />
           </div>
 
-          <div className="scroll-story-rail" aria-label="場面を移動">
+          <div className="scroll-story-rail" aria-label="コンセプトを移動">
             {scenes.map((scene, index) => (
               <button
                 key={scene.titleLines.join("")}
                 type="button"
                 className={`scroll-story-dot focus-ring ${index === activeIndex ? "scroll-story-dot-active" : ""}`}
-                aria-label={`${index + 1}つ目の場面へ`}
+                aria-label={`${index + 1}つ目のコンセプトへ`}
                 onClick={() => jumpToScene(index)}
               />
             ))}

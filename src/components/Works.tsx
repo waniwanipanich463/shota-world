@@ -10,11 +10,11 @@ export default function Works() {
       <div className="section-shell relative z-10 grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
         <div className="reveal-on-scroll max-w-3xl">
           <h2 className="section-title natural-title mb-6">
-            <span className="title-line">作品集は、</span>
-            <span className="title-line text-gradient">別ページでゆっくり。</span>
+            <span className="title-line">作品集で、</span>
+            <span className="title-line text-gradient">世界観を見る。</span>
           </h2>
           <p className="text-base leading-8 text-mist-gray md:text-lg">
-            ホームでは世界観の流れを優先し、作品は専用アーカイブにまとめています。大きなビューアで、作品とタイトルだけをすっきり辿れます。
+            霧の都市、静かな部屋、海辺の光。これまで制作してきたビジュアルを、作品とタイトルだけで見られるようにまとめています。
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
