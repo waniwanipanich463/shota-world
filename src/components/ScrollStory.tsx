@@ -5,8 +5,8 @@ import { useEffect, useRef, useState } from "react";
 
 const scenes = [
   {
-    titleLines: ["霧の都市を、", "記憶に残す。"],
-    body: "淡いネオン、水面の反射、静かな余白を重ね、広告やポスターの第一印象に残るビジュアルを設計します。",
+    titleLines: ["AIで広げる、", "表現の可能性。"],
+    body: "現実では撮れない光、空間、質感まで生成し、広告・ポスター・SNSに使える独自のビジュアル表現へ仕上げます。",
     image: "/images/gallery/highrise-01.png",
   },
   {

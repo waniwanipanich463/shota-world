@@ -59,11 +59,6 @@ export default function SiteIntro() {
         <div className="site-intro-loader" aria-hidden="true">
           <span />
         </div>
-        <div className="site-intro-meta" aria-hidden="true">
-          <span>SYNTH MODE</span>
-          <span>RETRO FUTURE</span>
-          <span>READY</span>
-        </div>
       </div>
     </div>
   );
