@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="SHOTA WORLD">
+  <rect width="512" height="512" rx="88" fill="#07070b"/>
+  <path d="M0 392 228 512H0Z" fill="#ff66d9"/>
+  <path d="M512 108 404 0h108Z" fill="#ffd37a"/>
+  <rect x="18" y="18" width="476" height="476" rx="72" fill="none" stroke="#aef6ff" stroke-width="18"/>
+  <path d="M70 116h108" stroke="#ff66d9" stroke-width="16" stroke-linecap="square"/>
+  <path d="M334 396h108" stroke="#ffd37a" stroke-width="16" stroke-linecap="square"/>
+  <text
+    x="256"
+    y="324"
+    text-anchor="middle"
+    fill="#f8f7f2"
+    font-family="Arial Black, Arial, sans-serif"
+    font-size="204"
+    font-weight="900"
+    letter-spacing="0"
+  >SW</text>
+</svg>

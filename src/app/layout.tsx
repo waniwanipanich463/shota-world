@@ -38,9 +38,12 @@ export const metadata: Metadata = {
     creator: "@Niwano_creator",
   },
   icons: {
-    icon: "/fabicon.png",
-    shortcut: "/fabicon.png",
-    apple: "/fabicon.png",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
   },
 };
 
