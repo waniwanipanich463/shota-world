@@ -2,56 +2,52 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className="retro-section relative overflow-hidden py-20 md:py-32">
-      <div className="mist-band top-[10%]" />
-      <div className="section-shell relative z-10 grid items-start gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-10">
-        <div className="profile-display chrome-card reveal-on-scroll relative overflow-hidden shadow-[0_30px_90px_rgba(5,7,21,0.38)]">
-          <div className="profile-image-wrap relative min-h-[520px] md:min-h-[620px] lg:min-h-[680px]">
-            <Image
-              src="/images/profile/shota-artist-profile.jpg"
-              alt="SHOTA WORLDの世界観を表すプロフィールビジュアル"
-              fill
-              sizes="(max-width: 1024px) 100vw, 45vw"
-              className="profile-image"
-            />
-          </div>
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,21,0.02)_0%,rgba(5,7,21,0.18)_48%,rgba(5,7,21,0.78)_100%)]" />
-          <div className="absolute inset-x-0 bottom-0 p-5 md:p-7">
-            <div className="mb-4 h-px bg-gradient-to-r from-synth-cyan/70 via-synth-pink/45 to-transparent" />
-            <p className="section-kicker mb-2">プロフィール</p>
-            <h3 className="font-display text-3xl font-bold text-white md:text-5xl">
-              SHOTA NIWANO
-            </h3>
-            <p className="mt-3 max-w-md text-sm leading-6 text-white/[0.78]">
-              都市の光、霧、余白を手がかりに、AIアートを広告やSNSで使えるビジュアルへ設計します。
-            </p>
+    <section id="about" className="studio-section studio-about">
+      <div className="section-shell studio-about-layout">
+        <div className="studio-about-portrait">
+          <Image
+            src="/images/profile/shota-artist-profile.jpg"
+            alt="デザイナー 庭野翔太"
+            fill
+            sizes="(max-width: 900px) 92vw, 42vw"
+            className="object-cover"
+          />
+          <div className="studio-about-name">
+            <span>DESIGNER</span>
+            <strong>庭野 翔太</strong>
+            <small>SHOTA NIWANO</small>
           </div>
         </div>
 
-        <div className="retro-panel reveal-on-scroll p-6 md:p-9 lg:p-10">
-          <div className="relative z-10">
-            <h2 className="natural-title mb-7 font-display text-4xl font-bold leading-tight text-white md:text-6xl">
-              <span className="title-line">世界観を描き、</span>
-              <span className="title-line text-gradient">印象に残る形へ</span>
-              <span className="title-line">仕上げる。</span>
-            </h2>
-
-            <div className="mb-8 border-l-2 border-retro-amber/70 pl-5 text-lg font-semibold leading-8 text-white md:text-xl">
-              AIで画像を作るだけではなく、誰に何を届けるためのビジュアルなのかまで考えて設計します。
-            </div>
-
-            <div className="space-y-5 text-base leading-8 text-mist-gray">
-              <p>
-                SHOTA WORLDは、AIアートとビジュアルデザインを組み合わせ、ブランドやサービスの「頭の中にあるイメージ」を、広告・ポスター・SNSで使える表現へ変換する場所です。
-              </p>
-              <p>
-                大切にしているのは、ただ綺麗な画像を作ることではなく、見る人の記憶に残ること、伝えたい価値が届くこと、広告やSNSの中で一瞬足を止めてもらうことです。
-              </p>
-              <p className="font-semibold text-white">
-                AIのスピードと、人の感情に届くデザインの視点。その両方を使って、まだ見たことのない世界観を、仕事に使えるビジュアルへ整えます。
-              </p>
-            </div>
+        <div className="studio-about-copy">
+          <p className="studio-eyebrow">ABOUT</p>
+          <h2>
+            話を聞き、整理して、
+            <span>伝わる形をつくる人。</span>
+          </h2>
+          <div className="studio-about-lead">
+            ホームページもチラシも、見た目を整えるだけでは終わりません。
+            誰に、何を、どんな順番で伝えるかを考えることからデザインは始まります。
           </div>
+          <div className="studio-about-body">
+            <p>
+              SHOTA WORLDでは、庭野翔太がご相談から制作まで担当します。
+              お話の中から事業やサービスの魅力を見つけ、文章、写真、色、レイアウトを一つの世界観に整えます。
+            </p>
+            <p>
+              「何を載せればいいかわからない」「イメージがまだ固まっていない」という段階でも、
+              一緒に考えながら形にしていきます。
+            </p>
+          </div>
+          <dl className="studio-about-facts">
+            <div><dt>NAME</dt><dd>庭野 翔太</dd></div>
+            <div><dt>ROLE</dt><dd>Web・グラフィックデザイナー</dd></div>
+            <div><dt>WORK</dt><dd>ホームページ / チラシ / ビジュアル制作</dd></div>
+          </dl>
+          <a href="mailto:contact@shota-world.jp" className="studio-text-link focus-ring">
+            庭野翔太に相談する
+            <span aria-hidden="true">↗</span>
+          </a>
         </div>
       </div>
     </section>

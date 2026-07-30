@@ -1,53 +1,38 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Images } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Works() {
   return (
-    <section id="works" className="works-gateway relative overflow-hidden py-20 md:py-28">
-      <div className="mist-band top-0" />
-
-      <div className="section-shell relative z-10 grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
-        <div className="reveal-on-scroll max-w-3xl">
-          <h2 className="section-title natural-title mb-6">
-            <span className="title-line">作品集で、</span>
-            <span className="title-line text-gradient">世界観を見る。</span>
-          </h2>
-          <p className="text-base leading-8 text-mist-gray md:text-lg">
-            霧の都市、静かな部屋、海辺の光。これまで制作してきたビジュアルを、作品とタイトルだけで見られるようにまとめています。
+    <section id="works" className="studio-section studio-works">
+      <div className="section-shell studio-works-layout">
+        <div className="studio-works-copy">
+          <p className="studio-eyebrow">SELECTED WORKS</p>
+          <h2>デザインの土台になる、<span>世界観の引き出し。</span></h2>
+          <p>
+            光、色、構図、余白。SHOTA WORLDが制作してきたビジュアル作品を、
+            専用の作品ページにまとめています。
           </p>
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="/works"
-              className="cta-link focus-ring border border-synth-cyan/60 bg-synth-cyan/[0.14] text-white shadow-[0_0_32px_rgba(155,231,245,0.18)] hover:border-retro-amber hover:bg-synth-cyan/[0.2]"
-            >
-              作品集を見る
-              <ArrowRight className="ml-2" size={18} aria-hidden="true" />
-            </Link>
-          </div>
+          <Link href="/works" className="studio-button studio-button-primary focus-ring">
+            作品集を見る
+            <ArrowRight size={18} aria-hidden="true" />
+          </Link>
         </div>
 
-        <Link href="/works" className="works-gateway-display reveal-on-scroll focus-ring" aria-label="作品集ページへ移動">
-          <div className="works-gateway-ring" aria-hidden="true" />
-          <div className="works-gateway-screen">
-            <Image
-              src="/images/gallery/tokyo-tower.png"
-              alt=""
-              fill
-              sizes="(max-width: 1024px) 92vw, 48vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="works-gateway-card works-gateway-card-a" aria-hidden="true">
-            <Image src="/images/gallery/highrise-02.png" alt="" fill sizes="180px" className="object-cover" />
-          </div>
-          <div className="works-gateway-card works-gateway-card-b" aria-hidden="true">
-            <Image src="/images/gallery/room-evening.png" alt="" fill sizes="180px" className="object-cover" />
-          </div>
-          <div className="works-gateway-badge" aria-hidden="true">
-            <Images size={18} />
-            <span>作品集</span>
+        <Link href="/works" className="studio-works-collage focus-ring" aria-label="作品集ページへ移動">
+          <figure className="studio-work-frame studio-work-frame-a">
+            <Image src="/images/gallery/tokyo-tower.png" alt="" fill sizes="260px" className="object-cover" />
+          </figure>
+          <figure className="studio-work-frame studio-work-frame-b">
+            <Image src="/images/gallery/open-sea.png" alt="" fill sizes="420px" className="object-cover" />
+          </figure>
+          <figure className="studio-work-frame studio-work-frame-c">
+            <Image src="/images/gallery/room-night.png" alt="" fill sizes="300px" className="object-cover" />
+          </figure>
+          <div className="studio-works-stamp">
+            <span>VIEW</span>
+            <strong>21</strong>
+            <small>VISUAL WORKS</small>
           </div>
         </Link>
       </div>
