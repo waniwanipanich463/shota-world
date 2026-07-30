@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "プライバシーポリシー｜SHOTA WORLD",
+  description: "SHOTA WORLDの個人情報保護方針です。",
+  alternates: {
+    canonical: "https://www.shota-world.jp/privacy",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 const sections = [
   {
