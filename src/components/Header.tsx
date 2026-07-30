@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 
 const navItems = [
   { name: "サービス", href: "/#service" },
-  { name: "制作実績", href: "/#works" },
   { name: "プロフィール", href: "/#about" },
   { name: "制作の流れ", href: "/#process" },
 ];

@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
-import Works from "@/components/Works";
 import About from "@/components/About";
 import Process from "@/components/Process";
 import Contact from "@/components/Contact";
@@ -11,7 +10,6 @@ export default function Home() {
     <main className="studio-site">
       <Hero />
       <Services />
-      <Works />
       <About />
       <Process />
       <Contact />
