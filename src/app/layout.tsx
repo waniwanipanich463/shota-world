@@ -41,6 +41,9 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+  verification: {
+    google: "MUzIrfonFXFxKdf39FBcSaUec9pJHAD91GqReRJxduI",
+  },
   openGraph: {
     title: "SHOTA WORLD｜庭野翔太のホームページ・チラシ制作",
     description: "デザイナー庭野翔太が、ホームページとチラシを情報整理からデザイン、公開・納品まで制作します。",
