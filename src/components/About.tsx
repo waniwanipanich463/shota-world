@@ -44,7 +44,7 @@ export default function About() {
             <div><dt>ROLE</dt><dd>Web・グラフィックデザイナー</dd></div>
             <div><dt>WORK</dt><dd>ホームページ / チラシ / ビジュアル制作</dd></div>
           </dl>
-          <a href="mailto:contact@shota-world.jp" className="studio-text-link focus-ring">
+          <a href="#contact" className="studio-text-link focus-ring">
             庭野翔太に相談する
             <span aria-hidden="true">↗</span>
           </a>

@@ -48,7 +48,13 @@ export default function Contact() {
         }),
       });
 
-      if (!response.ok) {
+      const result = (await response.json()) as {
+        success?: boolean | string;
+        message?: string;
+      };
+      const submitted = result.success === true || result.success === "true";
+
+      if (!response.ok || !submitted) {
         throw new Error("Submission failed");
       }
 
