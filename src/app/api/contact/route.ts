@@ -1,11 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const FORM_ENDPOINT = "https://formsubmit.co/ajax/waniwanipanich463@gmail.com";
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
-const SITE_ORIGIN = "https://www.shota-world.jp";
 const CONTACT_EMAIL = "waniwanipanich463@gmail.com";
 const DEFAULT_FROM_EMAIL = "SHOTA WORLD <onboarding@resend.dev>";
-const DELIVERY_ATTEMPTS = 2;
 const DELIVERY_TIMEOUT_MS = 3500;
 
 export const runtime = "nodejs";
@@ -25,9 +22,6 @@ const clean = (value: unknown, maxLength: number) =>
 
 const isEmail = (value: string) =>
   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-
-const wait = (milliseconds: number) =>
-  new Promise((resolve) => setTimeout(resolve, milliseconds));
 
 const escapeHtml = (value: string) =>
   value.replace(
@@ -103,56 +97,6 @@ async function sendWithResend(submission: Submission, apiKey: string) {
   }
 }
 
-async function sendWithFormSubmit(submission: Submission) {
-  const { name, email, company, service, message } = submission;
-  const body = JSON.stringify({
-    name,
-    email,
-    company,
-    service,
-    message,
-    _replyto: email,
-    _subject: "【SHOTA WORLD】Webサイトからのお問い合わせ",
-    _template: "table",
-    _captcha: "false",
-    _url: `${SITE_ORIGIN}/#contact`,
-  });
-
-  for (let attempt = 0; attempt < DELIVERY_ATTEMPTS; attempt += 1) {
-    try {
-      const response = await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          Origin: SITE_ORIGIN,
-          Referer: `${SITE_ORIGIN}/`,
-        },
-        body,
-        cache: "no-store",
-        signal: AbortSignal.timeout(DELIVERY_TIMEOUT_MS),
-      });
-
-      const result = (await response.json()) as {
-        success?: boolean | string;
-      };
-      const submitted = result.success === true || result.success === "true";
-
-      if (response.ok && submitted) {
-        return true;
-      }
-    } catch {
-      // Retry once before the UI offers its prefilled email fallback.
-    }
-
-    if (attempt < DELIVERY_ATTEMPTS - 1) {
-      await wait(300);
-    }
-  }
-
-  return false;
-}
-
 export async function POST(request: NextRequest) {
   let payload: ContactPayload;
 
@@ -192,9 +136,14 @@ export async function POST(request: NextRequest) {
   };
   const resendApiKey = process.env.RESEND_API_KEY?.trim();
 
-  const delivered = resendApiKey
-    ? await sendWithResend(submission, resendApiKey)
-    : await sendWithFormSubmit(submission);
+  if (!resendApiKey) {
+    return NextResponse.json(
+      { success: false, reason: "delivery_unavailable" },
+      { status: 503 },
+    );
+  }
+
+  const delivered = await sendWithResend(submission, resendApiKey);
 
   if (delivered) {
     return NextResponse.json({ success: true });
