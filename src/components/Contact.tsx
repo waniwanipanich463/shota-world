@@ -4,7 +4,7 @@ import { AlertCircle, ArrowRight, CheckCircle2, Send } from "lucide-react";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 
-const FORM_ENDPOINT = "https://formsubmit.co/ajax/waniwanipanich463@gmail.com";
+const CONTACT_EMAIL = "waniwanipanich463@gmail.com";
 
 const offers = [
   "ホームページを新しく作りたい",
@@ -15,36 +15,44 @@ const offers = [
 
 type SubmitStatus = "idle" | "sending" | "sent" | "error";
 
+type FailedSubmission = {
+  name: string;
+  email: string;
+  company: string;
+  service: string;
+  message: string;
+};
+
 export default function Contact() {
   const [status, setStatus] = useState<SubmitStatus>("idle");
+  const [failedSubmission, setFailedSubmission] = useState<FailedSubmission | null>(null);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     const formData = new FormData(form);
     const email = String(formData.get("email") ?? "");
+    const submission = {
+      name: String(formData.get("name") ?? ""),
+      email,
+      company: String(formData.get("company") ?? ""),
+      service: String(formData.get("service") ?? ""),
+      message: String(formData.get("message") ?? ""),
+    };
 
     setStatus("sending");
+    setFailedSubmission(null);
 
     try {
-      const response = await fetch(FORM_ENDPOINT, {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: formData.get("name"),
-          email,
-          company: formData.get("company"),
-          service: formData.get("service"),
-          message: formData.get("message"),
-          _replyto: email,
-          _subject: "【SHOTA WORLD】Webサイトからのお問い合わせ",
-          _template: "table",
-          _captcha: "false",
-          _honey: formData.get("_honey"),
-          _url: "https://www.shota-world.jp/#contact",
+          ...submission,
+          honey: formData.get("_honey"),
         }),
       });
 
@@ -61,9 +69,25 @@ export default function Contact() {
       form.reset();
       setStatus("sent");
     } catch {
+      setFailedSubmission(submission);
       setStatus("error");
     }
   };
+
+  const fallbackHref = failedSubmission
+    ? `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+        `【SHOTA WORLD】${failedSubmission.service}のご相談`,
+      )}&body=${encodeURIComponent(
+        [
+          `お名前: ${failedSubmission.name}`,
+          `メールアドレス: ${failedSubmission.email}`,
+          `会社名・屋号: ${failedSubmission.company || "未記入"}`,
+          `ご相談内容: ${failedSubmission.service}`,
+          "",
+          failedSubmission.message,
+        ].join("\n"),
+      )}`
+    : `mailto:${CONTACT_EMAIL}`;
 
   return (
     <section id="contact" className="studio-section studio-contact">
@@ -190,10 +214,16 @@ export default function Contact() {
                 </p>
               )}
               {status === "error" && (
-                <p className="is-error">
-                  <AlertCircle size={18} aria-hidden="true" />
-                  送信できませんでした。時間をおいて、もう一度お試しください。
-                </p>
+                <div className="studio-form-fallback is-error">
+                  <p>
+                    <AlertCircle size={18} aria-hidden="true" />
+                    送信サービスが一時的に利用できません。入力内容はこの画面に残っています。
+                  </p>
+                  <a href={fallbackHref} className="focus-ring">
+                    メールアプリから送信する
+                    <ArrowRight size={16} aria-hidden="true" />
+                  </a>
+                </div>
               )}
             </div>
           </form>

@@ -1252,6 +1252,23 @@
   color: #ff9da9;
 }
 
+.studio-form-fallback {
+  display: grid;
+  gap: 10px;
+}
+
+.studio-form-fallback a {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid currentColor;
+  color: #ffd37a;
+  font-size: 12px;
+  font-weight: 800;
+}
+
 .studio-footer {
   padding: 64px 0 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
