@@ -1905,10 +1905,14 @@
   }
 
   .studio-hero-signature {
-    right: -50%;
+    right: 3%;
     bottom: 2%;
-    width: 460px;
+    width: min(94vw, 420px);
     opacity: 0.32;
+  }
+
+  .studio-hero-logo {
+    inset: auto 10% 0;
   }
 
   .studio-scope {
