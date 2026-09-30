@@ -1322,6 +1322,11 @@
   margin: 24px 0;
 }
 
+.studio-contact-copy h2 .studio-contact-request {
+  display: inline;
+  color: inherit;
+}
+
 .studio-contact-tags {
   display: flex;
   flex-wrap: wrap;
@@ -1830,6 +1835,22 @@
 }
 
 @media (max-width: 640px) {
+  .studio-hero-copy,
+  .studio-works-copy,
+  .studio-works-feature,
+  .studio-service-copy,
+  .studio-about-copy,
+  .studio-process-step,
+  .studio-price-copy,
+  .studio-price-table,
+  .studio-contact-panel,
+  .studio-contact-copy,
+  .studio-contact-form,
+  .studio-footer-inner {
+    min-width: 0;
+    max-width: 100%;
+  }
+
   .studio-header {
     padding: 12px 0;
   }
@@ -1851,6 +1872,10 @@
     margin: 22px 0 20px;
     font-size: 40px;
     line-height: 1.16;
+    word-break: normal;
+    overflow-wrap: anywhere;
+    line-break: strict;
+    text-wrap: pretty;
   }
 
   .studio-hero h1 strong {
@@ -1866,7 +1891,9 @@
     font-size: 14px;
     line-height: 1.9;
     word-break: normal;
+    overflow-wrap: anywhere;
     line-break: strict;
+    text-wrap: pretty;
   }
 
   .studio-hero-actions {
@@ -1913,6 +1940,10 @@
   .studio-contact-copy h2 {
     font-size: 34px;
     line-height: 1.26;
+    word-break: normal;
+    overflow-wrap: anywhere;
+    line-break: strict;
+    text-wrap: pretty;
   }
 
   .studio-section-heading > p:last-child,
@@ -1922,7 +1953,13 @@
     font-size: 14px;
     line-height: 1.9;
     word-break: normal;
+    overflow-wrap: anywhere;
     line-break: strict;
+    text-wrap: pretty;
+  }
+
+  .studio-contact-copy h2 .studio-contact-request {
+    display: block;
   }
 
   .studio-service-row {
@@ -1949,7 +1986,9 @@
 
   .studio-service-copy > p:not(.studio-service-label) {
     word-break: normal;
+    overflow-wrap: anywhere;
     line-break: strict;
+    text-wrap: pretty;
   }
 
   .studio-service-copy ul {
@@ -2025,13 +2064,19 @@
 
   .studio-works-feature-info strong {
     font-size: 24px;
+    word-break: normal;
+    overflow-wrap: anywhere;
+    line-break: strict;
+    text-wrap: pretty;
   }
 
   .studio-works-feature-info p {
     font-size: 13px;
     line-height: 1.9;
     word-break: normal;
+    overflow-wrap: anywhere;
     line-break: strict;
+    text-wrap: pretty;
   }
 
   .studio-works-collage {
@@ -2077,6 +2122,7 @@
     font-size: 15px;
     line-height: 1.85;
     word-break: normal;
+    overflow-wrap: anywhere;
     line-break: strict;
   }
 
@@ -2115,24 +2161,73 @@
   .studio-price-copy > p {
     font-size: 14px;
     line-height: 1.9;
+    word-break: normal;
+    overflow-wrap: anywhere;
+    line-break: strict;
+  }
+
+  .studio-price-layout {
+    min-width: 0;
+  }
+
+  .studio-price-copy,
+  .studio-price-table {
+    min-width: 0;
+    width: 100%;
   }
 
   .studio-price-row {
-    grid-template-columns: 32px 1fr auto;
-    gap: 10px;
+    min-height: 112px;
+    grid-template-columns: 28px minmax(0, 1fr);
+    grid-template-areas:
+      "number item"
+      ". price";
+    align-content: center;
+    gap: 7px 10px;
+    padding: 18px 0;
+  }
+
+  .studio-price-row > span {
+    grid-area: number;
   }
 
   .studio-price-row strong {
+    grid-area: item;
     font-size: 13px;
+    overflow-wrap: anywhere;
   }
 
   .studio-price-row b {
+    grid-area: price;
+    justify-self: start;
     font-size: 14px;
+  }
+
+  .studio-price-table > p {
+    word-break: normal;
+    overflow-wrap: anywhere;
+    line-break: strict;
   }
 
   .studio-contact-copy,
   .studio-contact-form {
+    width: 100%;
+    min-width: 0;
     padding: 38px 24px;
+  }
+
+  .studio-contact-panel,
+  .studio-form-grid,
+  .studio-form-field {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .studio-form-field input,
+  .studio-form-field select,
+  .studio-form-field textarea {
+    max-width: 100%;
+    font-size: 16px;
   }
 
   .studio-contact-tags {
@@ -2163,6 +2258,34 @@
     grid-column: auto;
     grid-row: 3;
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 390px) {
+  .studio-hero h1 {
+    font-size: 38px;
+  }
+
+  .studio-hero-lead {
+    font-size: 13px;
+  }
+
+  .studio-section-heading h2,
+  .studio-works-copy h2,
+  .studio-about-copy h2,
+  .studio-contact-copy h2,
+  .studio-price-copy h2 {
+    font-size: 30px;
+  }
+
+  .studio-contact-copy,
+  .studio-contact-form {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .studio-footer-links {
+    grid-template-columns: 1fr;
   }
 }
 

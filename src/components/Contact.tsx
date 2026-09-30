@@ -96,7 +96,10 @@ export default function Contact() {
         <div className="studio-contact-panel">
           <div className="studio-contact-copy">
             <p className="studio-eyebrow">CONTACT</p>
-            <h2>まずは、つくりたいものを<span>聞かせてください。</span></h2>
+            <h2>
+              まずは、<span className="studio-contact-request">つくりたいものを</span>
+              <span>聞かせてください。</span>
+            </h2>
             <p>
               ホームページ、ロゴ・キャラクター、チラシ・名刺などの制作について、
               ご相談を受け付けています。

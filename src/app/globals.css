@@ -172,6 +172,8 @@
 html {
   scroll-behavior: smooth;
   background: #050715;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
