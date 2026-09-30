@@ -175,7 +175,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="ja" className="scroll-smooth">
+    <html lang="ja" className="scroll-smooth" data-scroll-behavior="smooth">
       <body
         className="bg-background text-foreground antialiased overflow-x-hidden"
       >

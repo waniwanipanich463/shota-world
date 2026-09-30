@@ -18,6 +18,7 @@ export default function Footer() {
 
         <div className="studio-footer-links">
           <Link href="/#service">サービス</Link>
+          <Link href="/works">制作実績</Link>
           <Link href="/#about">プロフィール</Link>
           <Link href="/#process">制作の流れ</Link>
           <Link href="/privacy">プライバシー</Link>
