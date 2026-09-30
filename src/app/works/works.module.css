@@ -918,6 +918,46 @@
 }
 
 @media (max-width: 640px) {
+  .page,
+  .page article,
+  .heroCopy,
+  .overviewInner,
+  .overviewGrid,
+  .sectionHeading,
+  .sectionHeading > div,
+  .storyText,
+  .initialGrid,
+  .balanceGrid,
+  .sectionBody,
+  .variationLayout,
+  .variationCopy,
+  .approachLayout,
+  .approachLayout > div,
+  .approachCopy,
+  .ctaInner,
+  .ctaCopy {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .heroCopy h1,
+  .heroCopy h1 span,
+  .heroCopy h1 strong,
+  .overviewGrid dd,
+  .sectionHeading h2,
+  .storyText,
+  .sectionBody,
+  .variationCopy,
+  .approachLayout h2,
+  .approachCopy,
+  .ctaInner h2,
+  .ctaCopy {
+    max-width: 100%;
+    word-break: normal;
+    overflow-wrap: anywhere;
+    line-break: strict;
+  }
+
   .heroInner {
     gap: 40px;
     padding-top: 126px;
@@ -992,7 +1032,7 @@
   }
 
   .sectionHeading {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 18px;
     margin-bottom: 48px;
   }
@@ -1108,6 +1148,32 @@
     width: 100%;
     gap: 18px;
     margin-top: 38px;
+  }
+}
+
+@media (max-width: 390px) {
+  .heroCopy h1 {
+    font-size: 36px;
+  }
+
+  .heroCopy h1 span {
+    font-size: 21px;
+  }
+
+  .heroCopy h1 strong {
+    font-size: 30px;
+  }
+
+  .sectionHeading h2,
+  .approachLayout h2,
+  .ctaInner h2 {
+    font-size: 29px;
+    line-height: 1.42;
+  }
+
+  .storyText {
+    font-size: 14px;
+    line-height: 1.95;
   }
 }
 
