@@ -457,11 +457,11 @@
 }
 
 .darkImageStage {
-  border: 1px solid rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(76, 58, 46, 0.18);
   background:
-    linear-gradient(rgba(174, 246, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 143, 207, 0.045) 1px, transparent 1px),
-    #15151b;
+    linear-gradient(rgba(76, 58, 46, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(76, 58, 46, 0.07) 1px, transparent 1px),
+    #f5efdf;
   background-size: 38px 38px;
 }
 
