@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "SHOTA WORLD｜庭野翔太のデザインスタジオ",
     short_name: "SHOTA WORLD",
     description:
-      "デザイナー庭野翔太が運営する、ホームページ制作・チラシ制作のデザインスタジオ。",
+      "デザイナー庭野翔太が運営する、Web・ロゴ・キャラクター・グラフィックデザインのスタジオ。",
     start_url: "/",
     display: "standalone",
     background_color: "#07070b",

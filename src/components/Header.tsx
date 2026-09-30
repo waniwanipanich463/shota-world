@@ -9,6 +9,7 @@ const navItems = [
   { name: "制作実績", href: "/#works" },
   { name: "プロフィール", href: "/#about" },
   { name: "制作の流れ", href: "/#process" },
+  { name: "料金", href: "/#price" },
 ];
 
 export default function Header() {

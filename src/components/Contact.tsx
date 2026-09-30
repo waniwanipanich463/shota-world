@@ -7,10 +7,11 @@ import { FormEvent, useState } from "react";
 const CONTACT_EMAIL = "waniwanipanich463@gmail.com";
 
 const offers = [
-  "ホームページを新しく作りたい",
-  "今あるサイトを見直したい",
-  "イベントや店舗のチラシを作りたい",
-  "まだ内容が決まっていない",
+  "ホームページを制作したい",
+  "ロゴ・キャラクターを制作したい",
+  "チラシ・名刺を制作したい",
+  "今あるデザインを見直したい",
+  "何を作ればいいか相談したい",
 ];
 
 type SubmitStatus = "idle" | "sending" | "sent" | "error";
@@ -97,8 +98,10 @@ export default function Contact() {
             <p className="studio-eyebrow">CONTACT</p>
             <h2>まずは、つくりたいものを<span>聞かせてください。</span></h2>
             <p>
-              ホームページやチラシの制作について、ご相談を受け付けています。
-              内容が固まっていない段階でも大丈夫です。目的や状況を伺い、必要な形をご提案します。
+              ホームページ、ロゴ・キャラクター、チラシ・名刺などの制作について、
+              ご相談を受け付けています。
+              「何を作ればいいかわからない」「まだイメージが固まっていない」という段階でも大丈夫です。
+              目的や状況をお聞きしながら、必要な形を一緒に考えます。
             </p>
             <div className="studio-contact-tags">
               {offers.map((offer) => (
@@ -151,11 +154,11 @@ export default function Contact() {
                 <span>ご相談内容 <em>必須</em></span>
                 <select name="service" required defaultValue="">
                   <option value="" disabled>選択してください</option>
-                  <option value="ホームページ制作">ホームページ制作</option>
-                  <option value="ホームページのリニューアル">ホームページのリニューアル</option>
-                  <option value="チラシ制作">チラシ制作</option>
-                  <option value="その他のデザイン">その他のデザイン</option>
-                  <option value="内容から相談したい">内容から相談したい</option>
+                  <option value="ホームページを制作したい">ホームページを制作したい</option>
+                  <option value="ロゴ・キャラクターを制作したい">ロゴ・キャラクターを制作したい</option>
+                  <option value="チラシ・名刺を制作したい">チラシ・名刺を制作したい</option>
+                  <option value="今あるデザインを見直したい">今あるデザインを見直したい</option>
+                  <option value="何を作ればいいか相談したい">何を作ればいいか相談したい</option>
                 </select>
               </label>
 
@@ -200,7 +203,7 @@ export default function Contact() {
               ) : (
                 <>
                   <Send size={19} aria-hidden="true" />
-                  問い合わせを送信する
+                  相談内容を送信する
                   <ArrowRight size={19} aria-hidden="true" />
                 </>
               )}

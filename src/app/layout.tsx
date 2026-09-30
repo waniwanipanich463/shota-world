@@ -7,8 +7,8 @@ import CursorParticles from "@/components/CursorParticles";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.shota-world.jp"),
-  title: "SHOTA WORLD｜庭野翔太のホームページ・チラシ制作",
-  description: "SHOTA WORLDは、デザイナー庭野翔太が運営するデザインスタジオです。ホームページ制作とチラシ制作を、情報整理からデザイン、公開・納品まで一貫して行います。",
+  title: "SHOTA WORLD｜庭野翔太のWeb・グラフィックデザイン",
+  description: "SHOTA WORLDは、デザイナー庭野翔太のデザインスタジオです。ホームページ、ロゴ・キャラクター、チラシ・名刺など、お店やサービスに必要なデザインを情報整理から一緒につくります。",
   applicationName: "SHOTA WORLD",
   keywords: [
     "SHOTA WORLD",
@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     "Shota Niwano",
     "ホームページ制作",
     "チラシ制作",
+    "ロゴ制作",
+    "キャラクターデザイン",
+    "名刺デザイン",
     "Webデザイン",
     "グラフィックデザイン",
     "デザイナー",
@@ -45,8 +48,8 @@ export const metadata: Metadata = {
     google: "MUzIrfonFXFxKdf39FBcSaUec9pJHAD91GqReRJxduI",
   },
   openGraph: {
-    title: "SHOTA WORLD｜庭野翔太のホームページ・チラシ制作",
-    description: "デザイナー庭野翔太が、ホームページとチラシを情報整理からデザイン、公開・納品まで制作します。",
+    title: "SHOTA WORLD｜庭野翔太のWeb・グラフィックデザイン",
+    description: "ホームページ、ロゴ・キャラクター、チラシ・名刺など、お店やサービスに必要なデザインを情報整理から一緒につくります。",
     url: "https://www.shota-world.jp",
     siteName: "SHOTA WORLD",
     images: [
@@ -62,8 +65,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SHOTA WORLD｜庭野翔太のホームページ・チラシ制作",
-    description: "デザイナー庭野翔太が、ホームページとチラシを制作します。",
+    title: "SHOTA WORLD｜庭野翔太のWeb・グラフィックデザイン",
+    description: "ホームページ、ロゴ・キャラクター、チラシ・名刺などのデザインを、情報整理から一緒につくります。",
     images: ["/images/ogp/shota-world-ogp.jpg"],
     creator: "@Niwano_creator",
   },
@@ -98,7 +101,7 @@ export default function RootLayout({
         name: "SHOTA WORLD",
         alternateName: ["庭野翔太", "Shota Niwano"],
         description:
-          "デザイナー庭野翔太が運営する、ホームページ制作・チラシ制作のデザインスタジオ。",
+          "デザイナー庭野翔太が運営する、Web・ロゴ・キャラクター・グラフィックデザインのスタジオ。",
         inLanguage: "ja-JP",
         publisher: {
           "@id": "https://www.shota-world.jp/#organization",
@@ -139,6 +142,9 @@ export default function RootLayout({
           "ホームページ制作",
           "Webデザイン",
           "チラシ制作",
+          "ロゴ制作",
+          "キャラクターデザイン",
+          "名刺デザイン",
           "グラフィックデザイン",
           "ビジュアルデザイン",
         ],
@@ -161,15 +167,27 @@ export default function RootLayout({
       },
       {
         "@type": "Service",
-        "@id": "https://www.shota-world.jp/#flyer-design",
-        name: "チラシ制作",
+        "@id": "https://www.shota-world.jp/#logo-character-design",
+        name: "ロゴ・キャラクター制作",
         provider: {
           "@id": "https://www.shota-world.jp/#organization",
         },
         areaServed: "JP",
         url: "https://www.shota-world.jp/#service",
         description:
-          "掲載内容の整理、写真・ビジュアル調整、印刷用データ作成を含むチラシ制作。",
+          "ヒアリング、デザイン提案、バリエーション制作、使用媒体に合わせた調整を含むロゴ・キャラクター制作。",
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.shota-world.jp/#flyer-design",
+        name: "チラシ・名刺などの印刷物制作",
+        provider: {
+          "@id": "https://www.shota-world.jp/#organization",
+        },
+        areaServed: "JP",
+        url: "https://www.shota-world.jp/#service",
+        description:
+          "掲載内容の整理、レイアウト・デザイン、印刷用データ作成、入稿サポートを含む印刷物制作。",
       },
     ],
   };

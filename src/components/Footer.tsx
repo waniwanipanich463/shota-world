@@ -13,7 +13,7 @@ export default function Footer() {
               <small>DESIGN STUDIO</small>
             </span>
           </Link>
-          <p className="studio-footer-role">ホームページ制作・チラシ制作 / 庭野翔太</p>
+          <p className="studio-footer-role">WEB &amp; GRAPHIC DESIGN / SHOTA NIWANO</p>
         </div>
 
         <div className="studio-footer-links">
@@ -21,6 +21,7 @@ export default function Footer() {
           <Link href="/works">制作実績</Link>
           <Link href="/#about">プロフィール</Link>
           <Link href="/#process">制作の流れ</Link>
+          <Link href="/#price">料金</Link>
           <Link href="/privacy">プライバシー</Link>
         </div>
 

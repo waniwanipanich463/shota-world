@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Check, Globe2, PanelsTopLeft } from "lucide-react";
+import { ArrowUpRight, Check, Globe2, PanelsTopLeft, Shapes } from "lucide-react";
 
 export default function Services() {
   return (
@@ -9,12 +9,12 @@ export default function Services() {
         <div className="studio-section-heading">
           <p className="studio-eyebrow">SERVICES</p>
           <h2>
-            ホームページとチラシを、
-            <span>ひとつの世界観で。</span>
+            必要なデザインを、
+            <span>情報整理から一緒に。</span>
           </h2>
           <p>
-            目的や伝えたい内容がまだ曖昧でも大丈夫です。
-            情報を整理し、見た人が迷わず行動できる形へ設計します。
+            お店やサービスの目的に合わせて、Webからロゴ・キャラクター、
+            印刷物まで、伝わる形を一緒につくります。
           </p>
         </div>
 
@@ -32,7 +32,7 @@ export default function Services() {
               <li><Check size={17} />ページ構成・情報整理</li>
               <li><Check size={17} />オリジナルデザイン</li>
               <li><Check size={17} />スマートフォン対応</li>
-              <li><Check size={17} />公開までのサポート</li>
+              <li><Check size={17} />公開サポート</li>
             </ul>
             <Link href="#contact" className="studio-text-link focus-ring">
               ホームページ制作を相談する
@@ -59,6 +59,41 @@ export default function Services() {
           </div>
         </div>
 
+        <div className="studio-service-row studio-service-character">
+          <div className="studio-character-stage" aria-label="ロゴ・キャラクターのデザインイメージ">
+            <span className="studio-character-ring" aria-hidden="true" />
+            <Image
+              src="/images/works/french-bulldog/french-bulldog-07-final-normal.png"
+              alt="キッチンカー用に制作したフレンチブルドッグのオリジナルキャラクターデザイン"
+              width={1182}
+              height={1182}
+              sizes="(max-width: 900px) 82vw, 42vw"
+            />
+            <small>ORIGINAL CHARACTER / BRAND IDENTITY</small>
+          </div>
+
+          <div className="studio-service-copy">
+            <div className="studio-service-number">02</div>
+            <Shapes className="studio-service-icon" aria-hidden="true" />
+            <p className="studio-service-label">LOGO &amp; CHARACTER DESIGN</p>
+            <h3>ロゴ・キャラクター制作</h3>
+            <p>
+              お店やサービスの個性を伝える、ロゴやオリジナルキャラクターを制作します。
+              イメージが固まっていない段階でも、比較しながら方向性を探します。
+            </p>
+            <ul>
+              <li><Check size={17} />ヒアリング</li>
+              <li><Check size={17} />デザイン提案</li>
+              <li><Check size={17} />バリエーション制作</li>
+              <li><Check size={17} />使用媒体に合わせた調整</li>
+            </ul>
+            <Link href="#contact" className="studio-text-link focus-ring">
+              ロゴ・キャラクター制作を相談する
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+
         <div className="studio-service-row studio-service-print">
           <div className="studio-flyer-stage" aria-label="チラシのデザインイメージ">
             <article className="studio-flyer studio-flyer-back">
@@ -75,22 +110,22 @@ export default function Services() {
           </div>
 
           <div className="studio-service-copy">
-            <div className="studio-service-number">02</div>
+            <div className="studio-service-number">03</div>
             <PanelsTopLeft className="studio-service-icon" aria-hidden="true" />
-            <p className="studio-service-label">FLYER DESIGN</p>
-            <h3>チラシ制作</h3>
+            <p className="studio-service-label">GRAPHIC DESIGN</p>
+            <h3>チラシ・名刺などの印刷物</h3>
             <p>
-              イベント、店舗、サービスの情報を読みやすく整理し、
-              手に取った瞬間に魅力が伝わるチラシを制作します。
+              お店やサービスの情報を整理し、見た人に伝わりやすい
+              チラシや名刺などの印刷物を制作します。
             </p>
             <ul>
               <li><Check size={17} />掲載内容の整理</li>
-              <li><Check size={17} />表面・両面デザイン</li>
-              <li><Check size={17} />写真・ビジュアルの調整</li>
-              <li><Check size={17} />印刷用データの作成</li>
+              <li><Check size={17} />レイアウト・デザイン</li>
+              <li><Check size={17} />印刷用データ作成</li>
+              <li><Check size={17} />入稿サポート</li>
             </ul>
             <Link href="#contact" className="studio-text-link focus-ring">
-              チラシ制作を相談する
+              印刷物の制作を相談する
               <ArrowUpRight size={18} aria-hidden="true" />
             </Link>
           </div>
