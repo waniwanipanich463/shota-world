@@ -379,7 +379,7 @@ export default function WorksPage() {
                 <figcaption>NORMAL</figcaption>
                 <div className={styles.finalNormalStage}>
                   <Image
-                    src={`${imageBase}/french-bulldog-07-final-normal.png`}
+                    src={`${imageBase}/french-bulldog-logo-normal-v2.png`}
                     alt="通常背景用の最終キャラクターデザイン"
                     width={1182}
                     height={1182}
@@ -391,7 +391,7 @@ export default function WorksPage() {
                 <figcaption>DARK BACKGROUND</figcaption>
                 <div className={styles.finalDarkStage}>
                   <Image
-                    src={`${imageBase}/french-bulldog-07-final-dark.png`}
+                    src={`${imageBase}/french-bulldog-logo-black-bg-v2.png`}
                     alt="濃色背景用の最終キャラクターデザイン"
                     width={1182}
                     height={1182}
