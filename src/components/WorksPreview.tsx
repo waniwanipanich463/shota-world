@@ -18,7 +18,7 @@ export default function WorksPreview() {
           <div className="studio-works-feature-visual">
             <span className="studio-works-feature-index">01</span>
             <Image
-              src="/images/works/french-bulldog/french-bulldog-07-final-normal.png"
+              src="/images/works/french-bulldog/french-bulldog-logo-normal-v2.png"
               alt="キッチンカー用に制作したフレンチブルドッグのオリジナルキャラクターデザイン"
               width={1182}
               height={1182}

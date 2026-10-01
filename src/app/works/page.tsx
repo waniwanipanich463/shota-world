@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: `${imageBase}/french-bulldog-07-final-normal.png`,
+        url: `${imageBase}/french-bulldog-logo-normal-v2.png`,
         width: 1182,
         height: 1182,
         alt: "キッチンカーのフレンチブルドッグキャラクター",
@@ -89,7 +89,7 @@ export default function WorksPage() {
       url: "https://www.shota-world.jp/#about",
     },
     dateCreated: "2026",
-    image: `https://www.shota-world.jp${imageBase}/french-bulldog-07-final-normal.png`,
+    image: `https://www.shota-world.jp${imageBase}/french-bulldog-logo-normal-v2.png`,
     url: "https://www.shota-world.jp/works",
     inLanguage: "ja-JP",
   };
@@ -136,7 +136,7 @@ export default function WorksPage() {
             <figure className={styles.heroVisual} data-works-reveal>
               <span className={styles.heroOrbit} aria-hidden="true" />
               <Image
-                src={`${imageBase}/french-bulldog-07-final-normal.png`}
+                src={`${imageBase}/french-bulldog-logo-normal-v2.png`}
                 alt="完成したフレンチブルドッグのキャラクターデザイン"
                 width={1182}
                 height={1182}

@@ -63,7 +63,7 @@ export default function Services() {
           <div className="studio-character-stage" aria-label="ロゴ・キャラクターのデザインイメージ">
             <span className="studio-character-ring" aria-hidden="true" />
             <Image
-              src="/images/works/french-bulldog/french-bulldog-07-final-normal.png"
+              src="/images/works/french-bulldog/french-bulldog-logo-normal-v2.png"
               alt="キッチンカー用に制作したフレンチブルドッグのオリジナルキャラクターデザイン"
               width={1182}
               height={1182}
