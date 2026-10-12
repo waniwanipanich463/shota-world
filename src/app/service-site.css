@@ -967,6 +967,37 @@
   color: #ffd37a;
 }
 
+.studio-works-feature-chive .studio-works-feature-visual {
+  min-height: 0;
+  aspect-ratio: 4 / 3;
+  background: #e9f0ed;
+}
+
+.studio-works-feature-chive .studio-works-feature-visual::before {
+  content: none;
+}
+
+.studio-works-feature-chive .studio-works-feature-visual img {
+  width: 100%;
+  filter: none;
+}
+
+.studio-works-feature-chive:hover .studio-works-feature-visual img {
+  transform: none;
+}
+
+.studio-works-feature-chive .studio-works-feature-info strong,
+.studio-works-feature-chive .studio-works-feature-info p {
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
+
+.studio-works-title-phrase {
+  display: inline-block;
+  max-width: 100%;
+}
+
 .studio-works-collage {
   position: relative;
   display: block;

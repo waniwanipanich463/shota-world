@@ -38,6 +38,35 @@ export default function WorksPreview() {
             </span>
           </div>
         </Link>
+
+        <Link href="/works/chive" className="studio-works-feature studio-works-feature-chive focus-ring">
+          <div className="studio-works-feature-visual">
+            <Image
+              src="/images/works/chive/chive-total-design-mockup.webp"
+              alt="グループホーム チャイブ様のWebサイト、10周年記念チラシ、名刺の制作実績"
+              width={1448}
+              height={1086}
+              sizes="(max-width: 900px) 90vw, 60vw"
+            />
+          </div>
+          <div className="studio-works-feature-info">
+            <small>02 WEB &amp; GRAPHIC DESIGN / 2026</small>
+            <strong>
+              グループホーム
+              <br />
+              <span className="studio-works-title-phrase">Webサイト・</span>
+              <span className="studio-works-title-phrase">チラシ・名刺制作</span>
+            </strong>
+            <p>
+              NPO法人アニマート グループホーム チャイブ様のWebサイト、10周年記念チラシ、名刺を制作しました。
+              施設のあたたかさや親しみやすさを大切にしながら、それぞれの媒体の目的に合わせて情報を整理し、デザインしています。
+            </p>
+            <span className="studio-works-view">
+              VIEW PROJECT
+              <ArrowUpRight size={20} aria-hidden="true" />
+            </span>
+          </div>
+        </Link>
       </div>
     </section>
   );
