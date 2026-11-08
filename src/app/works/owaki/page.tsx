@@ -226,9 +226,13 @@ export default function OwakiWorksPage() {
 
         <section className={`${works.section} ${works.approachSection}`}>
           <div className={`section-shell ${works.approachLayout}`} data-works-reveal>
-            <div>
+            <div className={styles.approachTitle}>
               <p className={works.sectionLabel}>DESIGN APPROACH</p>
-              <h2>「こんな感じにしたい」を、<wbr />一緒に形に。</h2>
+              <h2>
+                <span className={styles.headingPhrase}>「こんな感じにしたい」を、</span>
+                <br />
+                一緒に形に。
+              </h2>
             </div>
             <div className={works.approachCopy}>
               <p>お店の雰囲気や大切にしたいモチーフ、ご希望のテイストを伺いながら、一つひとつ具体的な形へ整えていきます。</p>
@@ -240,7 +244,11 @@ export default function OwakiWorksPage() {
         <section className={works.ctaSection}>
           <div className={`section-shell ${works.ctaInner}`} data-works-reveal>
             <p className={works.sectionLabel}>START A PROJECT</p>
-            <h2>お店らしさが伝わる、<wbr />オリジナルグッズを<wbr />つくりませんか？</h2>
+            <h2 className={styles.ctaTitle}>
+              <span className={styles.headingPhrase}>お店らしさが伝わる、</span>
+              <span className={styles.headingPhrase}>オリジナルグッズを</span>
+              <span className={styles.headingPhrase}>つくりませんか？</span>
+            </h2>
             <div className={works.ctaCopy}>
               <p>スタッフTシャツ、キャラクター、ロゴ、販促ビジュアルなど、お店の個性を伝えるデザインをご提案します。</p>
             </div>

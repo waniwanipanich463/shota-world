@@ -47,6 +47,25 @@
   text-wrap: balance;
 }
 
+.approachTitle {
+  container-type: inline-size;
+}
+
+.page .approachTitle h2 {
+  font-size: min(40px, 7cqi);
+}
+
+.headingPhrase {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@media (min-width: 901px) {
+  .page .ctaTitle {
+    font-size: 52px;
+  }
+}
+
 .page .overviewGrid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -113,6 +132,10 @@
 }
 
 @media (max-width: 640px) {
+  .page .approachTitle h2 {
+    font-size: min(32px, 7cqi);
+  }
+
   .hero {
     padding: 112px 0 60px;
   }
@@ -142,5 +165,11 @@
   .gallery {
     grid-template-columns: minmax(0, 1fr);
     gap: 24px;
+  }
+}
+
+@media (max-width: 390px) {
+  .page .ctaTitle {
+    font-size: 28px;
   }
 }
