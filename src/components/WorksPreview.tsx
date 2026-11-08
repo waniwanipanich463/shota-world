@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { owakiImages } from "@/data/owaki";
 
 export default function WorksPreview() {
+  const { src, alt, width, height } = owakiImages.backColorMockup;
+
   return (
     <section id="works" className="studio-section studio-works">
       <div className="section-shell studio-works-layout">
@@ -61,6 +64,28 @@ export default function WorksPreview() {
               NPO法人アニマート グループホーム チャイブ様のWebサイト、10周年記念チラシ、名刺を制作しました。
               施設のあたたかさや親しみやすさを大切にしながら、それぞれの媒体の目的に合わせて情報を整理し、デザインしています。
             </p>
+            <span className="studio-works-view">
+              VIEW PROJECT
+              <ArrowUpRight size={20} aria-hidden="true" />
+            </span>
+          </div>
+        </Link>
+        <Link href="/works/owaki" className="studio-works-feature studio-works-feature-owaki focus-ring">
+          <div className="studio-works-feature-visual">
+            <Image src={src} alt={alt} width={width} height={height} unoptimized />
+          </div>
+          <div className="studio-works-feature-info">
+            <small>03 T-SHIRT &amp; CHARACTER DESIGN / 2026</small>
+            <strong>
+              居酒屋おおわき
+              <br />
+              <span className="studio-works-title-phrase">オリジナルTシャツ</span>
+              <span className="studio-works-title-phrase">デザイン</span>
+            </strong>
+            <p>
+              東京都八丈島の居酒屋おおわき様のオリジナルTシャツを制作。店長様の特徴を取り入れた招き猫キャラクターを中心に、背面メインと前面右胸ワンポイントを2種類の印刷表現で展開しました。
+            </p>
+            <p className="studio-works-mockup-note">※画像は完成イメージのモックアップです。</p>
             <span className="studio-works-view">
               VIEW PROJECT
               <ArrowUpRight size={20} aria-hidden="true" />

@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: "https://www.shota-world.jp",
-      lastModified: new Date("2026-10-12T00:00:00+09:00"),
+      lastModified: new Date("2026-11-08T00:00:00+09:00"),
       changeFrequency: "weekly",
       priority: 1,
     },
@@ -17,6 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://www.shota-world.jp/works/chive",
       lastModified: new Date("2026-10-12T00:00:00+09:00"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://www.shota-world.jp/works/owaki",
+      lastModified: new Date("2026-11-08T00:00:00+09:00"),
       changeFrequency: "monthly",
       priority: 0.8,
     },

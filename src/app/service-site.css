@@ -998,6 +998,46 @@
   max-width: 100%;
 }
 
+.studio-works-feature-owaki .studio-works-feature-visual {
+  min-height: 0;
+  aspect-ratio: 4 / 3;
+  background: #777;
+}
+
+.studio-works-feature-owaki .studio-works-feature-visual::before {
+  content: none;
+}
+
+.studio-works-feature-owaki .studio-works-feature-visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: none;
+}
+
+.studio-works-feature-owaki:hover .studio-works-feature-visual img {
+  transform: none;
+}
+
+.studio-works-feature-owaki .studio-works-feature-info strong,
+.studio-works-feature-owaki .studio-works-feature-info p {
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
+
+.studio-works-feature-owaki .studio-works-mockup-note {
+  font-size: 12px;
+}
+
+@media (max-width: 640px) {
+  .studio-works-feature-owaki .studio-works-feature-visual {
+    aspect-ratio: 1122 / 1402;
+  }
+}
+
 .studio-works-collage {
   position: relative;
   display: block;
