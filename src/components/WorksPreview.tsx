@@ -77,8 +77,6 @@ export default function WorksPreview() {
           <div className="studio-works-feature-info">
             <small>03 T-SHIRT &amp; CHARACTER DESIGN / 2026</small>
             <strong>
-              居酒屋おおわき
-              <br />
               <span className="studio-works-title-phrase">オリジナルTシャツ</span>
               <span className="studio-works-title-phrase">デザイン</span>
             </strong>
