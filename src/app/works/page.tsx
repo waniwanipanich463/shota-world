@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Footer from "@/components/Footer";
+import { brandName } from "@/data/brand";
 import styles from "./works.module.css";
 
 const imageBase = "/images/works/french-bulldog";
@@ -35,27 +36,38 @@ const balanceDesigns = [
   },
 ];
 
+const shareTitle = `キッチンカー キャラクターデザイン｜${brandName}`;
+const shareDescription =
+  "ヒアリングから複数案の比較、カラー調整、利用シーンの検証まで。キャラクターデザインの制作実績です。";
+const shareImage = `${imageBase}/french-bulldog-logo-normal-v2.png`;
+
 export const metadata: Metadata = {
-  title: "WORKS｜キッチンカー キャラクターデザイン｜SHOTA WORLD",
+  title: `WORKS｜${shareTitle}`,
   description:
     "キッチンカーのために制作したフレンチブルドッグのオリジナルキャラクター。その提案とブラッシュアップの過程をご紹介します。",
   alternates: {
     canonical: "https://www.shota-world.jp/works",
   },
   openGraph: {
-    title: "キッチンカー キャラクターデザイン｜SHOTA WORLD",
-    description:
-      "ヒアリングから複数案の比較、カラー調整、利用シーンの検証まで。キャラクターデザインの制作実績です。",
+    title: shareTitle,
+    description: shareDescription,
+    siteName: brandName,
     url: "https://www.shota-world.jp/works",
     type: "article",
     images: [
       {
-        url: `${imageBase}/french-bulldog-logo-normal-v2.png`,
+        url: shareImage,
         width: 1182,
         height: 1182,
         alt: "キッチンカーのフレンチブルドッグキャラクター",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: shareTitle,
+    description: shareDescription,
+    images: [shareImage],
   },
 };
 
@@ -110,7 +122,7 @@ export default function WorksPage() {
             <div className={styles.heroCopy} data-works-reveal>
               <Link href="/" className={`${styles.backLink} focus-ring`}>
                 <ArrowLeft size={17} aria-hidden="true" />
-                SHOTA WORLD
+                {brandName} / WORKS
               </Link>
               <p className={styles.heroLabel}>CHARACTER DESIGN</p>
               <h1>
@@ -435,7 +447,7 @@ export default function WorksPage() {
                 そうした感覚も、デザインをつくるための大切な手がかりです。
               </p>
               <p>
-                SHOTA WORLDでは、お話を伺いながらイメージを整理し、比較できる形でご提案しながら、
+                {brandName}では、お話を伺いながらイメージを整理し、比較できる形でご提案しながら、
                 一緒に完成へ近づけていきます。
               </p>
             </div>

@@ -83,7 +83,7 @@ export default function ScrollStory() {
   const activeTitle = activeScene.titleLines.join("");
 
   return (
-    <section ref={sectionRef} className="scroll-story" aria-label="SHOTA WORLDのビジュアル制作コンセプト">
+    <section ref={sectionRef} className="scroll-story" aria-label="S createのビジュアル制作コンセプト">
       <div className="scroll-story-sticky">
         <Image
           src="/images/gallery/highrise-03.png"

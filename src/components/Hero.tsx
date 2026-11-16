@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Monitor, PanelsTopLeft, Shapes } from "lucide-react";
+import { brandDiscipline, brandName } from "@/data/brand";
 
 export default function Hero() {
   return (
@@ -13,7 +14,7 @@ export default function Hero() {
         playsInline
         preload="auto"
         poster="/images/hero/synthwave-oasis-hero.jpg"
-        aria-label="SHOTA WORLDの背景映像"
+        aria-label={`${brandName}の背景映像`}
       >
         <source src="/videos/cyber-city.mp4" type="video/mp4" />
       </video>
@@ -30,7 +31,7 @@ export default function Hero() {
             </strong>
           </h1>
           <p className="studio-hero-lead">
-            SHOTA WORLDは、デザイナー庭野翔太の<span className="studio-nowrap">デザインスタジオ</span>です。
+            {brandName}は、デザイナー庭野翔太が運営する<span className="studio-nowrap">{brandDiscipline}</span>事業です。
             ホームページ、ロゴ・キャラクター、チラシ・名刺など、
             お店やサービスに必要なデザインを、情報整理から一緒につくります。
           </p>
@@ -55,10 +56,10 @@ export default function Hero() {
           </div>
           <div className="studio-hero-logo">
             <Image
-              src="/images/logo/shota-world-logo.png"
+              src="/images/logo/s-create-wordmark.svg"
               alt=""
-              width={2172}
-              height={724}
+              width={600}
+              height={200}
               priority
             />
           </div>

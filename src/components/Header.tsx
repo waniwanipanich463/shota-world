@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { brandName } from "@/data/brand";
 
 const navItems = [
   { name: "サービス", href: "/#service" },
@@ -28,13 +29,13 @@ export default function Header() {
       <div className="section-shell studio-header-inner">
         <Link
           href="/"
-          aria-label="SHOTA WORLD ホーム"
+          aria-label={`${brandName} ホーム`}
           className="studio-brand focus-ring"
           onClick={() => setMenuOpen(false)}
         >
-          <span className="studio-brand-mark">SW</span>
+          <span className="studio-brand-mark" aria-hidden="true">S</span>
           <span className="studio-brand-copy">
-            <strong>SHOTA WORLD</strong>
+            <strong>{brandName}</strong>
             <small>DESIGN STUDIO</small>
           </span>
         </Link>

@@ -3,12 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Footer from "@/components/Footer";
+import { brandName } from "@/data/brand";
 import { owakiImages } from "@/data/owaki";
 import works from "../works.module.css";
 import styles from "./owaki.module.css";
 
 const pageUrl = "https://www.shota-world.jp/works/owaki";
-const title = "居酒屋おおわき様 オリジナルTシャツ制作実績 | SHOTA WORLD";
+const title = `居酒屋おおわき様 オリジナルTシャツ制作実績 | ${brandName}`;
 const description =
   "東京都八丈島の居酒屋おおわき様のオリジナルTシャツ用デザイン。招き猫キャラクターを使った背面と前面右胸を、白1色版・3色DTF版で制作しました。";
 
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
+    siteName: brandName,
     url: pageUrl,
     type: "article",
     images: [
@@ -160,7 +162,7 @@ export default function OwakiWorksPage() {
           <div className="section-shell">
             <Link href="/#works" className={`${works.backLink} ${styles.backLink} focus-ring`}>
               <ArrowLeft size={17} aria-hidden="true" />
-              SHOTA WORLD / WORKS
+              {brandName} / WORKS
             </Link>
             <div className={styles.heroText} data-works-reveal>
               <div>

@@ -2,16 +2,16 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "./service-site.css";
 import Header from "@/components/Header";
-import SiteIntro from "@/components/SiteIntro";
 import CursorParticles from "@/components/CursorParticles";
+import { brandIntro, brandName, brandShareImage, homeTitle } from "@/data/brand";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.shota-world.jp"),
-  title: "SHOTA WORLD｜庭野翔太のWeb・グラフィックデザイン",
-  description: "SHOTA WORLDは、デザイナー庭野翔太のデザインスタジオです。ホームページ、ロゴ・キャラクター、チラシ・名刺など、お店やサービスに必要なデザインを情報整理から一緒につくります。",
-  applicationName: "SHOTA WORLD",
+  title: homeTitle,
+  description: `${brandIntro}ホームページ、ロゴ・キャラクター、チラシ・名刺など、お店やサービスに必要なデザインを情報整理から一緒につくります。`,
+  applicationName: brandName,
   keywords: [
-    "SHOTA WORLD",
+    brandName,
     "庭野翔太",
     "Shota Niwano",
     "ホームページ制作",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "庭野翔太", url: "https://www.shota-world.jp/#about" }],
   creator: "庭野翔太",
-  publisher: "SHOTA WORLD",
+  publisher: brandName,
   category: "design",
   alternates: {
     canonical: "https://www.shota-world.jp",
@@ -48,16 +48,16 @@ export const metadata: Metadata = {
     google: "MUzIrfonFXFxKdf39FBcSaUec9pJHAD91GqReRJxduI",
   },
   openGraph: {
-    title: "SHOTA WORLD｜庭野翔太のWeb・グラフィックデザイン",
+    title: homeTitle,
     description: "ホームページ、ロゴ・キャラクター、チラシ・名刺など、お店やサービスに必要なデザインを情報整理から一緒につくります。",
     url: "https://www.shota-world.jp",
-    siteName: "SHOTA WORLD",
+    siteName: brandName,
     images: [
       {
-        url: "/images/ogp/shota-world-ogp.jpg",
+        url: brandShareImage,
         width: 1200,
         height: 630,
-        alt: "SHOTA WORLD",
+        alt: brandName,
       },
     ],
     locale: "ja_JP",
@@ -65,14 +65,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SHOTA WORLD｜庭野翔太のWeb・グラフィックデザイン",
+    title: homeTitle,
     description: "ホームページ、ロゴ・キャラクター、チラシ・名刺などのデザインを、情報整理から一緒につくります。",
-    images: ["/images/ogp/shota-world-ogp.jpg"],
+    images: [brandShareImage],
     creator: "@Niwano_creator",
   },
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.svg?v=s-create", type: "image/svg+xml" },
       { url: "/icon.png", type: "image/png", sizes: "512x512" },
     ],
     shortcut: "/favicon.ico",
@@ -98,7 +98,7 @@ export default function RootLayout({
         "@type": "WebSite",
         "@id": "https://www.shota-world.jp/#website",
         url: "https://www.shota-world.jp",
-        name: "SHOTA WORLD",
+        name: brandName,
         alternateName: ["庭野翔太", "Shota Niwano"],
         description:
           "デザイナー庭野翔太が運営する、Web・ロゴ・キャラクター・グラフィックデザインのスタジオ。",
@@ -110,8 +110,7 @@ export default function RootLayout({
       {
         "@type": "Organization",
         "@id": "https://www.shota-world.jp/#organization",
-        name: "SHOTA WORLD",
-        alternateName: "SHOTA WORLD DESIGN STUDIO",
+        name: brandName,
         url: "https://www.shota-world.jp",
         logo: {
           "@type": "ImageObject",
@@ -203,7 +202,6 @@ export default function RootLayout({
             __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
           }}
         />
-        <SiteIntro />
         <CursorParticles />
         <Header />
         {children}

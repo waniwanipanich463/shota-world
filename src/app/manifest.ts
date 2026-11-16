@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
+import { brandName } from "@/data/brand";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "SHOTA WORLD｜庭野翔太のデザインスタジオ",
-    short_name: "SHOTA WORLD",
+    name: `${brandName}｜庭野翔太のデザインスタジオ`,
+    short_name: brandName,
     description:
       "デザイナー庭野翔太が運営する、Web・ロゴ・キャラクター・グラフィックデザインのスタジオ。",
     start_url: "/",

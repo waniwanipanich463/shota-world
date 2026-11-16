@@ -1,12 +1,30 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { brandName, brandShareImage } from "@/data/brand";
+
+const title = `プライバシーポリシー｜${brandName}`;
+const description = `${brandName}の個人情報保護方針です。`;
+const pageUrl = "https://www.shota-world.jp/privacy";
 
 export const metadata: Metadata = {
-  title: "プライバシーポリシー｜SHOTA WORLD",
-  description: "SHOTA WORLDの個人情報保護方針です。",
+  title,
+  description,
   alternates: {
-    canonical: "https://www.shota-world.jp/privacy",
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title,
+    description,
+    url: pageUrl,
+    siteName: brandName,
+    images: [{ url: brandShareImage, width: 1200, height: 630, alt: brandName }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [brandShareImage],
   },
   robots: {
     index: false,
@@ -56,7 +74,7 @@ export default function PrivacyPolicy() {
           </h1>
 
           <p className="mb-12 border-l-2 border-synth-cyan pl-5 text-base leading-8 text-mist-gray md:text-lg">
-            SHOTA WORLD（運営：Shota Niwano）は、提供するサービスにおける訪問者の個人情報の保護に最大限の注意を払い、適正な管理に努めます。
+            {brandName}（運営：Shota Niwano）は、提供するサービスにおける訪問者の個人情報の保護に最大限の注意を払い、適正な管理に努めます。
           </p>
 
           <div className="space-y-8">

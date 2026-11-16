@@ -3,6 +3,7 @@
 import { AlertCircle, ArrowRight, CheckCircle2, Send } from "lucide-react";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
+import { brandName } from "@/data/brand";
 
 const CONTACT_EMAIL = "waniwanipanich463@gmail.com";
 
@@ -77,7 +78,7 @@ export default function Contact() {
 
   const fallbackHref = failedSubmission
     ? `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-        `【SHOTA WORLD】${failedSubmission.service}のご相談`,
+        `【${brandName}】${failedSubmission.service}のご相談`,
       )}&body=${encodeURIComponent(
         [
           `お名前: ${failedSubmission.name}`,

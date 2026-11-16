@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { brandName } from "@/data/brand";
 
 export default function About() {
   return (
@@ -32,7 +33,7 @@ export default function About() {
           </div>
           <div className="studio-about-body">
             <p>
-              SHOTA WORLDでは、庭野翔太がご相談から制作まで担当します。
+              {brandName}では、庭野翔太がご相談から制作まで担当します。
               お話の中からお店やサービスの魅力を見つけ、文章、写真、色、形、レイアウトを整理しながら、
               伝わるデザインへ形にしていきます。
             </p>

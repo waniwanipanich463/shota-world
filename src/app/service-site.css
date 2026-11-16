@@ -1809,10 +1809,14 @@
 
   .studio-hero-signature {
     position: absolute;
-    right: -22%;
+    right: 3%;
     bottom: 3%;
-    width: 500px;
+    width: min(94%, 420px);
     opacity: 0.44;
+  }
+
+  .studio-hero-logo {
+    inset: auto 10% 0;
   }
 
   .studio-service-row,
@@ -1980,10 +1984,6 @@
     bottom: 2%;
     width: min(94vw, 420px);
     opacity: 0.32;
-  }
-
-  .studio-hero-logo {
-    inset: auto 10% 0;
   }
 
   .studio-scope {
@@ -2365,6 +2365,14 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .studio-hero {
+    background: #07070b url("/images/hero/synthwave-oasis-hero.jpg") center / cover no-repeat;
+  }
+
+  .studio-hero-video {
+    display: none;
+  }
+
   .studio-hero-grid,
   .studio-orbit,
   .studio-hero-logo,

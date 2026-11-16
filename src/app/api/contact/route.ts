@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
+import { brandName } from "@/data/brand";
 
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 const CONTACT_EMAIL = "waniwanipanich463@gmail.com";
-const DEFAULT_FROM_EMAIL = "SHOTA WORLD <onboarding@resend.dev>";
+const DEFAULT_FROM_EMAIL = `${brandName} <onboarding@resend.dev>`;
 const DELIVERY_TIMEOUT_MS = 3500;
 
 export const runtime = "nodejs";
@@ -60,7 +61,7 @@ async function sendWithResend(submission: Submission, apiKey: string) {
         from,
         to: [CONTACT_EMAIL],
         reply_to: email,
-        subject: "【SHOTA WORLD】Webサイトからのお問い合わせ",
+        subject: `【${brandName}】Webサイトからのお問い合わせ`,
         text: [
           `お名前: ${name}`,
           `メールアドレス: ${email}`,
@@ -70,7 +71,7 @@ async function sendWithResend(submission: Submission, apiKey: string) {
           message,
         ].join("\n"),
         html: `
-          <h1 style="font-size:20px">SHOTA WORLDへのお問い合わせ</h1>
+          <h1 style="font-size:20px">${brandName}へのお問い合わせ</h1>
           <table style="border-collapse:collapse;width:100%;max-width:680px">
             <tbody>
               <tr><th style="border:1px solid #ddd;padding:10px;text-align:left">お名前</th><td style="border:1px solid #ddd;padding:10px">${escapeHtml(name)}</td></tr>

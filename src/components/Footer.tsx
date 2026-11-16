@@ -1,5 +1,6 @@
 import { ArrowUp, Instagram } from "lucide-react";
 import Link from "next/link";
+import { brandName } from "@/data/brand";
 
 export default function Footer() {
   return (
@@ -7,9 +8,9 @@ export default function Footer() {
       <div className="section-shell studio-footer-inner">
         <div>
           <Link href="/" className="studio-brand focus-ring">
-            <span className="studio-brand-mark">SW</span>
+            <span className="studio-brand-mark" aria-hidden="true">S</span>
             <span className="studio-brand-copy">
-              <strong>SHOTA WORLD</strong>
+              <strong>{brandName}</strong>
               <small>DESIGN STUDIO</small>
             </span>
           </Link>
@@ -49,7 +50,7 @@ export default function Footer() {
         </div>
 
         <div className="studio-footer-bottom">
-          <p>© 2026 SHOTA WORLD. All Rights Reserved.</p>
+          <p>© 2026 {brandName}. All Rights Reserved.</p>
           <Link href="#" aria-label="ページ上部へ戻る" className="focus-ring">
             <ArrowUp size={18} aria-hidden="true" />
           </Link>

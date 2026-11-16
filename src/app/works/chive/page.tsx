@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import Footer from "@/components/Footer";
+import { brandName } from "@/data/brand";
 import styles from "./chive.module.css";
 
 const imageBase = "/images/works/chive";
@@ -11,15 +12,16 @@ const description =
   "NPO法人アニマート グループホーム チャイブ様のWebサイト、10周年記念チラシ、名刺を制作しました。Webと紙をつなぎ、施設のあたたかさや親しみやすさを伝える制作実績をご紹介します。";
 
 export const metadata: Metadata = {
-  title: "WORKS｜グループホーム チャイブ Web・グラフィック制作｜SHOTA WORLD",
+  title: `WORKS｜グループホーム チャイブ Web・グラフィック制作｜${brandName}`,
   description,
   alternates: {
     canonical: pageUrl,
     languages: { "ja-JP": pageUrl },
   },
   openGraph: {
-    title: "グループホーム チャイブ Web・グラフィック制作｜SHOTA WORLD",
+    title: `グループホーム チャイブ Web・グラフィック制作｜${brandName}`,
     description,
+    siteName: brandName,
     url: pageUrl,
     type: "article",
     images: [
@@ -33,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "グループホーム チャイブ Web・グラフィック制作｜SHOTA WORLD",
+    title: `グループホーム チャイブ Web・グラフィック制作｜${brandName}`,
     description,
     images: [`${imageBase}/chive-total-design-mockup.webp`],
   },
@@ -244,7 +246,7 @@ export default function ChiveWorksPage() {
           <div className="section-shell">
             <Link href="/#works" className={`${styles.backLink} focus-ring`}>
               <ArrowLeft size={17} aria-hidden="true" />
-              SHOTA WORLD / WORKS
+              {brandName} / WORKS
             </Link>
             <div className={styles.heroCopy}>
               <div>
@@ -340,7 +342,7 @@ export default function ChiveWorksPage() {
             <div className={styles.copy}>
               <p>ホームページ、チラシ、名刺。</p>
               <p>事業やサービスによって、本当に必要なものはそれぞれ異なります。</p>
-              <p>SHOTA WORLDでは、最初から制作物がすべて決まっている必要はありません。</p>
+              <p>{brandName}では、最初から制作物がすべて決まっている必要はありません。</p>
               <blockquote className={styles.quotes}>
                 <p>「誰に伝えたいのか」</p>
                 <p>「何を知ってもらいたいのか」</p>
